@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../assets/styles/bootstrap.css">
+        <img class:"img" src="http://www.unimet.edu.ve/unimetsite/wp-content/uploads/2014/06/Logo-UNIMET-color-300-dpi.jpg" alt="Logotipo UNIMET" width="300" height="100">
+        <br/>
+        <br/>
+    </head>
+    <div class="homepage">
+    <body>
+        <h2>Inicia sesión</h2>
+        <h1><%= user.nombre %></h1>
+        <form>
+          <label for="Cedula" class="sr-only">Ingrese su Cedula</label>
+          <input type="int" class="form-control input-lg" placeholder="Cedula" name="Cedula" id="Cedula" required autofocus>
+          <br/>
+          <br/>
+          <label for="Clave">Ingrese su Clave</label>
+          <input type="password" placeholder="Clave" name="Clave" class="form-control input-lg" id="Clave" required>
+          <br/>
+          <br/>
+          <br/>
+          <button type="submit" class="btn btn-lg btn-primary btn-block">Iniciar sesión</button>
+          <br/>
+        </form>
+   
+        <h5>¿No te has registrado aún?  
+            <a target="_blank" href="user/registrar" title="Registrar">Regístrate</a>
+        </h5>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </body>
+    </div>
+<html>
