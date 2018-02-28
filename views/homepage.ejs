@@ -11,67 +11,98 @@
     <link rel="stylesheet" href="../assets/styles/estilos.css">
   </head>
   <body>
-      <!-- FORM DE LA PRIMERA LINEA -->
+
+    <!-- BARRA DE NAVEGACION -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">MetroPavo App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+             
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                   <li class="nav-item active">
+                    <a class="nav-link" href="#">Consultar</a>
+                </li>
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Añadir
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="user/registrar">Estudiante</a>
+                    <a class="dropdown-item" href="#">Profesor</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Materia</a>
+                    <a class="dropdown-item" href="#">Aula</a>
+                    <a class="dropdown-item" href="#">Departamento</a>
+                    <a class="dropdown-item" href="#">Sección</a>
+                    <a class="dropdown-item" href="#">Selección</a>
+                    <a class="dropdown-item" href="#">Período</a>
+                    <a class="dropdown-item" href="#">Carrera</a>
+                    </div>
+                </li>
+                </ul>
+            </div>
+         </nav>
+    </header>
+
+      <!-- TITULO Y LEMA -->
       <section id="cover">
         <div id="cover-texto">
             <div class="container">
                 <div class="row">
                     <div class="col-sn-12">
                         <h1 class="display-3">MetroPavo App</h1>
-                        <p>Aplicacion de los MetroPavos para los MetroPavos</p>
-                        <form class="form-inline my-2 my-lg-0">
-                            <div class="form-group mb-2">
-                                <label for="Cedula" class="sr-only">Numero de Cédula</label>
-                                <input type="int" class="form-control mr-sm-2" id="Cedula" placeholder="Numero de Cédula">
-                            </div>
-                            <div class="form-group mx-sm-3 mb-2">
-                                <label for="Carnet" class="sr-only">Numero de Carnet</label>
-                                <input type="int" class="form-control mr-sm-2" id="Carnet" placeholder="Numero de Carnet">
-                            </div>
-                            <button type="submit" class="btn btn-success btn-lg">Confirmar identidad</button>
-                        </form>
+                        <p> </p>
                     </div>
                 </div>
             </div>
         </div>
       </section>
 
-      <!-- BARRA DE NAVEGACION -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-         <a class="navbar-brand" href="#">Navbar</a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-         </button>
-          
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-             <ul class="navbar-nav mr-auto">
-             <li class="nav-item active">
-                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-             </li>
-                <li class="nav-item">
-                 <a class="nav-link" href="#">Link</a>
-             </li>
-             <li class="nav-item dropdown">
-                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Dropdown
-                 </a>
-                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                 <a class="dropdown-item" href="#">Action</a>
-                 <a class="dropdown-item" href="#">Another action</a>
-                 <div class="dropdown-divider"></div>
-                 <a class="dropdown-item" href="#">Something else here</a>
-                 </div>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link disabled" href="#">Disabled</a>
-             </li>
-             </ul>
-             <form class="form-inline my-2 my-lg-0">
-             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-             </form>
-         </div>
-      </nav>
+    <!-- RESEÑA DE LOS INTEGRANTES
+      ================================================== -->
+    <br></br>
+      <div class="container marketing">
+        <h1>Autores</h1>
+        <br></br>
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+              <div class="col-lg-4">
+                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                <h2>Richard Ascanio</h2>
+                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                <h2>Antonio Guerra</h2>
+                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                <h2>Manuel Ojeda</h2>
+                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+      <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+              <div class="col-lg-4">
+                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                <h2>Iván Rivolta</h2>
+                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+              </div><!-- /.col-lg-4 -->
+              <div class="col-lg-4">
+                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                <h2>Christian Zarur</h2>
+                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+              </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->       
+            </div>
+          </div>
 
     <!-- Optional JavaScript -->
 
