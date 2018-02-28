@@ -5,6 +5,7 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "ejs": "2.3.4",
     "grunt": "1.0.1",
     "grunt-contrib-clean": "1.0.0",
@@ -24,15 +25,13 @@
     "sails-disk": "~0.10.9",
     "sails-mysql": "^0.11.5"
   },
-  
   "scripts": {
     "debug": "node debug app.js",
     "start": "sails lift"
   },
-
   "engines": {
-        "node":"8.9.4"
-    },
+    "node": "8.9.4"
+  },
   "main": "app.js",
   "repository": {
     "type": "git",

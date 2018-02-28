@@ -1,32 +1,83 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="../assets/styles/bootstrap.css">
-        <img class:"img" src="http://www.unimet.edu.ve/unimetsite/wp-content/uploads/2014/06/Logo-UNIMET-color-300-dpi.jpg" alt="Logotipo UNIMET" width="300" height="100">
-        <br/>
-        <br/>
-    </head>
-    <div class="homepage">
-    <body>
-        <h2>Inicia sesión</h2>
-        <h1><%= user.nombre %></h1>
-        <form>
-          <label for="Cedula" class="sr-only">Ingrese su Cedula</label>
-          <input type="int" class="form-control input-lg" placeholder="Cedula" name="Cedula" id="Cedula" required autofocus>
-          <br/>
-          <br/>
-          <label for="Clave">Ingrese su Clave</label>
-          <input type="password" placeholder="Clave" name="Clave" class="form-control input-lg" id="Clave" required>
-          <br/>
-          <br/>
-          <br/>
-          <button type="submit" class="btn btn-lg btn-primary btn-block">Iniciar sesión</button>
-          <br/>
-        </form>
-   
-        <h5>¿No te has registrado aún?  
-            <a target="_blank" href="user/registrar" title="Registrar">Regístrate</a>
-        </h5>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-    </body>
-    </div>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/styles/bootstrap.css">
+    <!-- ESTILOS PERSONALIZADOS -->
+    <link rel="stylesheet" href="../assets/styles/estilos.css">
+  </head>
+  <body>
+      <!-- FORM DE LA PRIMERA LINEA -->
+      <section id="cover">
+        <div id="cover-texto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sn-12">
+                        <h1 class="display-3">MetroPavo App</h1>
+                        <p>Aplicacion de los MetroPavos para los MetroPavos</p>
+                        <form class="form-inline my-2 my-lg-0">
+                            <div class="form-group mb-2">
+                                <label for="Cedula" class="sr-only">Numero de Cédula</label>
+                                <input type="int" class="form-control mr-sm-2" id="Cedula" placeholder="Numero de Cédula">
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="Carnet" class="sr-only">Numero de Carnet</label>
+                                <input type="int" class="form-control mr-sm-2" id="Carnet" placeholder="Numero de Carnet">
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg">Confirmar identidad</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- BARRA DE NAVEGACION -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <a class="navbar-brand" href="#">Navbar</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+          
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+             </li>
+                <li class="nav-item">
+                 <a class="nav-link" href="#">Link</a>
+             </li>
+             <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Dropdown
+                 </a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="#">Action</a>
+                 <a class="dropdown-item" href="#">Another action</a>
+                 <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="#">Something else here</a>
+                 </div>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link disabled" href="#">Disabled</a>
+             </li>
+             </ul>
+             <form class="form-inline my-2 my-lg-0">
+             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+             </form>
+         </div>
+      </nav>
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../assets/js/dependencies/jquery-3.3.1.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="../assets/js/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="../assets/js/bootstrap.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
