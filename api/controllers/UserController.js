@@ -25,7 +25,7 @@ module.exports = {
 
             }).exec( function (err, user) {
 
-                if(user) res.view('homepage', {user : user})
+                if(user) res.view('homepage')
                 console.log("este es el usuario",user);
                 if (err) return res.serverError(err)
 
