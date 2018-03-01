@@ -12,14 +12,21 @@ img{
     background-size: cover;
     color: orangered;
     height: 100%;
-    text-align: center center;
+    text-align: left;
+/*  text-align: center;*/
     display: flex;
-    align-items: center;
+/*  align-items: center;*/
 }
 
 
 #cover-texto{
+    padding: 5%;
     width:100%;
+}
+
+#container-marketing{
+    background: rgb(212, 92, 48);
+    color: rgba(0, 0, 0, 0.849);
 }
 
 #registro{

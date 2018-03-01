@@ -36,12 +36,10 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  'POST /user/registrar': 'UserController.registrar',
-  'GET /user/registrar': {
-    view: 'user/registrar'
-  }
-
-  
+  'POST /user/agregar': 'UserController.agregar',
+  'GET /user/agregar': {
+    view: 'user/agregar'
+  },
   
   /***************************************************************************
   *                                                                          *

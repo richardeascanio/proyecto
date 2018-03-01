@@ -17,7 +17,7 @@
   </head>
 
   <body class="bg-dark">
-    <form action="/usuario/registrar" method="post" accept-charset="utf-8" class="form-singin">
+    <form action="/user/agregar" method="post" accept-charset="utf-8" class="form-singin">
         <section id="registro">
             <div class="container">
             <div class="row">
@@ -27,14 +27,14 @@
                     <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="" value="" required>
+                        <input type="text" class="form-control" name="nombre" placeholder=""  required>
                         <div class="invalid-feedback">
                         Ingrese un nombre valido
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="apellido">Apellido</label>
-                        <input type="text" class="form-control" id="apellido" placeholder="" value="" required>
+                        <input type="text" class="form-control" name="apellido" placeholder=""  required>
                         <div class="invalid-feedback">
                         Ingrese un apellido valido
                         </div>
@@ -43,37 +43,46 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="cedula">Cédula</label>
-                            <input type="integer" class="form-control" id="cedula" placeholder="Numero de cedula" value="" required>
+                            <input type="int" class="form-control" name="cedula" placeholder="Numero de cedula"  required>
                             <div class="invalid-feedback">
                             Ingrese un numero de cedula valido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="carnet">Carnet</label>
-                            <input type="integer" class="form-control" id="carnet" placeholder="Numero de carnet" value="" required>
+                            <input type="int" class="form-control" name="carnet" placeholder="Numero de carnet"  required>
                             <div class="invalid-feedback">
                             Ingrese un numero de carnet valido
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="nombre@correo.com">
+                        <label for="correo">Email</label>
+                        <input type="email" class="form-control" name="correo" placeholder="nombre@correo.com">
                         <div class="invalid-feedback">
                             Por favor ingrese una dirección de correo electronico que sea valida
                         </div>
                     </div>
-
-                    <label for="sexo">Sexo</label>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="masculino" name="sexo" class="custom-control-input" checked required >
-                        <label class="custom-control-label" for="masculino">Masculino</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="femenino" name="sexo" class="custom-control-input" required>
-                        <label class="custom-control-label" for="femenino">Femenino</label>
-                    </div>
-
+                    
+                        <label for="sexo">Sexo</label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="masculino" name="sexo" class="custom-control-input" value="masculino" checked required >
+                            <label class="custom-control-label" for="masculino">Masculino</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="femenino" name="sexo" class="custom-control-input" value="femenino" required>
+                            <label class="custom-control-label" for="femenino">Femenino</label>
+                        </div>
+                        <label for="tipo">Tipo</label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="pregrado" name="tipo" class="custom-control-input" value="pregrado" checked required >
+                            <label class="custom-control-label" for="pregrado">Pregrado</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="postgrado" name="tipo" class="custom-control-input" value="postgrado" required>
+                            <label class="custom-control-label" for="postgrado">Postgrado</label>
+                        </div>
+                    
                     <hr class="mb-4">
                     <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir estudiante</button>
                 </div>

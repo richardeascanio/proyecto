@@ -8,10 +8,10 @@
 module.exports = {
     
     
-    registrar: function(req,res){
+    agregar: function(req,res){
         
           
-        console.log("entre a funcion");
+        console.log("entre a funcion agregar");
 
             user.create({
 
@@ -21,17 +21,24 @@ module.exports = {
                 cedula: req.param('cedula'),
                 carnet: req.param('carnet'),
                 correo: req.param('correo'),
-                NroTlfn: req.param('NroTlfn'),
-
+                sexo: req.param('sexo'),
+                
             }).exec( function (err, user) {
 
-                if(user) res.view('homepage')
+                if(user) res.redirect('#')
                 console.log("este es el usuario",user);
                 if (err) return res.serverError(err)
 
             })
-        }
-    };
+    },
+
+    consultar: function(req, res) {
+        user.find(function(err, users) {
+            if (err) return res.serverError(err);
+            return res.view({users: users});
+        });
+    }
+};
 
 
 

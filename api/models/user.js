@@ -49,11 +49,10 @@ module.exports = {
       unique: true 
     },
 
-    NroTlfn:{
-      type:'int',
+    sexo:{
+      type:'string',
       required: true,
-      unique: true
-    },
+    }
 
   }
 };
