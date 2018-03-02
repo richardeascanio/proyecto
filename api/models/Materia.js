@@ -30,6 +30,11 @@ module.exports = {
     credito:{
       type:'int',
       required: true
+    },
+
+    iddepartamento:{
+      type:'integer',
+      required: false
     }
 
   }

@@ -9,7 +9,7 @@ module.exports = {
 
     agregar: function(req,res){
 
-        console.log("entre a funcion agregar");
+        console.log("entre a funcion agregar seleccion");
 
             Selecciondeportiva.create({
 
@@ -22,7 +22,7 @@ module.exports = {
             }).exec( function (err, Selecciondeportiva) {
 
                 if(Selecciondeportiva) res.redirect('#')
-                console.log("esta es la seleccion",Selecciondeportiva);
+                console.log("esta es la seleccion", Selecciondeportiva);
                 if (err) return res.serverError(err)
 
             })

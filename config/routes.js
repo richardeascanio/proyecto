@@ -66,9 +66,9 @@ module.exports.routes = {
     view: 'seccion/agregar'
   },
 
-  'POST /seleccion/agregar': 'SeleccionController.agregar',
-  'GET /seleccion/agregar': {
-    view: 'seleccion/agregar'
+  'POST /selecciondeportiva/agregar': 'SelecciondeportivaController.agregar',
+  'GET /selecciondeportiva/agregar': {
+    view: 'selecciondeportiva/agregar'
   },
 
   'POST /user/agregar': 'UserController.agregar',

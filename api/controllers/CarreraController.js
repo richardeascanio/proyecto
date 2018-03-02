@@ -19,7 +19,7 @@ module.exports = {
                 
             }).exec( function (err, Carrera) {
 
-                if(carrera) res.redirect('#')
+                if(Carrera) res.redirect('#')
                 console.log("este es la carrera",Carrera);
                 if (err) return res.serverError(err)
 

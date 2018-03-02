@@ -37,9 +37,9 @@
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="../materia/consultar">Materia</a>
                           <a class="dropdown-item" href="../aula/consultar">Aula</a>
-                          <a class="dropdown-item" href="consultar">Departamento</a>
+                          <a class="dropdown-item" href="../departamento/consultar">Departamento</a>
                           <a class="dropdown-item" href="../seccion/consultar">Sección</a>
-                          <a class="dropdown-item" href="../selecciondeportiva/consultar">Selección</a>
+                          <a class="dropdown-item" href="consultar">Selección</a>
                           <a class="dropdown-item" href="../periodo/consultar">Período</a>
                           <a class="dropdown-item" href="../carrera/consultar">Carrera</a>
                         </div>
@@ -53,9 +53,9 @@
                               <div class="dropdown-divider"></div>
                               <a class="dropdown-item" href="../materia/agregar">Materia</a>
                               <a class="dropdown-item" href="../aula/agregar">Aula</a>
-                              <a class="dropdown-item" href="agregar">Departamento</a>
+                              <a class="dropdown-item" href="../departamento/agregar">Departamento</a>
                               <a class="dropdown-item" href="../seccion/agregar">Sección</a>
-                              <a class="dropdown-item" href="../selecciondeportiva/agregar">Selección</a>
+                              <a class="dropdown-item" href="agregar">Selección</a>
                               <a class="dropdown-item" href="../periodo/agregar">Período</a>
                               <a class="dropdown-item" href="../carrera/agregar">Carrera</a>
                             </div>
@@ -65,12 +65,12 @@
              </nav>
     </header>
 
-    <form action="/departamento/agregar" method="post" accept-charset="utf-8" class="form-singin">
+    <form action="/selecciondeportiva/agregar" method="post" accept-charset="utf-8" class="form-singin">
         <section id="registro">
             <div class="container">
             <div class="row">
                 <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Añadir departamento</h4>
+                <h4 class="mb-3">Añadir seleccion</h4>
                 <form class="needs-validation" novalidate>
                     
                     <div class="col-md-6 mb-3">
@@ -79,24 +79,50 @@
                         <div class="invalid-feedback">
                         Ingrese un nombre valido
                         </div>
-                    </div>                  
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="codigo">Código</label>
+                        <input type="string" class="form-control" name="codigo" placeholder=""  required>
+                        <div class="invalid-feedback">
+                        Ingrese un codigo valido
+                        </div>
+                    </div>    
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="entrenador">Nombre entrenador</label>
+                        <input type="string" class="form-control" name="entrenador" placeholder=""  required>
+                        <div class="invalid-feedback">
+                        Ingrese un nombre valido
+                        </div>
+                    </div>
+
+                    <label for="sexo">Tipo</label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="masculino" name="sexo" class="custom-control-input" value="M" checked required >
+                        <label class="custom-control-label" for="masculino">Masculino</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="femenino" name="sexo" class="custom-control-input" value="F" required>
+                        <label class="custom-control-label" for="femenino">Femenino</label>
+                    </div>
                     
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir departamento</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir seleccion</button>
                 </div>
                 </div>
                     </div>
                 </section>
                 </form>
 
-            <footer class="my-5 pt-5 text-muted text-center text-small">
-                <p class="mb-1">&copy; Los que flinchy</p>
-                <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Privacy</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">Support</a></li>
-                </ul>
-            </footer>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; Los que flinchy</p>
+        <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
             
     <!-- Bootstrap core JavaScript
     ================================================== -->

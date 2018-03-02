@@ -17,6 +17,7 @@ module.exports = {
                 codigo: req.param('codigo'),
                 nombre: req.param('nombre'),
                 credito: req.param('credito'),
+                iddepartamento: req.param('iddepartamento'),
                 
             }).exec( function (err, Materia) {
 

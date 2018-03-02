@@ -30,11 +30,11 @@
                         <a class="dropdown-item" href="../user/consultar">Estudiante</a>
                         <a class="dropdown-item" href="#">Profesor</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="consultar">Materia</a>
+                        <a class="dropdown-item" href="../materia/consultar">Materia</a>
                         <a class="dropdown-item" href="../aula/consultar">Aula</a>
                         <a class="dropdown-item" href="../departamento/consultar">Departamento</a>
                         <a class="dropdown-item" href="../seccion/consultar">Sección</a>
-                        <a class="dropdown-item" href="../selecciondeportiva/consultar">Selección</a>
+                        <a class="dropdown-item" href="consultar">Selección</a>
                         <a class="dropdown-item" href="../periodo/consultar">Período</a>
                         <a class="dropdown-item" href="../carrera/consultar">Carrera</a>
                     </div>
@@ -46,11 +46,11 @@
                             <a class="dropdown-item" href="../user/agregar">Estudiante</a>
                             <a class="dropdown-item" href="#">Profesor</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="agregar">Materia</a>
+                            <a class="dropdown-item" href="../materia/agregar">Materia</a>
                             <a class="dropdown-item" href="../aula/agregar">Aula</a>
                             <a class="dropdown-item" href="../departamento/agregar">Departamento</a>
                             <a class="dropdown-item" href="../seccion/agregar">Sección</a>
-                            <a class="dropdown-item" href="../selecciondeportiva/agregar">Selección</a>
+                            <a class="dropdown-item" href="agregar">Selección</a>
                             <a class="dropdown-item" href="../periodo/agregar">Período</a>
                             <a class="dropdown-item" href="../carrera/agregar">Carrera</a>
                         </div>
@@ -66,18 +66,20 @@
           <th>id</th>
           <th>Nombre</th>
           <th>Codigo</th>
-          <th>Créditos</th>
+          <th>Tipo</th>
+          <th>Entrenador</th>
  
         </tr>
       </thead>
       <tbody>
         <tr>
-          <% _.each(materias, function(materia) {%>
-          <th scope="row"><%=materia.idmateria%></th>
+          <% _.each(selecciones, function(seleccion) {%>
+          <th scope="row"><%=seleccion.idselecciondeportiva%></th>
           
-            <td><%=materia.nombre%></td>
-            <td><%=materia.codigo%></td>
-            <td><%=materia.credito%></td>
+            <td><%=seleccion.nombre%></td>
+            <td><%=seleccion.codigo%></td>
+            <td><%=seleccion.sexo%></td>
+            <td><%=seleccion.entrenador%></td>
           
         </tr>
         <%}) %>
