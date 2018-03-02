@@ -35,12 +35,47 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
+  
+  'POST /aula/agregar': 'AulaController.agregar',
+  'GET /aula/agregar': {
+    view: 'aula/agregar'
+  },
+
+  'POST /carrera/agregar': 'CarreraController.agregar',
+  'GET /carrera/agregar': {
+    view: 'carrera/agregar'
+  },
+
+  'POST /departamento/agregar': 'DepartamentoController.agregar',
+  'GET /departamento/agregar': {
+    view: 'departamento/agregar'
+  },
+
+  'POST /materia/agregar': 'MateriaController.agregar',
+  'GET /materia/agregar': {
+    view: 'materia/agregar'
+  },
+
+  'POST /periodo/agregar': 'PeriodoController.agregar',
+  'GET /periodo/agregar': {
+    view: 'periodo/agregar'
+  },
+
+  'POST /seccion/agregar': 'SeccionController.agregar',
+  'GET /seccion/agregar': {
+    view: 'seccion/agregar'
+  },
+
+  'POST /seleccion/agregar': 'SeleccionController.agregar',
+  'GET /seleccion/agregar': {
+    view: 'seleccion/agregar'
+  },
 
   'POST /user/agregar': 'UserController.agregar',
   'GET /user/agregar': {
     view: 'user/agregar'
   },
-  
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

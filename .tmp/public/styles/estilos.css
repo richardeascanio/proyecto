@@ -25,13 +25,19 @@ img{
 }
 
 #cover-marketing{
+    margin-top: 15px;
     background: rgb(212, 92, 48);
-    background-size: cover-marketing;
+    margin-top: 15px;
     color: rgba(0, 0, 0, 0.849);
+}
+
+#homepage{
+    background: rgb(212, 92, 48);
 }
 
 #registro{
     max-width: 9060px;
+    margin-top: 17px;
     color: white;
     text-align: center center;
     align-items: center;

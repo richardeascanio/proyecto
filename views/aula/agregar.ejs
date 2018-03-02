@@ -32,11 +32,11 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Consultar</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="consultar">Estudiante</a>
+                          <a class="dropdown-item" href="../user/consultar">Estudiante</a>
                           <a class="dropdown-item" href="#">Profesor</a>
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="../materia/consultar">Materia</a>
-                          <a class="dropdown-item" href="../aula/consultar">Aula</a>
+                          <a class="dropdown-item" href="consultar">Aula</a>
                           <a class="dropdown-item" href="../departamento/consultar">Departamento</a>
                           <a class="dropdown-item" href="../seccion/consultar">Sección</a>
                           <a class="dropdown-item" href="../seleccion/consultar">Selección</a>
@@ -48,11 +48,11 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Añadir</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="agregar">Estudiante</a>
+                              <a class="dropdown-item" href="../aula/agregar">Estudiante</a>
                               <a class="dropdown-item" href="#">Profesor</a>
                               <div class="dropdown-divider"></div>
                               <a class="dropdown-item" href="../materia/agregar">Materia</a>
-                              <a class="dropdown-item" href="../aula/agregar">Aula</a>
+                              <a class="dropdown-item" href="agregar">Aula</a>
                               <a class="dropdown-item" href="../departamento/agregar">Departamento</a>
                               <a class="dropdown-item" href="../seccion/agregar">Sección</a>
                               <a class="dropdown-item" href="../seleccion/agregar">Selección</a>
@@ -65,88 +65,48 @@
              </nav>
     </header>
 
-    <form action="/user/agregar" method="post" accept-charset="utf-8" class="form-singin">
+    <form action="/aula/agregar" method="post" accept-charset="utf-8" class="form-singin">
         <section id="registro">
             <div class="container">
-            <div class="row">
-                <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Añadir estudiante</h4>
-                <form class="needs-validation" novalidate>
-                    <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" placeholder=""  required>
-                        <div class="invalid-feedback">
-                        Ingrese un nombre valido
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" class="form-control" name="apellido" placeholder=""  required>
-                        <div class="invalid-feedback">
-                        Ingrese un apellido valido
-                        </div>
-                    </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="cedula">Cédula</label>
-                            <input type="int" class="form-control" name="cedula" placeholder="Numero de cedula"  required>
-                            <div class="invalid-feedback">
-                            Ingrese un numero de cedula valido
+                <div class="row">
+                    <div class="col-md-8 order-md-1">
+                        <h4 class="mb-3">Añadir aula</h4>
+                        <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="edificio">Edificio</label>
+                                <input type="text" class="form-control" name="edificio" placeholder=""  required>
+                                <div class="invalid-feedback">Ingrese un nombre valido</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="piso">Piso</label>
+                                <input type="int" class="form-control" name="piso" placeholder=""  required>
+                                <div class="invalid-feedback">Ingrese un piso valido</div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="carnet">Carnet</label>
-                            <input type="int" class="form-control" name="carnet" placeholder="Numero de carnet"  required>
-                            <div class="invalid-feedback">
-                            Ingrese un numero de carnet valido
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="numeroaula">Número de aula</label>
+                                <input type="int" class="form-control" name="numeroaula" placeholder="Numero de aula"  required>
+                                <div class="invalid-feedback">Ingrese un numero de aula valido</div>
                             </div>
                         </div>
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir aula</button>
                     </div>
-                    <div class="mb-3">
-                        <label for="correo">Email</label>
-                        <input type="email" class="form-control" name="correo" placeholder="nombre@correo.com" required>
-                        <div class="invalid-feedback">
-                            Por favor ingrese una dirección de correo electronico que sea valida
-                        </div>
-                    </div>
-                    
-                        <label for="sexo">Sexo</label>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="masculino" name="sexo" class="custom-control-input" value="M" checked required >
-                            <label class="custom-control-label" for="masculino">Masculino</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="femenino" name="sexo" class="custom-control-input" value="F" required>
-                            <label class="custom-control-label" for="femenino">Femenino</label>
-                        </div>
-                        <label for="tipo">Tipo</label>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="pregrado" name="tipo" class="custom-control-input" value="pregrado" checked required >
-                            <label class="custom-control-label" for="pregrado">Pregrado</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="postgrado" name="tipo" class="custom-control-input" value="postgrado" required>
-                            <label class="custom-control-label" for="postgrado">Postgrado</label>
-                        </div>
-                    
-                    <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir estudiante</button>
                 </div>
-                </div>
-                    </div>
-                </section>
-                </form>
+            </div>
+        </section>
+    </form>
 
-            <footer class="my-5 pt-5 text-muted text-center text-small">
-                <p class="mb-1">&copy; Los que flinchy</p>
-                <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Privacy</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">Support</a></li>
-                </ul>
-            </footer>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; Los que flinchy</p>
+        <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
             
     <!-- Bootstrap core JavaScript
     ================================================== -->

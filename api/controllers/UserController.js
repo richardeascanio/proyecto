@@ -9,8 +9,7 @@ module.exports = {
     
     
     agregar: function(req,res){
-        
-          
+
         console.log("entre a funcion agregar");
 
             user.create({
@@ -33,6 +32,7 @@ module.exports = {
     },
 
     consultar: function(req, res) {
+        
         user.find(function(err, users) {
             if (err) return res.serverError(err);
             return res.view({users: users});
