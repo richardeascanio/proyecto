@@ -34,7 +34,7 @@ module.exports = {
 
     iddepartamento:{
       type:'integer',
-      required: false
+      required: true
     }
 
   }

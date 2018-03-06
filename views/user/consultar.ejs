@@ -70,7 +70,6 @@
           <th>Carnet</th>
           <th>Cedula</th>
           <th>Sexo</th>
-          <th>Tipo</th> 
         </tr>
       </thead>
       <tbody>
@@ -84,7 +83,7 @@
             <td><%=user.carnet%></td>
             <td><%=user.cedula%></td>
             <td><%=user.sexo%></td>
-            <td><%=user.tipo%></td>
+            <td><a class="btn btn-outline-success" href="<%=user.idusuario%>" role="button">Editar</a></td>
           
         </tr>
         <%}) %>

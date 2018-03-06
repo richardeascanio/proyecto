@@ -52,13 +52,8 @@ module.exports = {
     sexo:{
       type:'string',
       required: true
-    },
-
-    tipo:{
-      type: 'string',
-      required: true
     }
-
+    
   }
 };
 

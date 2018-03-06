@@ -26,6 +26,7 @@ module.exports = {
                 if (err) return res.serverError(err)
 
             })
+
     },
 
     consultar: function(req, res) {
