@@ -1,4 +1,4 @@
-estudiante<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -28,7 +28,7 @@ estudiante<!doctype html>
                     Consultar</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="../estudiante/consultar">Estudiante</a>
-                      <a class="dropdown-item" href="../profesor/consultar">Profesor</a>
+                      <a class="dropdown-item" href="consultar">Profesor</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="../materia/consultar">Materia</a>
                       <a class="dropdown-item" href="../aula/consultar">Aula</a>
@@ -36,7 +36,7 @@ estudiante<!doctype html>
                       <a class="dropdown-item" href="../seccion/consultar">Sección</a>
                       <a class="dropdown-item" href="../selecciondeportiva/consultar">Selección</a>
                       <a class="dropdown-item" href="../periodo/consultar">Período</a>
-                      <a class="dropdown-item" href="consultar">Carrera</a>
+                      <a class="dropdown-item" href="../carrera/consultar">Carrera</a>
                       <a class="dropdown-item" href="../beca/consultar">Beca</a>
                     </div>
                   </li>
@@ -45,7 +45,7 @@ estudiante<!doctype html>
                         Añadir</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="../estudiante/agregar">Estudiante</a>
-                          <a class="dropdown-item" href="../profesor/agregar">Profesor</a>
+                          <a class="dropdown-item" href="agregar">Profesor</a>
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="../materia/agregar">Materia</a>
                           <a class="dropdown-item" href="../aula/agregar">Aula</a>
@@ -53,7 +53,7 @@ estudiante<!doctype html>
                           <a class="dropdown-item" href="../seccion/agregar">Sección</a>
                           <a class="dropdown-item" href="../selecciondeportiva/agregar">Selección</a>
                           <a class="dropdown-item" href="../periodo/agregar">Período</a>
-                          <a class="dropdown-item" href="agregar">Carrera</a>
+                          <a class="dropdown-item" href="../carrera/agregar">Carrera</a>
                           <a class="dropdown-item" href="../beca/agregar">Beca</a>
                         </div>
                     </li>
@@ -67,18 +67,31 @@ estudiante<!doctype html>
         <tr>
           <th>id</th>
           <th>Nombre</th>
-          <th>Codigo</th>
- 
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>Carnet</th>
+          <th>Cedula</th>
+          <th>Sexo</th>
+          <th>Profesion</th>
+          <th>Fecha Ingreso</th>
+          <th>Departamento</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <% _.each(carreras, function(carrera) {%>
-          <th scope="row"><%=carrera.idcarrera%></th>
+          <% _.each(profesores, function(profesor) {%>
+          <th scope="row"><%=profesor.idprofesor%></th>
           
-            <td><%=carrera.nombre%></td>
-            <td><%=carrera.codigo%></td>
-            <td><a class="btn btn-outline-success" href="<%=carrera.idcarrera%>" role="button">Editar</a></td>
+            <td><%=profesor.nombre%></td>
+            <td><%=profesor.apellido%></td>
+            <td><%=profesor.correo%></td>
+            <td><%=profesor.carnet%></td>
+            <td><%=profesor.cedula%></td>
+            <td><%=profesor.sexo%></td>
+            <td><%=profesor.profesion%></td>
+            <td><%=profesor.fechaingreso%></td>
+            <td><%=profesor.departamento%></td>
+            <td><a class="btn btn-outline-success" href="<%=profesor.idprofesor%>" role="button">Editar</a></td>
           
         </tr>
         <%}) %>

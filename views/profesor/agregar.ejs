@@ -1,4 +1,4 @@
-estudiante<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -33,12 +33,12 @@ estudiante<!doctype html>
                         Consultar</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="../estudiante/consultar">Estudiante</a>
-                          <a class="dropdown-item" href="../profesor/consultar">Profesor</a>
+                          <a class="dropdown-item" href="consultar">Profesor</a>
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="../materia/consultar">Materia</a>
                           <a class="dropdown-item" href="../aula/consultar">Aula</a>
                           <a class="dropdown-item" href="../departamento/consultar">Departamento</a>
-                          <a class="dropdown-item" href="consultar">Sección</a>
+                          <a class="dropdown-item" href="../seccion/consultar">Sección</a>
                           <a class="dropdown-item" href="../selecciondeportiva/consultar">Selección</a>
                           <a class="dropdown-item" href="../periodo/consultar">Período</a>
                           <a class="dropdown-item" href="../carrera/consultar">Carrera</a>
@@ -50,12 +50,12 @@ estudiante<!doctype html>
                             Añadir</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="../estudiante/agregar">Estudiante</a>
-                              <a class="dropdown-item" href="../profesor/agregar">Profesor</a>
+                              <a class="dropdown-item" href="agregar">Profesor</a>
                               <div class="dropdown-divider"></div>
                               <a class="dropdown-item" href="../materia/agregar">Materia</a>
                               <a class="dropdown-item" href="../aula/agregar">Aula</a>
                               <a class="dropdown-item" href="../departamento/agregar">Departamento</a>
-                              <a class="dropdown-item" href="agregar">Sección</a>
+                              <a class="dropdown-item" href="../seccion/agregar">Sección</a>
                               <a class="dropdown-item" href="../selecciondeportiva/agregar">Selección</a>
                               <a class="dropdown-item" href="../periodo/agregar">Período</a>
                               <a class="dropdown-item" href="../carrera/agregar">Carrera</a>
@@ -67,32 +67,93 @@ estudiante<!doctype html>
              </nav>
     </header>
 
-    <form action="/seccion/agregar" method="post" accept-charset="utf-8" class="form-singin">
+    <form action="/profesor/agregar" method="post" accept-charset="utf-8" class="form-singin">
         <section id="registro">
             <div class="container">
             <div class="row">
                 <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Añadir seccion</h4>
+                <h4 class="mb-3">Añadir profesor</h4>
                 <form class="needs-validation" novalidate>
-                    
+                    <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="nrseccion">Numero de seccion</label>
-                        <input type="integer" class="form-control" name="nroseccion" placeholder=""  required>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" placeholder=""  required>
                         <div class="invalid-feedback">
-                        Ingrese un numero valido
+                        Ingrese un nombre valido
                         </div>
                     </div>
-                    
                     <div class="col-md-6 mb-3">
-                        <label for="cupos">Cupos</label>
-                        <input type="string" class="form-control" name="cupos" placeholder=""  required>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" name="apellido" placeholder=""  required>
                         <div class="invalid-feedback">
-                        Ingrese un numero valido
+                        Ingrese un apellido valido
                         </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cedula">Cédula</label>
+                            <input type="int" class="form-control" name="cedula" placeholder="Numero de cedula"  required>
+                            <div class="invalid-feedback">
+                            Ingrese un numero de cedula valido
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="carnet">Carnet</label>
+                            <input type="int" class="form-control" name="carnet" placeholder="Numero de carnet"  required>
+                            <div class="invalid-feedback">
+                            Ingrese un numero de carnet valido
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo">Email</label>
+                        <input type="email" class="form-control" name="correo" placeholder="nombre@correo.com" required>
+                        <div class="invalid-feedback">
+                            Por favor ingrese una dirección de correo electronico que sea valida
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                        <label for="fechaingreso">Fecha de Ingreso</label>
+                        
+                            <input type="date" class="form-control" name="fechaingreso" required>
+                        <div class="invalid-feedback">
+                        Ingrese una fecha de ingreso valida
+                        </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="profesion">Profesión</label>
+                            <input type="text" class="form-control" name="profesion" placeholder="Profesión"  required>
+                            <div class="invalid-feedback">
+                            Ingrese una profesión valida
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="idDepartamento">Departamento</label>
+                        <select class="form-control" id="iddepartamento">
+                            <option selected value="null">Departamento de...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    
+                    <label for="sexo">Sexo</label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="masculino" name="sexo" class="custom-control-input" value="M" checked required >
+                        <label class="custom-control-label" for="masculino">Masculino</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="femenino" name="sexo" class="custom-control-input" value="F" required>
+                        <label class="custom-control-label" for="femenino">Femenino</label>
                     </div>
                     
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir seccion</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir profesor</button>
                 </div>
                 </div>
                     </div>
@@ -138,4 +199,4 @@ estudiante<!doctype html>
       })();
     </script>
   </body>
-</html>../materia/
+</html>

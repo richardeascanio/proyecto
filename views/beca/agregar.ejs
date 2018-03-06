@@ -1,4 +1,4 @@
-estudiante<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -38,11 +38,11 @@ estudiante<!doctype html>
                           <a class="dropdown-item" href="../materia/consultar">Materia</a>
                           <a class="dropdown-item" href="../aula/consultar">Aula</a>
                           <a class="dropdown-item" href="../departamento/consultar">Departamento</a>
-                          <a class="dropdown-item" href="consultar">Sección</a>
+                          <a class="dropdown-item" href="../seccion/consultar">Sección</a>
                           <a class="dropdown-item" href="../selecciondeportiva/consultar">Selección</a>
                           <a class="dropdown-item" href="../periodo/consultar">Período</a>
                           <a class="dropdown-item" href="../carrera/consultar">Carrera</a>
-                          <a class="dropdown-item" href="../beca/consultar">Beca</a>
+                          <a class="dropdown-item" href="consultar">Beca</a>
                         </div>
                       </li>
                         <li class="nav-item active dropdown">
@@ -55,11 +55,11 @@ estudiante<!doctype html>
                               <a class="dropdown-item" href="../materia/agregar">Materia</a>
                               <a class="dropdown-item" href="../aula/agregar">Aula</a>
                               <a class="dropdown-item" href="../departamento/agregar">Departamento</a>
-                              <a class="dropdown-item" href="agregar">Sección</a>
+                              <a class="dropdown-item" href="../seccion/agregar">Sección</a>
                               <a class="dropdown-item" href="../selecciondeportiva/agregar">Selección</a>
                               <a class="dropdown-item" href="../periodo/agregar">Período</a>
                               <a class="dropdown-item" href="../carrera/agregar">Carrera</a>
-                              <a class="dropdown-item" href="../beca/agregar">Beca</a>
+                              <a class="dropdown-item" href="agregar">Beca</a>
                             </div>
                         </li>
                     </ul>
@@ -67,46 +67,48 @@ estudiante<!doctype html>
              </nav>
     </header>
 
-    <form action="/seccion/agregar" method="post" accept-charset="utf-8" class="form-singin">
+    <form action="/beca/agregar" method="post" accept-charset="utf-8" class="form-singin">
         <section id="registro">
             <div class="container">
-            <div class="row">
-                <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Añadir seccion</h4>
-                <form class="needs-validation" novalidate>
-                    
-                    <div class="col-md-6 mb-3">
-                        <label for="nrseccion">Numero de seccion</label>
-                        <input type="integer" class="form-control" name="nroseccion" placeholder=""  required>
-                        <div class="invalid-feedback">
-                        Ingrese un numero valido
-                        </div>
+                <div class="row">
+                    <div class="col-md-8 order-md-1">
+                        <h4 class="mb-3">Añadir Beca</h4>
+                        <form class="needs-validation" novalidate>
+                        
+                            <div class="col-md-6 mb-3">
+                                <label for="tipo">Tipo</label>
+                                <input type="text" class="form-control" name="tipo" placeholder=""  required>
+                                <div class="invalid-feedback">Ingrese un nombre valido</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="porcentaje">Porcentaje</label>
+                                <input type="int" class="form-control" name="porcentaje" placeholder=""  required>
+                                <div class="invalid-feedback">Ingrese un numero valido</div>
+                            </div>
+                        
+                        
+                            <div class="col-md-6 mb-3">
+                                <label for="idestudiante">Estudiante</label>
+                                <input type="int" class="form-control" name="idestudiante" placeholder=""  required>
+                                <div class="invalid-feedback">Ingrese un numero valido</div>
+                            </div>
+                        
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir beca</button>
                     </div>
-                    
-                    <div class="col-md-6 mb-3">
-                        <label for="cupos">Cupos</label>
-                        <input type="string" class="form-control" name="cupos" placeholder=""  required>
-                        <div class="invalid-feedback">
-                        Ingrese un numero valido
-                        </div>
-                    </div>
-                    
-                    <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir seccion</button>
                 </div>
-                </div>
-                    </div>
-                </section>
-                </form>
+            </div>
+        </section>
+    </form>
 
-            <footer class="my-5 pt-5 text-muted text-center text-small">
-                <p class="mb-1">&copy; Los que flinchy</p>
-                <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Privacy</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">Support</a></li>
-                </ul>
-            </footer>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; Los que flinchy</p>
+        <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
             
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -130,7 +132,7 @@ estudiante<!doctype html>
               if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
-              }
+              }estudiante
               form.classList.add('was-validated');
             }, false);
           });
@@ -138,4 +140,4 @@ estudiante<!doctype html>
       })();
     </script>
   </body>
-</html>../materia/
+</html>
