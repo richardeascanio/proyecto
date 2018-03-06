@@ -29,12 +29,12 @@ module.exports = {
     },
 
     consultar: function(req, res) {
-        
+        console.log("entre a consultar")
         Materia.find(function(err, materias) {
             if (err) return res.serverError(err);
             return res.view({materias: materias});
         });
-    }
+    },
 	
 };
 

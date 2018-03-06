@@ -66,53 +66,61 @@
     </header>
 
     <form action="/materia/agregar" method="post" accept-charset="utf-8" class="form-singin">
-        <section id="registro">
-            <div class="container">
-            <div class="row">
-                <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Añadir materia</h4>
-                <form class="needs-validation" novalidate>
-                    
-                    <div class="col-md-6 mb-3">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" placeholder=""  required>
-                        <div class="invalid-feedback">
-                        Ingrese un nombre valido
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-3">
-                        <label for="codigo">Código</label>
-                        <input type="string" class="form-control" name="codigo" placeholder=""  required>
-                        <div class="invalid-feedback">
-                        Ingrese un codigo valido
-                        </div>
-                    </div>    
-                    
-                    <div class="col-md-6 mb-3">
-                        <label for="credito">Créditos</label>
-                        <input type="int" class="form-control" name="credito" placeholder=""  required>
-                        <div class="invalid-feedback">
-                        Ingrese un numero valido
-                        </div>
-                    </div>
-                    
-                    <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir materia</button>
-                </div>
-                </div>
-                    </div>
-                </section>
-                </form>
+      <section id="registro">
+          <div class="container">
+          <div class="row">
+            <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Añadir materia</h4>
+            <form class="needs-validation" novalidate>
 
-            <footer class="my-5 pt-5 text-muted text-center text-small">
-                <p class="mb-1">&copy; Los que flinchy</p>
-                <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Privacy</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">Support</a></li>
-                </ul>
-            </footer>
+              <div class="col-md-6 mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" name="nombre" placeholder=""  required>
+                <div class="invalid-feedback">
+                Ingrese un nombre valido
+                </div>
+              </div>
+              
+              <div class="col-md-6 mb-3">
+                <label for="codigo">Código</label>
+                <input type="string" class="form-control" name="codigo" placeholder=""  required>
+                <div class="invalid-feedback">
+                Ingrese un codigo valido
+                </div>
+              </div>    
+              
+              <div class="col-md-6 mb-3">
+                <label for="credito">Créditos</label>
+                <input type="int" class="form-control" name="credito" placeholder=""  required>
+                <div class="invalid-feedback">
+                Ingrese un numero valido
+                </div>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="idDepartamento">Departamento</label>
+                <select id="idDepartamento" class="form-control">
+                  <option selected value="null">Departamento de...</option>
+                  <option value="1">...</option>
+                </select>
+              </div>
+
+              <hr class="mb-4">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir materia</button>
+            </div>
+          </div>
+          </div>
+      </section>
+    </form>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; Los que flinchy</p>
+      <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
             
     <!-- Bootstrap core JavaScript
     ================================================== -->

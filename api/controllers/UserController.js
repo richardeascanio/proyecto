@@ -21,6 +21,7 @@ module.exports = {
                 carnet: req.param('carnet'),
                 correo: req.param('correo'),
                 sexo: req.param('sexo'),
+                tipo: req.param('tipo'),
                 
             }).exec( function (err, user) {
 
