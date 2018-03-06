@@ -1,4 +1,4 @@
-estudiante<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -27,7 +27,7 @@ estudiante<!doctype html>
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Consultar</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="../estudiante/consultar">Estudiante</a>
+                      <a class="dropdown-item" href="consultar">Estudiante</a>
                       <a class="dropdown-item" href="../profesor/consultar">Profesor</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="../materia/consultar">Materia</a>
@@ -36,7 +36,7 @@ estudiante<!doctype html>
                       <a class="dropdown-item" href="../seccion/consultar">Sección</a>
                       <a class="dropdown-item" href="../selecciondeportiva/consultar">Selección</a>
                       <a class="dropdown-item" href="../periodo/consultar">Período</a>
-                      <a class="dropdown-item" href="consultar">Carrera</a>
+                      <a class="dropdown-item" href="../carrera/consultar">Carrera</a>
                       <a class="dropdown-item" href="../beca/consultar">Beca</a>
                     </div>
                   </li>
@@ -44,7 +44,7 @@ estudiante<!doctype html>
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Añadir</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="../estudiante/agregar">Estudiante</a>
+                          <a class="dropdown-item" href="agregar">Estudiante</a>
                           <a class="dropdown-item" href="../profesor/agregar">Profesor</a>
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="../materia/agregar">Materia</a>
@@ -53,7 +53,7 @@ estudiante<!doctype html>
                           <a class="dropdown-item" href="../seccion/agregar">Sección</a>
                           <a class="dropdown-item" href="../selecciondeportiva/agregar">Selección</a>
                           <a class="dropdown-item" href="../periodo/agregar">Período</a>
-                          <a class="dropdown-item" href="agregar">Carrera</a>
+                          <a class="dropdown-item" href="../carrera/agregar">Carrera</a>
                           <a class="dropdown-item" href="../beca/agregar">Beca</a>
                         </div>
                     </li>
@@ -67,18 +67,27 @@ estudiante<!doctype html>
         <tr>
           <th>id</th>
           <th>Nombre</th>
-          <th>Codigo</th>
- 
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>Carnet</th>
+          <th>Cedula</th>
+          <th>Sexo</th>
+          <th>Tipo</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <% _.each(carreras, function(carrera) {%>
-          <th scope="row"><%=carrera.idcarrera%></th>
+          <% _.each(estudiantes, function(estudiante) {%>
+          <th scope="row"><%=estudiante.idestudiante%></th>
           
-            <td><%=carrera.nombre%></td>
-            <td><%=carrera.codigo%></td>
-            <td><a class="btn btn-outline-success" href="<%=carrera.idcarrera%>" role="button">Editar</a></td>
+            <td><%=estudiante.nombre%></td>
+            <td><%=estudiante.apellido%></td>
+            <td><%=estudiante.correo%></td>
+            <td><%=estudiante.carnet%></td>
+            <td><%=estudiante.cedula%></td>
+            <td><%=estudiante.sexo%></td>
+            <td><%=estudiante.tipo%></td>
+            <td><a class="btn btn-outline-success" href="<%=estudiante.idestudiante%>" role="button">Editar</a></td>
           
         </tr>
         <%}) %>

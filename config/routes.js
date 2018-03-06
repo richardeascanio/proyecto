@@ -71,10 +71,20 @@ module.exports.routes = {
     view: 'selecciondeportiva/agregar'
   },
 
-  'POST /user/agregar': 'UserController.agregar',
-  'GET /user/agregar': {
-    view: 'user/agregar'
+  'POST /estudiante/agregar': 'EstudianteController.agregar',
+  'GET /estudiante/agregar': {
+    view: 'estudiante/agregar'
   },
+
+  'POST /profesor/agregar': 'ProfesorController.agregar',
+  'GET /profesor/agregar': {
+    view: 'profesor/agregar'
+  },
+
+  'POST /beca/agregar': 'BecaController.agregar',
+  'GET /beca/agregar': {
+    view: 'beca/agregar'
+  }
 
   /***************************************************************************
   *                                                                          *
