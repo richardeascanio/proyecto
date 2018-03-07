@@ -33,8 +33,7 @@ module.exports = {
 
     iddepartamento:{
       type: 'integer',
-      required:false,
-      unique: true
+      required:false
     }
   }
 };

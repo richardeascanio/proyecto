@@ -25,9 +25,10 @@ module.exports = {
                 
                 Profesor.create({
 
-                    idprofesor: req.param('id'),
-                    tipo:req.param('tipo'),
-                    
+                    idprofesor: user.idusuario,
+                    profesion:req.param('profesion'),
+                    fechaingreso:req.param('fechaingreso'),
+                    iddepartamento:req.param('iddepartamento')
                     
                 }).exec( function (err, Profesor) {
 
