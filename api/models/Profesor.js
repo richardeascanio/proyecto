@@ -7,6 +7,9 @@
 
 module.exports = {
 
+  createdAt:false,
+  updatedAt:false,
+
   attributes: {
 
     idprofesor: {
@@ -14,57 +17,25 @@ module.exports = {
       required:false,
       autoIncrement: true,
       primaryKey: true,
-      unique: true
-    },
+      unique: true,
 
-    nombre:{
-      type:'string',
-      required: true
-    },
-
-    apellido:{
-      type:'string',
-      required: true
-    },
-
-    cedula:{
-      type:'int',
-      required: true,
-      unique: true
-    },
-
-    carnet:{
-      type:'int',
-      required: true,
-      unique: true
-    },
-
-    correo:{
-      type:'email',
-      required: true,
-      unique: true 
-    },
-
-    sexo:{
-      type:'string',
-      required: true
     },
 
     profesion:{
       type:'string',
-      required: true
+      required: true,
     },
 
     fechaingreso:{
-      type: 'date',
+      type:'date',
       required: true
     },
 
     iddepartamento:{
-      type:'integer',
-      required: true
+      type: 'integer',
+      required:false,
+      unique: true
     }
-
   }
 };
 

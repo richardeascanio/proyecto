@@ -11,27 +11,32 @@ module.exports = {
 
         console.log("entre a funcion agregar");
 
-            Profesor.create({
+            user.create({
 
-                idprofesor: req.param('id'),
+                idusuario: req.param('id'),
                 nombre: req.param('nombre'),
                 apellido: req.param('apellido'),
                 cedula: req.param('cedula'),
                 carnet: req.param('carnet'),
                 correo: req.param('correo'),
                 sexo: req.param('sexo'),
-                profesion: req.param('profesion'),
-                fechaingreso: req.param('fechaingreso'),
-                iddepartamento: req.param('iddepartamento')
-
                 
-            }).exec( function (err, Profesor) {
+            }).then(user=>{
+                
+                Profesor.create({
 
-                if(Profesor) res.redirect('#')
-                console.log("este es el Profesor",Profesor);
-                if (err) return res.serverError(err)
+                    idprofesor: req.param('id'),
+                    tipo:req.param('tipo'),
+                    
+                    
+                }).exec( function (err, Profesor) {
 
-            })
+                    if(Profesor) res.redirect('#')
+                    console.log("este es el Profesor", Profesor);
+                    if (err) return res.serverError(err)
+    
+                })
+            });
     },
 
     consultar: function(req, res) {

@@ -11,32 +11,44 @@ module.exports = {
 
         console.log("entre a funcion agregar");
 
-            Estudiante.create({
+            user.create({
 
-                idestudiante: req.param('id'),
+                idusuario: req.param('id'),
                 nombre: req.param('nombre'),
                 apellido: req.param('apellido'),
                 cedula: req.param('cedula'),
                 carnet: req.param('carnet'),
                 correo: req.param('correo'),
                 sexo: req.param('sexo'),
-                tipo: req.param('tipo')
                 
-            }).exec( function (err, Estudiante) {
+            }).then(user=>{
+                
+                Estudiante.create({
 
-                if(Estudiante) res.redirect('#')
-                console.log("este es el estudiante",Estudiante);
-                if (err) return res.serverError(err)
+                    idestudiante: user.idusuario,
+                    tipo:req.param('tipo'),
+                    
+                }).exec( function (err, Estudiante) {
 
-            })
+                    if(Estudiante) res.redirect('#')
+                    console.log("este es el Estudiante",Estudiante, user);
+                    if (err) return res.serverError(err)
+    
+                })
+            });
     },
 
     consultar: function(req, res) {
+        console.log("entre a consultar");
+
+            Estudiante.find(function(err, estudiantes) {
+            
+                if (err) return res.serverError(err);
+                console.log("entre a if")
+                return res.view({estudiantes: estudiantes});
+            });
         
-        Estudiante.find(function(err, estudiantes) {
-            if (err) return res.serverError(err);
-            return res.view({estudiantes: estudiantes});
-        });
+        
     }
 	
 };

@@ -80,14 +80,14 @@
           <% _.each(estudiantes, function(estudiante) {%>
           <th scope="row"><%=estudiante.idestudiante%></th>
           
-            <td><%=estudiante.nombre%></td>
-            <td><%=estudiante.apellido%></td>
-            <td><%=estudiante.correo%></td>
-            <td><%=estudiante.carnet%></td>
-            <td><%=estudiante.cedula%></td>
-            <td><%=estudiante.sexo%></td>
+            <td><%=user.nombre%></td>
+            <td><%=user.apellido%></td>
+            <td><%=user.correo%></td>
+            <td><%=user.carnet%></td>
+            <td><%=user.cedula%></td>
+            <td><%=user.sexo%></td>
             <td><%=estudiante.tipo%></td>
-            <td><a class="btn btn-outline-success" href="<%=estudiante.idestudiante%>" role="button">Editar</a></td>
+            <td><a class="btn btn-outline-success" href="../user/<%=estudiante.idestudiante%>" role="button">Editar</a></td>
           
         </tr>
         <%}) %>

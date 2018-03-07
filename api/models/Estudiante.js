@@ -9,50 +9,19 @@ module.exports = {
 
   attributes: {
 
+
     idestudiante: {
       type: 'integer',
       required:false,
-      autoIncrement: true,
       primaryKey: true,
-      unique: true
+      unique: true,
+
     },
 
-    nombre:{
-      type:'string',
-      required: true
-    },
-
-    apellido:{
-      type:'string',
-      required: true
-    },
-
-    cedula:{
-      type:'int',
+    tipo: {
+      type: 'string',
       required: true,
-      unique: true
-    },
 
-    carnet:{
-      type:'int',
-      required: true,
-      unique: true
-    },
-
-    correo:{
-      type:'email',
-      required: true,
-      unique: true 
-    },
-
-    sexo:{
-      type:'string',
-      required: true
-    },
-
-    tipo:{
-      type:'string',
-      required: true
     }
 
   }
