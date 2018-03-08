@@ -35,7 +35,7 @@ module.exports = {
         
         user.find(function(err, users) {
             if (err) return res.serverError(err);
-            return res.view({users: users});
+            return res.view(('../../views/estudiante/consultar'),{users: users});
         });
     }
 };

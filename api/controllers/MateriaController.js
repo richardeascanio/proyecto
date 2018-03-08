@@ -36,6 +36,14 @@ module.exports = {
             return res.view({materias: materias});
         });
     },
+
+    consultarDep: function(req, res){
+        console.log("entre a consultar dep")
+        Departamento.find(function(err, departamentos) {
+            if (err) return res.serverError(err);
+            return ({departamentos: departamentos});
+        });
+    }
 	
 };
 

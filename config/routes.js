@@ -35,6 +35,9 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
+
+  
+  
   
   'POST /aula/agregar': 'AulaController.agregar',
   'GET /aula/agregar': {

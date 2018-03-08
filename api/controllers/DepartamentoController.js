@@ -30,6 +30,7 @@ module.exports = {
         Departamento.find(function(err, departamentos) {
             if (err) return res.serverError(err);
             return res.view({departamentos: departamentos});
+            // return {departamentos: departamentos}
         });
     }
 	

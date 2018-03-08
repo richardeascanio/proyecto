@@ -67,7 +67,7 @@
              </nav>
     </header>
 
-    <form action="/materia/agregar" method="post" accept-charset="utf-8" class="form-singin">
+    <form action="/materia/agregar"  method="post" accept-charset="utf-8" class="form-singin">
       <section id="registro">
           <div class="container">
           <div class="row">
@@ -99,11 +99,13 @@
                 </div>
               </div>
 
-              <div class="form-group col-md-6">
-                <label for="idDepartamento">Departamento</label>
+              <div class="col-md-6 mb-3">
+                <label class="mr-sm-2" for="iddepartamento">Departamento</label>
                 <select class="form-control" id="iddepartamento">
-                  <option selected value="null">Departamento de...</option>
-                  <option>...</option>
+                  <option selected>Departamento de...</option>
+                  <% _.each(departamentos, function(departamento) {%>
+                    <option value="<%=departamento.iddepartamento%>"><%=departamento.nombre%></option>
+                  <% }) %>
                 </select>
               </div>
 
@@ -111,7 +113,7 @@
               <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir materia</button>
             </div>
           </div>
-          </div>estudiante
+          </div>
       </section>
     </form>
 
