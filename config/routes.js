@@ -35,58 +35,127 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-
-  
-  
   
   'POST /aula/agregar': 'AulaController.agregar',
   'GET /aula/agregar': {
     view: 'aula/agregar'
+  },
+  'POST /aula/edit':{
+    controller: 'AulaController',
+    action: 'update'
+  },
+  'GET /aula/edit':{
+    view:'aula/edit'
   },
 
   'POST /carrera/agregar': 'CarreraController.agregar',
   'GET /carrera/agregar': {
     view: 'carrera/agregar'
   },
+  'POST /carrera/edit':{
+    controller: 'CarreraController',
+    action: 'update'
+  },
+  'GET /carrera/edit':{
+    view:'carrera/edit'
+  },
 
-  'POST /departamento/agregar': 'DepartamentoController.agregar',
+  'POST /departamento/agregar': {
+    controller: 'DepartamentoController',
+    action:'agregar'
+  },
+
   'GET /departamento/agregar': {
     view: 'departamento/agregar'
   },
 
-  'POST /materia/agregar': 'MateriaController.agregar',
+  'POST /materia/agregar':{
+    controller: 'MateriaController',
+    action: 'agregar'
+  },
+
   'GET /materia/agregar': {
-    view: 'materia/agregar'
+    view: 'materia/agregar',
+  },
+
+  'POST /departamento/edit':{
+    controller: 'DepartamentoController',
+    action: 'update'
+  },
+  'GET /departamento/edit':{
+    view:'departamento/edit'
   },
 
   'POST /periodo/agregar': 'PeriodoController.agregar',
   'GET /periodo/agregar': {
     view: 'periodo/agregar'
   },
+  'POST /periodo/edit':{
+    controller: 'PeriodoController',
+    action: 'update'
+  },
+  'GET /periodo/edit':{
+    view:'periodo/edit'
+  },
 
   'POST /seccion/agregar': 'SeccionController.agregar',
   'GET /seccion/agregar': {
     view: 'seccion/agregar'
+  },
+  'POST /seccion/edit':{
+    controller: 'SeccionController',
+    action: 'update'
+  },
+  'GET /seccion/edit':{
+    view:'seccion/edit'
   },
 
   'POST /selecciondeportiva/agregar': 'SelecciondeportivaController.agregar',
   'GET /selecciondeportiva/agregar': {
     view: 'selecciondeportiva/agregar'
   },
+  'POST /selecciondeportiva/edit':{
+    controller: 'SelecciondeportivaController',
+    action: 'update'
+  },
+  'GET /selecciondeportiva/edit':{
+    view:'selecciondeportiva/edit'
+  },
 
   'POST /estudiante/agregar': 'EstudianteController.agregar',
   'GET /estudiante/agregar': {
     view: 'estudiante/agregar'
+  },
+  'POST /estudiante/edit':{
+    controller: 'EstudianteController',
+    action: 'update'
+  },
+  'GET /estudiante/edit':{
+    view:'estudiante/edit'
   },
 
   'POST /profesor/agregar': 'ProfesorController.agregar',
   'GET /profesor/agregar': {
     view: 'profesor/agregar'
   },
+  'POST /profesor/edit':{
+    controller: 'ProfesorController',
+    action: 'update'
+  },
+  'GET /profesor/edit':{
+    view:'profesor/edit'
+  },
 
   'POST /beca/agregar': 'BecaController.agregar',
   'GET /beca/agregar': {
     view: 'beca/agregar'
+  },
+  'POST /beca/edit':{
+    controller: 'BecaController',
+    action: 'update'
+  },
+  'GET /beca/edit':{
+    view:'beca/edit'
   }
 
   /***************************************************************************

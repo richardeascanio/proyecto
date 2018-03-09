@@ -13,9 +13,7 @@ img{
     color: orangered;
     height: 100%;
     text-align: left;
-/*  text-align: center;*/
     display: flex;
-/*  align-items: center;*/
 }
 
 
@@ -41,7 +39,15 @@ img{
     color: white;
     text-align: center center;
     align-items: center;
-}  
+} 
+
+#editar{
+    max-width: 9060px;
+    margin-top: 17px;
+    color: white;
+    text-align: center center;
+    align-items: center;
+} 
 
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }

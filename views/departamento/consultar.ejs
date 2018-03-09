@@ -93,6 +93,7 @@
     </tbody>
   </table>
 
+<<<<<<< HEAD
 
 
   <!-- Bootstrap core JavaScript
@@ -105,3 +106,39 @@
 </body>
 
 </html>
+=======
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Nombre</th>
+ 
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% _.each(departamentos, function(departamento) {%>
+          <th scope="row"><%=departamento.iddepartamento%></th>
+          
+            <td><%=departamento.nombre%></td>
+            <td>
+              <form action="../departamento/edit/<%=departamento.iddepartamento%>" method="POST" accept-charset="utf-8">
+                <button type="submit" class="btn btn-outline-success">Editar</button>
+              </form>
+            </td>
+          
+        </tr>
+        <%}) %>
+      </tbody>
+    </table>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/dependencies/jquery-3.3.1.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/holder.min.js"></script>
+  </body>  
+</html>
+>>>>>>> richard
