@@ -71,7 +71,7 @@
           <th>Nombre</th>
           <th>Codigo</th>
           <th>Créditos</th>
- 
+          <th>Departamento</th>
         </tr>
       </thead>
       <tbody>
@@ -82,8 +82,8 @@
             <td><%=materia.nombre%></td>
             <td><%=materia.codigo%></td>
             <td><%=materia.credito%></td>
-            <td><a class="btn btn-outline-success" href="<%=materia.idmateria%>" role="button">Editar</a></td>
-          
+            <td><%=materia.iddepartamento%></td>
+            <td><a class="btn btn-outline-success" href="../materia/edit/<%=materia.idmateria%>" role="button">Editar</a></td>
         </tr>
         <%}) %>
       </tbody>

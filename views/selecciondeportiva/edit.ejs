@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../assets/favicon.ico">
+
+    <title>Editar departamento de MetroPavoApp</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/styles/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../assets/styles/estilos.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-dark">
+
+    <!-- BARRA DE NAVEGACION -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="../../../#">MetroPavo App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+                
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Consultar</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../../estudiante/consultar">Estudiante</a>
+                        <a class="dropdown-item" href="../../profesor/consultar">Profesor</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../../materia/consultar">Materia</a>
+                        <a class="dropdown-item" href="../../aula/consultar">Aula</a>
+                        <a class="dropdown-item" href="../../departamento/consultar">Departamento</a>
+                        <a class="dropdown-item" href="../../seccion/consultar">Sección</a>
+                        <a class="dropdown-item" href="../consultar">Selección</a>
+                        <a class="dropdown-item" href="../../periodo/consultar">Período</a>
+                        <a class="dropdown-item" href="../../carrera/consultar">Carrera</a>
+                        <a class="dropdown-item" href="../../beca/consultar">Beca</a>
+                    </div>
+                    </li>
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Añadir</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../../estudiante/agregar">Estudiante</a>
+                        <a class="dropdown-item" href="../../profesor/agregar">Profesor</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../../materia/agregar">Materia</a>
+                        <a class="dropdown-item" href="../../aula/agregar">Aula</a>
+                        <a class="dropdown-item" href="../../departamento/agregar">Departamento</a>
+                        <a class="dropdown-item" href="../../seccion/agregar">Sección</a>
+                        <a class="dropdown-item" href="../agregar">Selección</a>
+                        <a class="dropdown-item" href="../../periodo/agregar">Período</a>
+                        <a class="dropdown-item" href="../../carrera/agregar">Carrera</a>
+                        <a class="dropdown-item" href="../../beca/agregar">Beca</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <form action="../../selecciondeportiva/update/<%=selecciondeportiva.idselecciondeportiva%>" method="POST" accept-charset="utf-8" class="form-singin">
+      <section id="editar">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Editar Seleccion</h4>
+            <form class="needs-validation" novalidate>
+                
+              <div class="col-md-6 mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre del Seleccion" value="<%=selecciondeportiva.nombre%>" required>
+                <div class="invalid-feedback">
+                Ingrese un nombre valido
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="codigo">Código</label>
+                <input type="string" class="form-control" name="codigo" placeholder="Código" value="<%=selecciondeportiva.codigo%>" required>
+                <div class="invalid-feedback">
+                Ingrese un codigo valido
+                </div>
+            </div>    
+            
+            <div class="col-md-6 mb-3">
+                <label for="entrenador">Nombre del entrenador</label>
+                <input type="string" class="form-control" name="entrenador" placeholder="Nombre del entrenador" value="<%=selecciondeportiva.entrenador%>" required>
+                <div class="invalid-feedback">
+                Ingrese un nombre valido
+                </div>
+            </div>
+            
+            <label for="sexo">Tipo</label>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="masculino" name="sexo" class="custom-control-input" value="M" checked required >
+                <label class="custom-control-label" for="masculino">Masculino</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="femenino" name="sexo" class="custom-control-input" value="F" required>
+                <label class="custom-control-label" for="femenino">Femenino</label>
+            </div>
+                
+              <hr class="mb-4">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Editar seleccion</button>
+            </div>
+        </div>
+        </div>
+      </section>
+    </form>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; Los que flinchy</p>
+    </footer>
+            
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/dependencies/jquery-3.3.1.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+</html>

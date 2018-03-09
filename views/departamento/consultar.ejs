@@ -76,14 +76,16 @@
           <th scope="row"><%=departamento.iddepartamento%></th>
           
             <td><%=departamento.nombre%></td>
-            <td><a class="btn btn-outline-success" href="<%=departamento.iddepartamento%>" role="button">Editar</a></td>
+            <td>
+              <form action="../departamento/edit/<%=departamento.iddepartamento%>" method="POST" accept-charset="utf-8">
+                <button type="submit" class="btn btn-outline-success">Editar</button>
+              </form>
+            </td>
           
         </tr>
         <%}) %>
       </tbody>
     </table>
-
-    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -93,5 +95,4 @@
     <script src="../../assets/js/bootstrap.min.js"></script>
     <script src="../../assets/js/holder.min.js"></script>
   </body>  
-
 </html>

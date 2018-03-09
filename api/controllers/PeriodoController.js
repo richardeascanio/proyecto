@@ -30,6 +30,16 @@ module.exports = {
             if (err) return res.serverError(err);
             return res.view({periodos: periodos});
         });
-    }
+    },
+
+    edit: function(req, res){
+        console.log("entre a editar")
+        Periodo.findOne({idperiodo:req.param('id')}, function(err, periodo){
+            console.log(periodo)
+            if(err) return res.serverError(err)
+            res.view({periodo:periodo});
+        });
+    },
+    
 };
 

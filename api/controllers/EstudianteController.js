@@ -63,7 +63,6 @@ module.exports = {
                             
                         }
                         listaEstudiantesConUsuarios.push(estudianteQueSeInserta);
-                        console.log(estudianteQueSeInserta)
                         aux = aux+1
                         if(aux==lista.length){
                             return res.view({listaEstudiantesConUsuarios: listaEstudiantesConUsuarios});
@@ -73,6 +72,40 @@ module.exports = {
                 });
             }
         });
+    },
+
+    edit: function(req, res){
+        console.log("entre a editar")
+        Estudiante.findOne({idestudiante:req.param('id')}, function(err, estudiante){
+            console.log(estudiante)
+            if(err) return res.serverError(err)
+            res.view({estudiante:estudiante});
+        });
+    },
+
+    update: function(req, res){
+        console.log("entre a update")
+
+        Estudiante.update({
+
+            idestudiante:req.param('id')
+        }, 
+        {
+            nombre: req.param('nombre'),
+            apellido: req.param('apellido'),
+            cedula: req.param('cedula'),
+            carnet: req.param('carnet'),
+            correo: req.param('correo'),
+            sexo: req.param('sexo'),
+            tipo: req.param('tipo'),
+        }
+        ).exec( function (err, updated) {
+
+            if(Estudiante) res.redirect('#')
+            console.log("este es el estudiante " +updated[0].nombre, updated[0].codigo);
+            if (err) return res.serverError(err)
+
+        })
     }
 };
 

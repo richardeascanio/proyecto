@@ -25,7 +25,7 @@ module.exports = {
     cupos:{
       type:'int',
       required: true
-    }
+    },
 
   }
 };
