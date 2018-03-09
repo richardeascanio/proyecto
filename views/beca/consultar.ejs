@@ -66,42 +66,7 @@
     </nav>
   </header>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>Tipo</th>
-        <th>Porcentaje</th>
-        <th>Estudiante</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <% _.each(becas, function(beca) {%>
-          <th scope="row">
-            <%=beca.idbeca%>
-          </th>
 
-          <td>
-            <%=beca.tipo%>
-          </td>
-          <td>
-            <%=beca.porcentaje%>
-          </td>
-          <td>
-            <%=beca.idusuario%>
-          </td>
-          <td>
-            <a class="btn btn-outline-success" href="<%=beca.idbeca%>" role="button">Editar</a>
-          </td>
-
-      </tr>
-      <%}) %>
-    </tbody>
-  </table>
-
-<<<<<<< HEAD
-=======
     <table class="table table-striped">
       <thead>
         <tr>
@@ -125,8 +90,6 @@
         <%}) %>
       </tbody>
     </table>
->>>>>>> richard
-
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
