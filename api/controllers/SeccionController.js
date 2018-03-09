@@ -22,13 +22,9 @@ module.exports = {
       if (Seccion) res.redirect('#')
       console.log("este es la seccion", Seccion);
       if (err) return res.serverError(err)
+    });
+},
 
-<<<<<<< HEAD
-    })
-  },
-
-  consultar: function (req, res) {
-=======
     consultar: function(req, res) {
         
         Seccion.find(function(err, secciones) {
@@ -66,15 +62,4 @@ module.exports = {
         })
     }
 	
-};
->>>>>>> richard
-
-    Seccion.find(function (err, secciones) {
-      if (err) return res.serverError(err);
-      return res.view({
-        secciones: secciones
-      });
-    });
-  }
-
 };

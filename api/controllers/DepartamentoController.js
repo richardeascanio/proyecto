@@ -11,23 +11,6 @@ module.exports = {
 
     console.log("entre a funcion agregar");
 
-<<<<<<< HEAD
-    Departamento.create({
-
-      iddepartamento: req.param('id'),
-      nombre: req.param('nombre'),
-
-    }).exec(function (err, user) {
-
-      if (Departamento) res.redirect('#')
-      console.log("este es el departamento", Departamento);
-      if (err) return res.serverError(err)
-
-    })
-  },
-
-  consultar: function (req, res) {
-=======
         Departamento.create({
 
             iddepartamento: req.param('id'),
@@ -77,16 +60,4 @@ module.exports = {
 
         })
     }
-};
->>>>>>> richard
-
-    Departamento.find(function (err, departamentos) {
-      if (err) return res.serverError(err);
-      return res.view({
-        departamentos: departamentos
-      });
-      // return {departamentos: departamentos}
-    });
-  }
-
 };

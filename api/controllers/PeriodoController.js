@@ -17,14 +17,12 @@ module.exports = {
 
     }).exec(function (err, Periodo) {
 
-<<<<<<< HEAD
       if (Periodo) res.redirect('#')
       console.log("este es el usuario", Periodo);
       if (err) return res.serverError(err)
 
     })
   },
-=======
     consultar: function(req, res) {
         
         Periodo.find(function(err, periodos) {
@@ -42,16 +40,4 @@ module.exports = {
         });
     },
     
-};
->>>>>>> richard
-
-  consultar: function (req, res) {
-
-    Periodo.find(function (err, periodos) {
-      if (err) return res.serverError(err);
-      return res.view({
-        periodos: periodos
-      });
-    });
-  }
 };

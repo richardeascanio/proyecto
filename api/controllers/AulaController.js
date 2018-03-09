@@ -23,20 +23,9 @@ module.exports = {
       if (Aula) res.redirect('#')
       console.log("este es el aula ", Aula);
       if (err) return res.serverError(err)
-
-<<<<<<< HEAD
-    })
-  },
-
-  consultar: function (req, res) {
-    Aula.find(function (err, aulas) {
-      if (err) return res.serverError(err);
-      return res.view({
-        aulas: aulas
-      });
     });
-  }
-=======
+    },
+
     consultar: function(req, res) {
         Aula.find(function(err, aulas) {
             if (err) return res.serverError(err);
@@ -75,6 +64,4 @@ module.exports = {
     }
 	
 };
->>>>>>> richard
 
-};

@@ -66,39 +66,6 @@
     </nav>
   </header>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>Numero de sección</th>
-        <th>Cupos</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <% _.each(secciones, function(seccion) {%>
-          <th scope="row">
-            <%=seccion.idseccion%>
-          </th>
-
-          <td>
-            <%=seccion.nroseccion%>
-          </td>
-          <td>
-            <%=seccion.cupos%>
-          </td>
-          <td>
-            <a class="btn btn-outline-success" href="<%=seccion.idseccion%>" role="button">Editar</a>
-          </td>
-
-      </tr>
-      <%}) %>
-    </tbody>
-  </table>
-
-<<<<<<< HEAD
-=======
     <table class="table table-striped">
       <thead>
         <tr>
@@ -121,7 +88,6 @@
         <%}) %>
       </tbody>
     </table>
->>>>>>> richard
 
 
   <!-- Bootstrap core JavaScript

@@ -26,7 +26,6 @@ module.exports = {
       type: 'int',
       required: true
     },
-<<<<<<< HEAD
 
     idProfesor: {
       model: 'Profesor'
@@ -43,8 +42,5 @@ module.exports = {
     idAula: {
       model: 'Aula'
     }
-=======
->>>>>>> richard
-
   }
 };

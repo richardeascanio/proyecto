@@ -22,13 +22,9 @@ module.exports = {
       if (Carrera) res.redirect('#')
       console.log("este es la carrera", Carrera);
       if (err) return res.serverError(err)
+    });
+    },
 
-<<<<<<< HEAD
-    })
-  },
-
-  consultar: function (req, res) {
-=======
     consultar: function(req, res) {
         
         Carrera.find(function(err, carreras) {
@@ -65,16 +61,5 @@ module.exports = {
 
         })
     }
-	
-};
->>>>>>> richard
-
-    Carrera.find(function (err, carreras) {
-      if (err) return res.serverError(err);
-      return res.view({
-        carreras: carreras
-      });
-    });
-  }
 
 };

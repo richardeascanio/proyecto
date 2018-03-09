@@ -66,48 +66,6 @@
     </nav>
   </header>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>Nombre</th>
-        <th>Codigo</th>
-        <th>Tipo</th>
-        <th>Entrenador</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <% _.each(selecciones, function(seleccion) {%>
-          <th scope="row">
-            <%=seleccion.idselecciondeportiva%>
-          </th>
-
-          <td>
-            <%=seleccion.nombre%>
-          </td>
-          <td>
-            <%=seleccion.codigo%>
-          </td>
-          <td>
-            <%=seleccion.sexo%>
-          </td>
-          <td>
-            <%=seleccion.entrenador%>
-          </td>
-          <td>
-            <a class="btn btn-outline-success" href="<%=seleccion.idselecciondeportiva%>" role="button">Editar</a>
-          </td>
-
-      </tr>
-      <%}) %>
-    </tbody>
-  </table>
-
-<<<<<<< HEAD
-  <!-- Bootstrap core JavaScript
-=======
     <table class="table table-striped">
       <thead>
         <tr>
@@ -136,7 +94,6 @@
     </table>
     
     <!-- Bootstrap core JavaScript
->>>>>>> richard
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="../../assets/js/dependencies/jquery-3.3.1.js"></script>
