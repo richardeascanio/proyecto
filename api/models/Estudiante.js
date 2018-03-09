@@ -12,7 +12,7 @@ module.exports = {
 
     idestudiante: {
       type: 'integer',
-      required:false,
+      required: false,
       primaryKey: true,
       unique: true,
 
@@ -22,8 +22,12 @@ module.exports = {
       type: 'string',
       required: true,
 
-    }
+    },
+
+    beca: {
+      collection: 'Beca',
+      via: 'idestudiante'
+    },
 
   }
 };
-

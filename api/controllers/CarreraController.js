@@ -7,32 +7,33 @@
 
 module.exports = {
 
-    agregar: function(req,res){
+  agregar: function (req, res) {
 
-        console.log("entre a funcion agregar");
+    console.log("entre a funcion agregar");
 
-            Carrera.create({
+    Carrera.create({
 
-                idcarrera: req.param('id'),
-                nombre: req.param('nombre'),
-                codigo: req.param('codigo'),
-                
-            }).exec( function (err, Carrera) {
+      idcarrera: req.param('id'),
+      nombre: req.param('nombre'),
+      codigo: req.param('codigo'),
 
-                if(Carrera) res.redirect('#')
-                console.log("este es la carrera",Carrera);
-                if (err) return res.serverError(err)
+    }).exec(function (err, Carrera) {
 
-            })
-    },
+      if (Carrera) res.redirect('#')
+      console.log("este es la carrera", Carrera);
+      if (err) return res.serverError(err)
 
-    consultar: function(req, res) {
-        
-        Carrera.find(function(err, carreras) {
-            if (err) return res.serverError(err);
-            return res.view({carreras: carreras});
-        });
-    }
-	
+    })
+  },
+
+  consultar: function (req, res) {
+
+    Carrera.find(function (err, carreras) {
+      if (err) return res.serverError(err);
+      return res.view({
+        carreras: carreras
+      });
+    });
+  }
+
 };
-

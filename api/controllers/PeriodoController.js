@@ -6,30 +6,31 @@
  */
 
 module.exports = {
-    
-    agregar: function(req,res){
 
-        console.log("entre a funcion agregar");
+  agregar: function (req, res) {
 
-            Periodo.create({
+    console.log("entre a funcion agregar");
 
-                idperiodo: req.param('id'),
-  
-            }).exec( function (err, Periodo) {
+    Periodo.create({
 
-                if(Periodo) res.redirect('#')
-                console.log("este es el usuario",Periodo);
-                if (err) return res.serverError(err)
+      idperiodo: req.param('id'),
 
-            })
-    },
+    }).exec(function (err, Periodo) {
 
-    consultar: function(req, res) {
-        
-        Periodo.find(function(err, periodos) {
-            if (err) return res.serverError(err);
-            return res.view({periodos: periodos});
-        });
-    }
+      if (Periodo) res.redirect('#')
+      console.log("este es el usuario", Periodo);
+      if (err) return res.serverError(err)
+
+    })
+  },
+
+  consultar: function (req, res) {
+
+    Periodo.find(function (err, periodos) {
+      if (err) return res.serverError(err);
+      return res.view({
+        periodos: periodos
+      });
+    });
+  }
 };
-

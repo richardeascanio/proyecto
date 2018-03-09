@@ -11,32 +11,31 @@ module.exports = {
 
     idselecciondeportiva: {
       type: 'integer',
-      required:false,
+      required: false,
       autoIncrement: true,
       primaryKey: true,
       unique: true
     },
 
-    codigo:{
+    codigo: {
       type: 'string',
       required: true
     },
 
-    nombre:{
+    nombre: {
       type: 'string',
       required: true
     },
 
-    sexo:{
+    sexo: {
       type: 'string',
       required: true
     },
 
-    entrenador:{
+    entrenador: {
       type: 'string',
       required: true
     }
 
   }
 };
-

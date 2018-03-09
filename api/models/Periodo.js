@@ -11,14 +11,18 @@ module.exports = {
 
     idperiodo: {
       type: 'integer',
-      required:false,
+      required: false,
       autoIncrement: true,
       primaryKey: true,
       unique: true
     },
 
-    
+    secciones: {
+      collection: 'Seccion',
+      via: 'idPeriodo'
+    },
+
+
 
   }
 };
-
