@@ -11,32 +11,36 @@ module.exports = {
 
     idmateria: {
       type: 'integer',
-      required:false,
+      required: false,
       autoIncrement: true,
       primaryKey: true,
       unique: true
     },
 
-    codigo:{
-      type:'string',
+    codigo: {
+      type: 'string',
       required: true
     },
 
-    nombre:{
-      type:'string',
+    nombre: {
+      type: 'string',
       required: true
     },
 
-    credito:{
-      type:'int',
+    credito: {
+      type: 'int',
       required: true
     },
 
-    iddepartamento:{
-      type:'integer',
-      required: true
-    }
+    iddepartamento: {
+      model: 'Departamento'
+
+    },
+
+    secciones: {
+      collection: 'Seccion',
+      via: 'idMateria'
+    },
 
   }
 };
-

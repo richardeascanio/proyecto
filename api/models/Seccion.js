@@ -11,22 +11,37 @@ module.exports = {
 
     idseccion: {
       type: 'integer',
-      required:false,
+      required: false,
       autoIncrement: true,
       primaryKey: true,
       unique: true
     },
 
-    nroseccion:{
-      type:'integer',
+    nroseccion: {
+      type: 'integer',
       required: true
     },
 
-    cupos:{
-      type:'int',
+    cupos: {
+      type: 'int',
       required: true
+    },
+
+    idProfesor: {
+      model: 'Profesor'
+    },
+
+    idPeriodo: {
+      model: 'Periodo'
+    },
+
+    idMateria: {
+      model: 'Materia'
+    },
+
+    idAula: {
+      model: 'Aula'
     }
 
   }
 };
-

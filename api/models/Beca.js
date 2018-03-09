@@ -28,9 +28,9 @@ module.exports = {
     },
 
     idestudiante:{
-      type:'integer',
-      required: true
-    }
+      model: 'Estudiante',
+      unique: true
+    },
 
   }
 };

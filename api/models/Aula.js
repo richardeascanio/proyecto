@@ -30,7 +30,13 @@ module.exports = {
     numeroaula:{
       type:'int',
       required: true
-    }
+    },
+
+    clases:{
+      collection: 'Seccion',
+      via: 'idAula',
+
+    },
 
   }
 };

@@ -20,7 +20,18 @@ module.exports = {
     nombre:{
       type:'string',
       required: true
-    }
+    },
+
+    profesores:{
+      collections:'Profesor',
+      via: 'idDepartamento',
+    },
+
+    materias:{
+      collection:'Materia',
+      via: 'iddepartamento'
+
+    },
 
   }
 };

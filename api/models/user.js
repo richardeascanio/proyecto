@@ -6,54 +6,53 @@
  */
 
 module.exports = {
- 
-  createdAt:false,
-  updatedAt:false,
-  
+
+  createdAt: false,
+  updatedAt: false,
+
 
   attributes: {
 
     idusuario: {
       type: 'integer',
-      required:false,
+      required: false,
       autoIncrement: true,
       primaryKey: true,
       unique: true
     },
 
-    nombre:{
-      type:'string',
+    nombre: {
+      type: 'string',
       required: true
     },
 
-    apellido:{
-      type:'string',
+    apellido: {
+      type: 'string',
       required: true
     },
 
-    cedula:{
-      type:'int',
+    cedula: {
+      type: 'int',
       required: true,
       unique: true
     },
 
-    carnet:{
-      type:'int',
+    carnet: {
+      type: 'int',
       required: true,
       unique: true
     },
 
-    correo:{
-      type:'email',
+    correo: {
+      type: 'email',
       required: true,
-      unique: true 
+      unique: true
     },
 
-    sexo:{
-      type:'string',
+    sexo: {
+      type: 'string',
       required: true
     }
-    
+
   }
 };
-

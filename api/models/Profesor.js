@@ -7,34 +7,38 @@
 
 module.exports = {
 
-  createdAt:false,
-  updatedAt:false,
+  createdAt: false,
+  updatedAt: false,
 
   attributes: {
 
     idprofesor: {
       type: 'integer',
-      required:false,
+      required: false,
       autoIncrement: true,
       primaryKey: true,
       unique: true,
 
     },
 
-    profesion:{
-      type:'string',
+    profesion: {
+      type: 'string',
       required: true,
     },
 
-    fechaingreso:{
-      type:'date',
+    fechaingreso: {
+      type: 'date',
       required: true
     },
 
-    iddepartamento:{
-      type: 'integer',
-      required:false
-    }
+    idDepartamento: {
+      model: 'Departamento'
+
+    },
+
+    clases: {
+      collection: 'Seccion',
+      via: 'idProfesor'
+    },
   }
 };
-
