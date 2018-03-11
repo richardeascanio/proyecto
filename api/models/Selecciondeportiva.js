@@ -35,6 +35,12 @@ module.exports = {
     entrenador: {
       type: 'string',
       required: true
+    },
+
+    jugadores:{
+      collection:'Estudiante',
+      via:'idSeleccion',
+      through: 'estudiante_seleccion'
     }
 
   }

@@ -25,6 +25,18 @@ module.exports = {
     codigo: {
       type: 'string',
       required: true
+    },
+
+    materias:{
+      collection:'Materia',
+      via:'idCarrera',
+      through:'materia_carrera'
+    },
+
+    estudiantes:{
+      collection:'Estudiante',
+      via:'idCarrera',
+      through: 'estudiante_carrera'
     }
 
   }
