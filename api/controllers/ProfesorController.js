@@ -80,11 +80,32 @@ module.exports = {
     },
 
     edit: function(req, res){
+        var profesorNuevo
         console.log("entre a editar")
-        Profesor.findOne({idprofesor:req.param('id')}, function(err, profesor){
-            console.log(profesor)
-            if(err) return res.serverError(err)
-            res.view({profesor:profesor});
+      Profesor.findOne({idprofesor:req.param('id')}, function(err, prof){
+        console.log(prof);
+            
+        user.findOne(prof.idprofesor).exec(function(err, usuario){
+
+
+                profesorNuevo = {
+
+                    idprofesor: prof.idprofesor,
+                    nombre:usuario.nombre,
+                    apellido:usuario.apellido,
+                    cedula: usuario.cedula,
+                    carnet: usuario.carnet,
+                    correo: usuario.correo,
+                    sexo: usuario.sexo,
+                    profesion : prof.profesion,
+                    fechaingreso: prof.fechaingreso,
+                    iddepartamento: prof.iddepartamento
+                }
+                console.log(profesorNuevo)
+                if(err) return res.serverError(err)
+                return res.view({profesor:profesorNuevo});
+            });
+
         });
     },
 
