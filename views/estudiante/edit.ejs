@@ -67,7 +67,7 @@
         </nav>
     </header>
 
-    <form action="../../departamento/update/<%=estudiante.idestudiante%>" method="POST" accept-charset="utf-8" class="form-singin">
+    <form action="../../estudiante/update/<%=estudiante.idestudiante%>" method="POST" accept-charset="utf-8" class="form-singin">
       <section id="editar">
         <div class="container">
           <div class="row">
@@ -77,14 +77,14 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" placeholder="<%=estudiante.idestudiante%>" required>
+                    <input type="text" class="form-control" name="nombre" value="<%=estudiante.nombre%>" required>
                     <div class="invalid-feedback">
                       Ingrese un nombre valido
                     </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control" name="apellido" placeholder="" required>
+                    <input type="text" class="form-control" name="apellido" value="<%=estudiante.apellido%>" required>
                     <div class="invalid-feedback">
                       Ingrese un apellido valido
                     </div>
@@ -93,14 +93,14 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="cedula">Cédula</label>
-                    <input type="int" class="form-control" name="cedula" placeholder="Numero de cedula" required>
+                    <input type="int" class="form-control" name="cedula" value="<%=estudiante.cedula%>" required>
                     <div class="invalid-feedback">
                       Ingrese un numero de cedula valido
                     </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="carnet">Carnet</label>
-                    <input type="int" class="form-control" name="carnet" placeholder="Numero de carnet" required>
+                    <input type="int" class="form-control" name="carnet" value="<%=estudiante.carnet%>" required>
                     <div class="invalid-feedback">
                       Ingrese un numero de carnet valido
                     </div>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="correo">Email</label>
-                  <input type="email" class="form-control" name="correo" placeholder="nombre@correo.com" required>
+                  <input type="email" class="form-control" name="correo" value="<%=estudiante.correo%>" required>
                   <div class="invalid-feedback">
                     Por favor ingrese una dirección de correo electronico que sea valida
                   </div>
@@ -134,7 +134,7 @@
                 </div>
       
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir estudiante</button>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Editar estudiante</button>
             </div>
           </div>
         </div>
