@@ -67,28 +67,36 @@
   </header>
 
 
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Nombre</th>
-          <th>Codigo</th>
- 
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <% _.each(carreras, function(carrera) {%>
-          <th scope="row"><%=carrera.idcarrera%></th>
-          
-            <td><%=carrera.nombre%></td>
-            <td><%=carrera.codigo%></td>
-            <td><a class="btn btn-outline-success" href="../carrera/edit/<%=carrera.idcarrera%>" role="button">Editar</a></td>
-          
-        </tr>
-        <%}) %>
-      </tbody>
-    </table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Codigo</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% _.each(carreras, function(carrera) {%>
+          <th scope="row">
+            <%=carrera.idcarrera%>
+          </th>
+
+          <td>
+            <%=carrera.nombre%>
+          </td>
+          <td>
+            <%=carrera.codigo%>
+          </td>
+          <td>
+            <a class="btn btn-outline-success" href="../carrera/edit/<%=carrera.idcarrera%>" role="button">Editar</a>
+          </td>
+
+      </tr>
+      <%}) %>
+    </tbody>
+  </table>
 
 
   <!-- Bootstrap core JavaScript

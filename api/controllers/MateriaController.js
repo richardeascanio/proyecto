@@ -7,73 +7,79 @@
 
 module.exports = {
 
-    agregar: function(req,res){
+  agregar: function (req, res) {
 
-        console.log("entre a funcion agregar");
+    console.log("entre a funcion agregar");
 
-        Materia.create({
+    Materia.create({
 
-            idmateria: req.param('id'),
-            codigo: req.param('codigo'),
-            nombre: req.param('nombre'),
-            credito: req.param('credito'),
-            iddepartamento: req.param('iddepartamento'),
-            
-        }).exec( function (err, Materia) {
-            
-            if(Materia) res.redirect('#')
-            console.log("esta es la materia ",Materia);
+      idmateria: req.param('id'),
+      codigo: req.param('codigo'),
+      nombre: req.param('nombre'),
+      credito: req.param('credito'),
+      iddepartamento: req.param('iddepartamento'),
 
-            if (err) return res.serverError(err)
-        });
-    },
+    }).exec(function (err, Materia) {
 
-    consultar: function(req, res) {
-        console.log("entre a consultar")
-        Materia.find(function(err, materias) {
-            if (err) return res.serverError(err);
-            return res.view({materias: materias});
-        });
-    },
+      if (Materia) res.redirect('#')
+      console.log("esta es la materia ", Materia);
 
-    edit: function(req, res){
-        console.log("entre a editar")
-        Materia.findOne({idmateria:req.param('id')}, function(err, materia){
-            console.log(materia)
-            if(err) return res.serverError(err)
-            res.view({materia:materia});
-        });
-    },
+      if (err) return res.serverError(err)
+    });
+  },
 
-    update: function(req, res){
-        console.log("entre a update")
+  consultar: function (req, res) {
+    console.log("entre a consultar")
+    Materia.find(function (err, materias) {
+      if (err) return res.serverError(err);
+      return res.view({
+        materias: materias
+      });
+    });
+  },
 
-        Materia.update({
+  edit: function (req, res) {
+    console.log("entre a editar")
+    Materia.findOne({
+      idmateria: req.param('id')
+    }, function (err, materia) {
+      console.log(materia)
+      if (err) return res.serverError(err)
+      res.view({
+        materia: materia
+      });
+    });
+  },
 
-            idmateria:req.param('id')
-        },
-        {
-            codigo: req.param('codigo'),
-            nombre: req.param('nombre'),
-            credito: req.param('credito'),
-            iddepartamento: req.param('iddepartamento'),
-        }
-        ).exec( function (err, updated) {
+  update: function (req, res) {
+    console.log("entre a update")
 
-            if(Materia) res.redirect('#')
-            console.log("este es la materia " +updated[0].nombre, updated[0].codigo, updated[0].credito, updated[0].iddepartamento);
-            if (err) return res.serverError(err)
+    Materia.update({
 
-        })
-    },
+      idmateria: req.param('id')
+    }, {
+      codigo: req.param('codigo'),
+      nombre: req.param('nombre'),
+      credito: req.param('credito'),
+      iddepartamento: req.param('iddepartamento'),
+    }).exec(function (err, updated) {
 
-    consultarDep: function(req, res){
-        console.log("entre a consultar dep")
-        Departamento.find(function(err, deps) {
-            if (err) return res.serverError(err);
-            console.log(deps)
-            return ({deps:deps});
-        });
-    }
-	
+      if (Materia) res.redirect('#')
+      console.log("este es la materia " + updated[0].nombre, updated[0].codigo, updated[0].credito, updated[0].iddepartamento);
+      if (err) return res.serverError(err)
+
+    })
+  },
+
+  consultarDep: function (req, res) {
+    console.log("entre a consultar dep")
+    Departamento.find(function (err, deps) {
+      if (err) return res.serverError(err);
+      console.log(deps)
+      return ({
+        deps: deps
+      });
+    });
+  }
+
 };

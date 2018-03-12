@@ -29,21 +29,21 @@ module.exports = {
       via: 'idestudiante'
     },
 
-    carreras:{
-      collection:'Carrera',
-      via:'idEstudiante',
+    carreras: {
+      collection: 'Carrera',
+      via: 'idEstudiante',
       through: 'estudiante_carrera'
     },
 
-    secciones:{
-      collection:'Seccion',
-      via:'idEstudiante',
+    secciones: {
+      collection: 'Seccion',
+      via: 'idEstudiante',
       through: 'estudiante_seccion'
     },
 
-    selecciones:{
-      collection:'Selecciondeportiva',
-      via:'idEstudiante',
+    selecciones: {
+      collection: 'Selecciondeportiva',
+      via: 'idEstudiante',
       through: 'estudiante_seleccion'
     }
 

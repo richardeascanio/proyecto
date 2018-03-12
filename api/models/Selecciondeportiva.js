@@ -37,9 +37,9 @@ module.exports = {
       required: true
     },
 
-    jugadores:{
-      collection:'Estudiante',
-      via:'idSeleccion',
+    jugadores: {
+      collection: 'Estudiante',
+      via: 'idSeleccion',
       through: 'estudiante_seleccion'
     }
 

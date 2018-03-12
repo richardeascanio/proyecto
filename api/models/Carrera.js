@@ -27,15 +27,15 @@ module.exports = {
       required: true
     },
 
-    materias:{
-      collection:'Materia',
-      via:'idCarrera',
-      through:'materia_carrera'
+    materias: {
+      collection: 'Materia',
+      via: 'idCarrera',
+      through: 'materia_carrera'
     },
 
-    estudiantes:{
-      collection:'Estudiante',
-      via:'idCarrera',
+    estudiantes: {
+      collection: 'Estudiante',
+      via: 'idCarrera',
       through: 'estudiante_carrera'
     }
 

@@ -9,30 +9,30 @@ module.exports = {
 
   attributes: {
 
-    idaula:{
+    idaula: {
       type: 'integer',
-      required:false,
+      required: false,
       autoIncrement: true,
       primaryKey: true,
       unique: true
     },
 
-    edificio:{
-      type:'string',
+    edificio: {
+      type: 'string',
       required: true
     },
 
-    piso:{
-      type:'int',
+    piso: {
+      type: 'int',
       required: true
     },
 
-    numeroaula:{
-      type:'int',
+    numeroaula: {
+      type: 'int',
       required: true
     },
 
-    clases:{
+    clases: {
       collection: 'Seccion',
       via: 'idAula',
 
@@ -40,4 +40,3 @@ module.exports = {
 
   }
 };
-

@@ -9,14 +9,13 @@ module.exports = {
 
   attributes: {
 
-    idEstudiante:{
-      model:'Estudiante'
+    idEstudiante: {
+      model: 'Estudiante'
     },
 
-    idCarera:{
-      model:'Carrera'
+    idCarera: {
+      model: 'Carrera'
     }
 
   }
 };
-

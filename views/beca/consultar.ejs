@@ -67,29 +67,39 @@
   </header>
 
 
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Tipo</th>
-          <th>Porcentaje</th>
-          <th>Estudiante</th> 
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <% _.each(becas, function(beca) {%>
-          <th scope="row"><%=beca.idbeca%></th>
-          
-            <td><%=beca.tipo%></td>
-            <td><%=beca.porcentaje%></td>
-            <td><%=beca.idestudiante%></td>
-            <td><a class="btn btn-outline-success" href="../beca/edit/<%=beca.idbeca%>" role="button">Editar</a></td>
-          
-        </tr>
-        <%}) %>
-      </tbody>
-    </table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Tipo</th>
+        <th>Porcentaje</th>
+        <th>Estudiante</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% _.each(becas, function(beca) {%>
+          <th scope="row">
+            <%=beca.idbeca%>
+          </th>
+
+          <td>
+            <%=beca.tipo%>
+          </td>
+          <td>
+            <%=beca.porcentaje%>
+          </td>
+          <td>
+            <%=beca.idestudiante%>
+          </td>
+          <td>
+            <a class="btn btn-outline-success" href="../beca/edit/<%=beca.idbeca%>" role="button">Editar</a>
+          </td>
+
+      </tr>
+      <%}) %>
+    </tbody>
+  </table>
 
   <!-- Bootstrap core JavaScript
     ================================================== -->

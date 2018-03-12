@@ -68,30 +68,42 @@
 
   <!-- TABLA QUE IMPRIME TODOS LOS DATOS -->
 
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Nombre</th>
-          <th>Codigo</th>
-          <th>Créditos</th>
-          <th>Departamento</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <% _.each(materias, function(materia) {%>
-          <th scope="row"><%=materia.idmateria%></th>
-          
-            <td><%=materia.nombre%></td>
-            <td><%=materia.codigo%></td>
-            <td><%=materia.credito%></td>
-            <td><%=materia.iddepartamento%></td>
-            <td><a class="btn btn-outline-success" href="../materia/edit/<%=materia.idmateria%>" role="button">Editar</a></td>
-        </tr>
-        <%}) %>
-      </tbody>
-    </table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Codigo</th>
+        <th>Créditos</th>
+        <th>Departamento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% _.each(materias, function(materia) {%>
+          <th scope="row">
+            <%=materia.idmateria%>
+          </th>
+
+          <td>
+            <%=materia.nombre%>
+          </td>
+          <td>
+            <%=materia.codigo%>
+          </td>
+          <td>
+            <%=materia.credito%>
+          </td>
+          <td>
+            <%=materia.iddepartamento%>
+          </td>
+          <td>
+            <a class="btn btn-outline-success" href="../materia/edit/<%=materia.idmateria%>" role="button">Editar</a>
+          </td>
+      </tr>
+      <%}) %>
+    </tbody>
+  </table>
 
 
   <!-- Bootstrap core JavaScript

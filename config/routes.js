@@ -23,53 +23,53 @@
 module.exports.routes = {
 
   /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+   *                                                                          *
+   * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
+   * etc. depending on your default view engine) your home page.              *
+   *                                                                          *
+   * (Alternatively, remove this and add an `index.html` file in your         *
+   * `assets` directory)                                                      *
+   *                                                                          *
+   ***************************************************************************/
 
   '/': {
     view: 'homepage'
   },
-  
+
   'POST /aula/agregar': 'AulaController.agregar',
   'GET /aula/agregar': {
     view: 'aula/agregar'
   },
-  'POST /aula/edit':{
+  'POST /aula/edit': {
     controller: 'AulaController',
     action: 'update'
   },
-  'GET /aula/edit':{
-    view:'aula/edit'
+  'GET /aula/edit': {
+    view: 'aula/edit'
   },
 
   'POST /carrera/agregar': 'CarreraController.agregar',
   'GET /carrera/agregar': {
     view: 'carrera/agregar'
   },
-  'POST /carrera/edit':{
+  'POST /carrera/edit': {
     controller: 'CarreraController',
     action: 'update'
   },
-  'GET /carrera/edit':{
-    view:'carrera/edit'
+  'GET /carrera/edit': {
+    view: 'carrera/edit'
   },
 
   'POST /departamento/agregar': {
     controller: 'DepartamentoController',
-    action:'agregar'
+    action: 'agregar'
   },
 
   'GET /departamento/agregar': {
     view: 'departamento/agregar'
   },
 
-  'POST /materia/agregar':{
+  'POST /materia/agregar': {
     controller: 'MateriaController',
     action: 'agregar'
   },
@@ -78,94 +78,94 @@ module.exports.routes = {
     view: 'materia/agregar',
   },
 
-  'POST /departamento/edit':{
+  'POST /departamento/edit': {
     controller: 'DepartamentoController',
     action: 'update'
   },
-  'GET /departamento/edit':{
-    view:'departamento/edit'
+  'GET /departamento/edit': {
+    view: 'departamento/edit'
   },
 
   'POST /periodo/agregar': 'PeriodoController.agregar',
   'GET /periodo/agregar': {
     view: 'periodo/agregar'
   },
-  'POST /periodo/edit':{
+  'POST /periodo/edit': {
     controller: 'PeriodoController',
     action: 'update'
   },
-  'GET /periodo/edit':{
-    view:'periodo/edit'
+  'GET /periodo/edit': {
+    view: 'periodo/edit'
   },
 
   'POST /seccion/agregar': 'SeccionController.agregar',
   'GET /seccion/agregar': {
     view: 'seccion/agregar'
   },
-  'POST /seccion/edit':{
+  'POST /seccion/edit': {
     controller: 'SeccionController',
     action: 'update'
   },
-  'GET /seccion/edit':{
-    view:'seccion/edit'
+  'GET /seccion/edit': {
+    view: 'seccion/edit'
   },
 
   'POST /selecciondeportiva/agregar': 'SelecciondeportivaController.agregar',
   'GET /selecciondeportiva/agregar': {
     view: 'selecciondeportiva/agregar'
   },
-  'POST /selecciondeportiva/edit':{
+  'POST /selecciondeportiva/edit': {
     controller: 'SelecciondeportivaController',
     action: 'update'
   },
-  'GET /selecciondeportiva/edit':{
-    view:'selecciondeportiva/edit'
+  'GET /selecciondeportiva/edit': {
+    view: 'selecciondeportiva/edit'
   },
 
   'POST /estudiante/agregar': 'EstudianteController.agregar',
   'GET /estudiante/agregar': {
     view: 'estudiante/agregar'
   },
-  'POST /estudiante/edit':{
+  'POST /estudiante/edit': {
     controller: 'EstudianteController',
     action: 'update'
   },
-  'GET /estudiante/edit':{
-    view:'estudiante/edit'
+  'GET /estudiante/edit': {
+    view: 'estudiante/edit'
   },
 
   'POST /profesor/agregar': 'ProfesorController.agregar',
   'GET /profesor/agregar': {
     view: 'profesor/agregar'
   },
-  'POST /profesor/edit':{
+  'POST /profesor/edit': {
     controller: 'ProfesorController',
     action: 'update'
   },
-  'GET /profesor/edit':{
-    view:'profesor/edit'
+  'GET /profesor/edit': {
+    view: 'profesor/edit'
   },
 
   'POST /beca/agregar': 'BecaController.agregar',
   'GET /beca/agregar': {
     view: 'beca/agregar'
   },
-  'POST /beca/edit':{
+  'POST /beca/edit': {
     controller: 'BecaController',
     action: 'update'
   },
-  'GET /beca/edit':{
-    view:'beca/edit'
+  'GET /beca/edit': {
+    view: 'beca/edit'
   }
 
   /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
+   *                                                                          *
+   * Custom routes here...                                                    *
+   *                                                                          *
+   * If a request to a URL doesn't match any of the custom routes above, it   *
+   * is matched against Sails route blueprints. See `config/blueprints.js`    *
+   * for configuration options and examples.                                  *
+   *                                                                          *
+   ***************************************************************************/
 
 };

@@ -23,43 +23,47 @@ module.exports = {
       console.log("este es la seccion", Seccion);
       if (err) return res.serverError(err)
     });
-},
+  },
 
-    consultar: function(req, res) {
-        
-        Seccion.find(function(err, secciones) {
-            if (err) return res.serverError(err);
-            return res.view({secciones: secciones});
-        });
-    },
+  consultar: function (req, res) {
 
-    edit: function(req, res){
-        console.log("entre a editar")
-        Seccion.findOne({idseccion:req.param('id')}, function(err, seccion){
-            console.log(seccion)
-            if(err) return res.serverError(err)
-            res.view({seccion:seccion});
-        });
-    },
+    Seccion.find(function (err, secciones) {
+      if (err) return res.serverError(err);
+      return res.view({
+        secciones: secciones
+      });
+    });
+  },
 
-    update: function(req, res){
-        console.log("entre a update")
+  edit: function (req, res) {
+    console.log("entre a editar")
+    Seccion.findOne({
+      idseccion: req.param('id')
+    }, function (err, seccion) {
+      console.log(seccion)
+      if (err) return res.serverError(err)
+      res.view({
+        seccion: seccion
+      });
+    });
+  },
 
-        Seccion.update({
+  update: function (req, res) {
+    console.log("entre a update")
 
-            idseccion:req.param('id')
-        },
-        {
-            nroseccion: req.param('nroseccion'),
-            cupos: req.param('cupos'),
-        }
-        ).exec( function (err, updated) {
+    Seccion.update({
 
-            if(Seccion) res.redirect('#')
-            console.log("este es el seccion " +updated[0].nroseccion, updated[0].cupos);
-            if (err) return res.serverError(err)
+      idseccion: req.param('id')
+    }, {
+      nroseccion: req.param('nroseccion'),
+      cupos: req.param('cupos'),
+    }).exec(function (err, updated) {
 
-        })
-    }
-	
+      if (Seccion) res.redirect('#')
+      console.log("este es el seccion " + updated[0].nroseccion, updated[0].cupos);
+      if (err) return res.serverError(err)
+
+    })
+  }
+
 };

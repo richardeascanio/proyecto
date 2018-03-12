@@ -9,29 +9,28 @@ module.exports = {
 
   attributes: {
 
-    idbeca:{
+    idbeca: {
       type: 'integer',
-      required:false,
+      required: false,
       autoIncrement: true,
       primaryKey: true,
       unique: true
     },
 
-    porcentaje:{
-      type:'int',
+    porcentaje: {
+      type: 'int',
       required: true
     },
 
-    tipo:{
-      type:'string',
+    tipo: {
+      type: 'string',
       required: true
     },
 
-    idestudiante:{
+    idestudiante: {
       model: 'Estudiante',
       unique: true
     },
 
   }
 };
-

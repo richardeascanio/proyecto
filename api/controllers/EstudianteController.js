@@ -8,123 +8,127 @@
 
 module.exports = {
 
-    agregar: function(req,res){
+  agregar: function (req, res) {
 
-        console.log("entre a funcion agregar");
+    console.log("entre a funcion agregar");
 
-            user.create({
+    user.create({
 
-                idusuario: req.param('id'),
-                nombre: req.param('nombre'),
-                apellido: req.param('apellido'),
-                cedula: req.param('cedula'),
-                carnet: req.param('carnet'),
-                correo: req.param('correo'),
-                sexo: req.param('sexo'),
-                
-            }).then(user=>{
-                
-                Estudiante.create({
+      idusuario: req.param('id'),
+      nombre: req.param('nombre'),
+      apellido: req.param('apellido'),
+      cedula: req.param('cedula'),
+      carnet: req.param('carnet'),
+      correo: req.param('correo'),
+      sexo: req.param('sexo'),
 
-                    idestudiante: user.idusuario,
-                    tipo:req.param('tipo'),
-                    
-                }).exec( function (err, Estudiante) {
+    }).then(user => {
 
-                    if(Estudiante) res.redirect('#')
-                    console.log("este es el Estudiante",Estudiante, user);
-                    if (err) return res.serverError(err)
-    
-                })
-            });
-    },
+      Estudiante.create({
 
-    consultar: function(req, res) {
-        console.log("entre a consultar");
-        var listaEstudiantesConUsuarios = []
-        var estudianteQueSeInserta
-        var aux = 0
-        Estudiante.find(function(err, lista) {
-            if (err) return res.serverError(err);
-            else{
-                lista.forEach(estud => {
-                    user.findOne(estud.idestudiante).exec(function(err, usuario){
-                        
-                        estudianteQueSeInserta = {
+        idestudiante: user.idusuario,
+        tipo: req.param('tipo'),
 
-                            idestudiante: estud.idestudiante,
-                            nombre:usuario.nombre,
-                            apellido:usuario.apellido,
-                            cedula: usuario.cedula,
-                            carnet: usuario.carnet,
-                            correo: usuario.correo,
-                            sexo: usuario.sexo,
-                            tipo: estud.tipo,
-                            
-                        }
-                        listaEstudiantesConUsuarios.push(estudianteQueSeInserta);
-                        aux = aux+1
-                        if(aux==lista.length){
-                            return res.view({listaEstudiantesConUsuarios: listaEstudiantesConUsuarios});
-                        }
-                        
-                    });
-                });
+      }).exec(function (err, Estudiante) {
+
+        if (Estudiante) res.redirect('#')
+        console.log("este es el Estudiante", Estudiante, user);
+        if (err) return res.serverError(err)
+
+      })
+    });
+  },
+
+  consultar: function (req, res) {
+    console.log("entre a consultar");
+    var listaEstudiantesConUsuarios = []
+    var estudianteQueSeInserta
+    var aux = 0
+    Estudiante.find(function (err, lista) {
+      if (err) return res.serverError(err);
+      else {
+        lista.forEach(estud => {
+          user.findOne(estud.idestudiante).exec(function (err, usuario) {
+
+            estudianteQueSeInserta = {
+
+              idestudiante: estud.idestudiante,
+              nombre: usuario.nombre,
+              apellido: usuario.apellido,
+              cedula: usuario.cedula,
+              carnet: usuario.carnet,
+              correo: usuario.correo,
+              sexo: usuario.sexo,
+              tipo: estud.tipo,
+
+            }
+            listaEstudiantesConUsuarios.push(estudianteQueSeInserta);
+            aux = aux + 1
+            if (aux == lista.length) {
+              return res.view({
+                listaEstudiantesConUsuarios: listaEstudiantesConUsuarios
+              });
             }
 
           });
-    },
+        });
+      }
 
-    edit: function(req, res){
-        var estudianteQueSeInserta
-        Estudiante.findOne({idestudiante:req.param('id')},function(err, estud) {
-            
-        
-                    user.findOne(estud.idestudiante).exec(function (err, usuario) {
-                        estudianteQueSeInserta = {
+    });
+  },
 
-                            idestudiante: estud.idestudiante,
-                            nombre: usuario.nombre,
-                            apellido: usuario.apellido,
-                            cedula: usuario.cedula,
-                            carnet: usuario.carnet,
-                            correo: usuario.correo,
-                            sexo: usuario.sexo,
-                            tipo: estud.tipo,
-
-                        }
-                        if(err)return res.serverError(err)
-                        return res.view({ estudiante:estudianteQueSeInserta });
+  edit: function (req, res) {
+    var estudianteQueSeInserta
+    Estudiante.findOne({
+      idestudiante: req.param('id')
+    }, function (err, estud) {
 
 
-                    });
-                 });
-            },
+      user.findOne(estud.idestudiante).exec(function (err, usuario) {
+        estudianteQueSeInserta = {
 
+          idestudiante: estud.idestudiante,
+          nombre: usuario.nombre,
+          apellido: usuario.apellido,
+          cedula: usuario.cedula,
+          carnet: usuario.carnet,
+          correo: usuario.correo,
+          sexo: usuario.sexo,
+          tipo: estud.tipo,
 
-
-    update: function(req, res){
-        console.log("entre a update")
-
-        Estudiante.update({
-
-            idestudiante:req.param('id')
-        }, 
-        {
-            nombre: req.param('nombre'),
-            apellido: req.param('apellido'),
-            cedula: req.param('cedula'),
-            carnet: req.param('carnet'),
-            correo: req.param('correo'),
-            sexo: req.param('sexo'),
-            tipo: req.param('tipo'),
         }
-        ).exec( function (err, updated) {
+        if (err) return res.serverError(err)
+        return res.view({
+          estudiante: estudianteQueSeInserta
+        });
 
-            if(Estudiante) res.redirect('#')
-            console.log("este es el estudiante " +updated[0].nombre, updated[0].codigo);
-            if (err) return res.serverError(err)
 
-        })
-    }
+      });
+    });
+  },
+
+
+
+  update: function (req, res) {
+    console.log("entre a update")
+
+    Estudiante.update({
+
+      idestudiante: req.param('id')
+    }, {
+      nombre: req.param('nombre'),
+      apellido: req.param('apellido'),
+      cedula: req.param('cedula'),
+      carnet: req.param('carnet'),
+      correo: req.param('correo'),
+      sexo: req.param('sexo'),
+      tipo: req.param('tipo'),
+    }).exec(function (err, updated) {
+
+      if (Estudiante) res.redirect('#')
+      console.log("este es el estudiante " + updated[0].nombre, updated[0].codigo);
+      if (err) return res.serverError(err)
+
+    })
+  }
 };

@@ -9,19 +9,18 @@ module.exports = {
 
   attributes: {
 
-    idEstudiante:{
-      model:'Estudiante'
+    idEstudiante: {
+      model: 'Estudiante'
     },
 
-    idSeccion:{
-      model:'Seccion'
+    idSeccion: {
+      model: 'Seccion'
     },
 
-    nota:{
+    nota: {
       type: 'int',
 
     }
 
   }
 };
-

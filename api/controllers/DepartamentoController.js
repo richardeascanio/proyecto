@@ -11,53 +11,57 @@ module.exports = {
 
     console.log("entre a funcion agregar");
 
-        Departamento.create({
+    Departamento.create({
 
-            iddepartamento: req.param('id'),
-            nombre: req.param('nombre'),
-            
-        }).exec( function (err, Departamento) {
+      iddepartamento: req.param('id'),
+      nombre: req.param('nombre'),
 
-            if(Departamento) res.redirect('#')
-            console.log("este es el departamento", Departamento);
-            if (err) return res.serverError(err)
+    }).exec(function (err, Departamento) {
 
-        })
-    },
+      if (Departamento) res.redirect('#')
+      console.log("este es el departamento", Departamento);
+      if (err) return res.serverError(err)
 
-    consultar: function(req, res) {
-        
-        Departamento.find(function(err, departamentos) {
-            if (err) return res.serverError(err);
-            return res.view({departamentos: departamentos});
-        });
-    },
+    })
+  },
 
-    edit: function(req, res){
-        console.log("entre a editar")
-        Departamento.findOne({iddepartamento:req.param('id')}, function(err, departamento){
-            console.log(departamento)
-            if(err) return res.serverError(err)
-            res.view({departamento:departamento});
-        });
-    },
+  consultar: function (req, res) {
 
-    update: function(req, res){
-        console.log("entre a update")
+    Departamento.find(function (err, departamentos) {
+      if (err) return res.serverError(err);
+      return res.view({
+        departamentos: departamentos
+      });
+    });
+  },
 
-        Departamento.update({
+  edit: function (req, res) {
+    console.log("entre a editar")
+    Departamento.findOne({
+      iddepartamento: req.param('id')
+    }, function (err, departamento) {
+      console.log(departamento)
+      if (err) return res.serverError(err)
+      res.view({
+        departamento: departamento
+      });
+    });
+  },
 
-            iddepartamento:req.param('id')
-        },
-        {
-            nombre:req.param('nombre')
-        }
-        ).exec( function (err, updated) {
+  update: function (req, res) {
+    console.log("entre a update")
 
-            if(Departamento) res.redirect('#')
-            console.log("este es el departamento " +updated[0].nombre);
-            if (err) return res.serverError(err)
+    Departamento.update({
 
-        })
-    }
+      iddepartamento: req.param('id')
+    }, {
+      nombre: req.param('nombre')
+    }).exec(function (err, updated) {
+
+      if (Departamento) res.redirect('#')
+      console.log("este es el departamento " + updated[0].nombre);
+      if (err) return res.serverError(err)
+
+    })
+  }
 };

@@ -11,28 +11,27 @@ module.exports = {
 
     iddepartamento: {
       type: 'integer',
-      required:false,
+      required: false,
       autoIncrement: true,
       primaryKey: true,
       unique: true
     },
 
-    nombre:{
-      type:'string',
+    nombre: {
+      type: 'string',
       required: true
     },
 
-    profesores:{
-      collection:'Profesor',
+    profesores: {
+      collection: 'Profesor',
       via: 'idDepartamento',
     },
 
-    materias:{
-      collection:'Materia',
+    materias: {
+      collection: 'Materia',
       via: 'iddepartamento'
 
     },
 
   }
 };
-
