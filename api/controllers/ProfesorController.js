@@ -7,8 +7,6 @@
 
 module.exports = {
 
-    
-
     agregar: function(req,res){
 
         console.log("entre a funcion agregar");
@@ -87,7 +85,6 @@ module.exports = {
             
         user.findOne(prof.idprofesor).exec(function(err, usuario){
 
-
                 profesorNuevo = {
 
                     idprofesor: prof.idprofesor,
@@ -112,9 +109,9 @@ module.exports = {
     update: function(req, res){
         console.log("entre a update")
 
-        Profesor.update({
+        user.update({
 
-            idprofesor:req.param('id')
+            idusuario:req.param('id')
         }, 
         {
             nombre: req.param('nombre'),
@@ -123,18 +120,27 @@ module.exports = {
             carnet: req.param('carnet'),
             correo: req.param('correo'),
             sexo: req.param('sexo'),
-            profesion: req.param('profesion'),
-            fechaingreso: req.param('fechaingreso'),
-            iddepartamento: req.param('iddepartamento'),
-            
         }
-        ).exec( function (err, updated) {
+        ).then(user=>{   
+            console.log(user)
 
-            if(Profesor) res.redirect('#')
-            console.log("este es el profesor " +updated[0].nombre, updated[0].codigo);
+            Profesor.update({
+                idprofesor:req.param('id')
+            },{
+                profesion: req.param('profesion'),
+                fechaingreso: req.param('fechaingreso'),
+            }).exec( function (err, updated) {
+               
+            if(Profesor)      {
+                res.redirect('#')
+            }
+            
+           
             if (err) return res.serverError(err)
+            
+        });
+     });
 
-        })
-    }
-	
-};
+ },
+
+ };
