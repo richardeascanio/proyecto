@@ -28,7 +28,7 @@ module.exports = {
                 idprofesor: user.idusuario,
                 profesion: req.param('profesion'),
                 fechaingreso: req.param('fechaingreso'),
-                iddepartamento: req.param('iddepartamento'),
+                idDepartamento: req.param('idDepartamento'),
                 
             }).exec( function (err, Profesor) {
 
@@ -63,7 +63,7 @@ module.exports = {
                             sexo: usuario.sexo,
                             profesion : prof.profesion,
                             fechaingreso: prof.fechaingreso,
-                            iddepartamento: prof.iddepartamento
+                            idDepartamento: prof.idDepartamento
                         }
                         listaProfesoresConUsuarios.push(profesorQueSeInserta);
                         aux = aux+1
@@ -120,6 +120,7 @@ module.exports = {
             carnet: req.param('carnet'),
             correo: req.param('correo'),
             sexo: req.param('sexo'),
+            
         }
         ).then(user=>{   
             console.log(user)

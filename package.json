@@ -39,5 +39,8 @@
     "url": "git://github.com/anonymous node/sails user/MetroPavoApp.git"
   },
   "author": "anonymous node/sails user",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
+  }
 }

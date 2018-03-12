@@ -42,5 +42,11 @@ module.exports = {
       via: 'idMateria'
     },
 
+    carreras:{
+      collection:'Carrera',
+      via:'idMateria',
+      through:'materia_carrera'
+    }
+
   }
 };

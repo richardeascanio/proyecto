@@ -76,13 +76,32 @@ module.exports = {
     },
 
     edit: function(req, res){
-        console.log("entre a editar")
-        Estudiante.findOne({idestudiante:req.param('id')}, function(err, estudiante){
-            console.log(estudiante)
-            if(err) return res.serverError(err)
-            res.view({estudiante:estudiante});
-        });
-    },
+        var estudianteQueSeInserta
+        Estudiante.findOne({idestudiante:req.param('id')},function(err, estud) {
+            
+        
+                    user.findOne(estud.idestudiante).exec(function (err, usuario) {
+                        estudianteQueSeInserta = {
+
+                            idestudiante: estud.idestudiante,
+                            nombre: usuario.nombre,
+                            apellido: usuario.apellido,
+                            cedula: usuario.cedula,
+                            carnet: usuario.carnet,
+                            correo: usuario.correo,
+                            sexo: usuario.sexo,
+                            tipo: estud.tipo,
+
+                        }
+                        if(err)return res.serverError(err)
+                        return res.view({ estudiante:estudianteQueSeInserta });
+
+
+                    });
+                 });
+            },
+
+
 
     update: function(req, res){
         console.log("entre a update")

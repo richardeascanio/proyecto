@@ -41,6 +41,12 @@ module.exports = {
 
     idAula: {
       model: 'Aula'
+    },
+
+    estudiantes:{
+      collection:'Estudiante',
+      via:'idSeccion',
+      through: 'estudiante_seccion'
     }
   }
 };

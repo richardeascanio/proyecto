@@ -67,26 +67,76 @@
         </nav>
     </header>
 
-    <form action="../../departamento/update/<%=departamento.iddepartamento%>" method="POST" accept-charset="utf-8" class="form-singin">
+    <form action="../../estudiante/update/<%=estudiante.idestudiante%>" method="POST" accept-charset="utf-8" class="form-singin">
       <section id="editar">
         <div class="container">
-        <div class="row">
+          <div class="row">
             <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Editar departamento</h4>
-            <form class="needs-validation" novalidate>
-                
-              <div class="col-md-6 mb-3">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" name="nombre" placeholder="Nombre del departamento" value="<%=departamento.nombre%>" required>
-                <div class="invalid-feedback">
-                Ingrese un nombre valido
+              <h4 class="mb-3">Añadir estudiante</h4>
+              <form class="needs-validation" novalidate>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" value="<%=estudiante.nombre%>" required>
+                    <div class="invalid-feedback">
+                      Ingrese un nombre valido
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" value="<%=estudiante.apellido%>" required>
+                    <div class="invalid-feedback">
+                      Ingrese un apellido valido
+                    </div>
+                  </div>
                 </div>
-              </div>
-                
-              <hr class="mb-4">
-              <button class="btn btn-primary btn-lg btn-block" type="submit">Editar departamento</button>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="cedula">Cédula</label>
+                    <input type="int" class="form-control" name="cedula" value="<%=estudiante.cedula%>" required>
+                    <div class="invalid-feedback">
+                      Ingrese un numero de cedula valido
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="carnet">Carnet</label>
+                    <input type="int" class="form-control" name="carnet" value="<%=estudiante.carnet%>" required>
+                    <div class="invalid-feedback">
+                      Ingrese un numero de carnet valido
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="correo">Email</label>
+                  <input type="email" class="form-control" name="correo" value="<%=estudiante.correo%>" required>
+                  <div class="invalid-feedback">
+                    Por favor ingrese una dirección de correo electronico que sea valida
+                  </div>
+                </div>
+      
+                <label for="sexo">Sexo</label>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="masculino" name="sexo" class="custom-control-input" value="M" checked required>
+                  <label class="custom-control-label" for="masculino">Masculino</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="femenino" name="sexo" class="custom-control-input" value="F" required>
+                  <label class="custom-control-label" for="femenino">Femenino</label>
+                </div>
+                <label for="tipo">Tipo</label>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="pregrado" name="tipo" class="custom-control-input" value="pregrado" checked required>
+                  <label class="custom-control-label" for="pregrado">Pregrado</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="postgrado" name="tipo" class="custom-control-input" value="postgrado" required>
+                  <label class="custom-control-label" for="postgrado">Postgrado</label>
+                </div>
+      
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Editar estudiante</button>
             </div>
-        </div>
+          </div>
         </div>
       </section>
     </form>
