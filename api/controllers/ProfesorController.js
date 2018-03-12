@@ -7,6 +7,14 @@
 
 module.exports = {
 
+  consultarDep2: function (req, res) {
+    Departamento.find(function (err, departamentos) {
+      if (err) return res.serverError(err);
+      return res.view('profesor/agregar', {
+        departamentos: departamentos
+      });
+    });
+  },
   agregar: function (req, res) {
 
     console.log("entre a funcion agregar");
@@ -76,6 +84,16 @@ module.exports = {
           });
         });
       }
+    });
+  },
+
+  consultarDep: function (req, res) {
+
+    Departamento.find(function (err, departamentos) {
+      if (err) return res.serverError(err);
+      return res.view({
+        departamentos: departamentos
+      });
     });
   },
 

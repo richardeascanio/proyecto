@@ -120,11 +120,15 @@
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="idDepartamento">ID Departamento</label>
-                  <input type="integer" class="form-control" name="idDepartamento" placeholder="ID departamento" required>
-                  <div class="invalid-feedback">
-                    Por favor ingrese un numero valido
-                  </div>
+                  <label class="mr-sm-2" for="idDepartamento"></label>
+                  <select id="idDepartamento" class="form-control">
+                    <option selected> Departamento de..</option>
+                    <%_.each(departamentos, function(departamento) {%>}
+                      <option value="<%=departamento.iddepartamento%>">
+                        <%=departamento.nombre%>
+                      </option>
+                      <%})%>
+                  </select>
                 </div>
               </div>
 
