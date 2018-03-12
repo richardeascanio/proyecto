@@ -23,7 +23,7 @@ module.exports = {
     },
 
     profesores:{
-      collections:'Profesor',
+      collection:'Profesor',
       via: 'idDepartamento',
     },
 
