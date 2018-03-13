@@ -64,22 +64,9 @@ module.exports.routes = {
     controller: 'DepartamentoController',
     action: 'agregar'
   },
-
   'GET /departamento/agregar': {
     view: 'departamento/agregar'
   },
-
-  'POST /materia/agregar': {
-    controller: 'MateriaController',
-    action: 'agregar'
-  },
-  'GET /materia/agregar': 'MateriaController.consultarDep',
-  'GET /materia/edit': 'MateriaController.consultarDep',
-  'POST /materia/edit': {
-    controller: 'MateriaController',
-    action: 'update'
-  },
-
   'POST /departamento/edit': {
     controller: 'DepartamentoController',
     action: 'update'
@@ -87,6 +74,17 @@ module.exports.routes = {
   'GET /departamento/edit': {
     view: 'departamento/edit'
   },
+
+  'POST /materia/agregar': {
+    controller: 'MateriaController',
+    action: 'agregar'
+  },
+  'GET /materia/agregar': 'MateriaController.consultarDep',
+  'POST /materia/edit': {
+    controller: 'MateriaController',
+    action: 'update'
+  },
+  'GET /materia/edit': 'MateriaController.consultarDep',
 
   'POST /periodo/agregar': 'PeriodoController.agregar',
   'GET /periodo/agregar': {
@@ -142,9 +140,7 @@ module.exports.routes = {
     controller: 'ProfesorController',
     action: 'update'
   },
-  'GET /profesor/edit': {
-    view: 'profesor/edit'
-  },
+  'GET /profesor/edit': 'ProfesorController.consultarDep',
 
   'POST /beca/agregar': 'BecaController.agregar',
   'GET /beca/agregar': {
