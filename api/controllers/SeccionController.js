@@ -39,7 +39,7 @@ module.exports = {
   },
 
   edit: function (req, res) {
-    console.log("entre a editar")
+    console.log("entre a editar seccion")
     Seccion.findOne({
       idseccion: req.param('id')
     }, function (err, seccion) {
@@ -60,6 +60,9 @@ module.exports = {
     }, {
       nroseccion: req.param('nroseccion'),
       cupos: req.param('cupos'),
+      idProfesor: req.param('idProfesor'),
+      idAula: req.param('idAula'),
+
     }).exec(function (err, updated) {
 
       if (Seccion) res.redirect('#')
