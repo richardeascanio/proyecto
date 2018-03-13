@@ -16,6 +16,8 @@ module.exports = {
       idseccion: req.param('id'),
       nroseccion: req.param('nroseccion'),
       cupos: req.param('cupos'),
+      idProfesor: req.param('idProfesor'),
+      idMateria: req.param('idMateria'),
 
     }).exec(function (err, Seccion) {
 
@@ -64,6 +66,18 @@ module.exports = {
       if (err) return res.serverError(err)
 
     })
-  }
+  },
+
+
+    consultarMat: function (req, res) {
+    Materia.find(function (err, materias) {
+      if (err) return res.serverError(err);
+      return res.view('seccion/agregar', {
+        materias: materias
+      });
+    });
+  },
+
+
 
 };

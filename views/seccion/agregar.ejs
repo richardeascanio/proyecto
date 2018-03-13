@@ -99,12 +99,25 @@
               </div>
 
               <div class="col-md-6 mb-3">
-                <label for="idprofesor">Profesor</label>
-                <input type="int" class="form-control" name="idprofesor" placeholder="Id del Profesor" required>
+                <label for="idProfesor">Profesor</label>
+                <input type="int" class="form-control" name="idProfesor" placeholder="Id del Profesor" required>
                 <div class="invalid-feedback">
                   Ingrese un numero valido
                 </div>
               </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="mr-sm-2" for="idMateria">Materia</label>
+                <select name="idMateria" class="form-control">
+                  <option selected>Materia..</option>
+                  <%_.each(materias, function(materia) {%>}
+                    <option value="<%=materia.idmateria%>">
+                      <%=materia.nombre%>
+                    </option>
+                    <%})%>
+                </select>
+              </div>
+
 
               <hr class="mb-4">
               <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir seccion</button>
