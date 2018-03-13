@@ -72,12 +72,10 @@ module.exports = {
   },
 
   consultarDep: function (req, res) {
-    console.log("entre a consultar dep")
-    Departamento.find(function (err, deps) {
+    Departamento.find(function (err, departamentos) {
       if (err) return res.serverError(err);
-      console.log(deps)
-      return ({
-        deps: deps
+      return res.view('materia/agregar', {
+        departamentos: departamentos
       });
     });
   }

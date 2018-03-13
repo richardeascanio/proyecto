@@ -66,6 +66,9 @@
               <a class="dropdown-item" href="../../beca/agregar">Beca</a>
             </div>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Busquedas Especiales</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -103,13 +106,16 @@
               </div>
 
               <div class="col-md-6 mb-3">
-                <label for="iddepartamento">Departamento</label>
-                <input type="int" class="form-control" name="iddepartamento" placeholder="Departamento" value="<%=materia.iddepartamento%>"
-                  required>
-                <div class="invalid-feedback">
-                  Ingrese un numero valido
+                  <label class="mr-sm-2" for="iddepartamento">Departamento</label>
+                  <select name="iddepartamento" class="form-control">
+                    <option selected value="null">Departamento de..</option>
+                    <%_.each(departamentos, function(departamento) {%>}
+                      <option value="<%=departamento.iddepartamento%>">
+                        <%=departamento.nombre%>
+                      </option>
+                      <%})%>
+                  </select>
                 </div>
-              </div>
               <hr class="mb-4">
               <button class="btn btn-primary btn-lg btn-block" type="submit">Editar materia</button>
           </div>

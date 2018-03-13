@@ -66,6 +66,9 @@
               <a class="dropdown-item" href="../../beca/agregar">Beca</a>
             </div>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Busquedas Especiales</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -109,11 +112,25 @@
                   </div>
                 </div>
               </div>
+              <div class="row">
+
               <div class="mb-3">
                 <label for="correo">Email</label>
                 <input type="email" class="form-control" name="correo" placeholder="nombre@correo.com" value="<%=profesor.correo%>" required>
                 <div class="invalid-feedback">
                   Por favor ingrese una dirección de correo electronico que sea valida
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                  <label class="mr-sm-2" for="iddepartamento">Departamento</label>
+                  <select name="iddepartamento" class="form-control">
+                    <option selected>Departamento de..</option>
+                    <%_.each(departamentos, function(departamento) {%>}
+                      <option value="<%=departamento.iddepartamento%>">
+                        <%=departamento.nombre%>
+                      </option>
+                      <%})%>
+                  </select>
                 </div>
               </div>
 

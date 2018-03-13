@@ -73,9 +73,11 @@ module.exports.routes = {
     controller: 'MateriaController',
     action: 'agregar'
   },
-
-  'GET /materia/agregar': {
-    view: 'materia/agregar',
+  'GET /materia/agregar': 'MateriaController.consultarDep',
+  'GET /materia/edit': 'MateriaController.consultarDep',
+  'POST /materia/edit': {
+    controller: 'MateriaController',
+    action: 'update'
   },
 
   'POST /departamento/edit': {
@@ -135,7 +137,7 @@ module.exports.routes = {
   },
 
   'POST /profesor/agregar': 'ProfesorController.agregar',
-  'GET /profesor/agregar': 'ProfesorController.consultarDep2',
+  'GET /profesor/agregar': 'ProfesorController.consultarDep',
   'POST /profesor/edit': {
     controller: 'ProfesorController',
     action: 'update'
