@@ -8,7 +8,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../assets/favicon.ico">
 
-  <title>Añadir estudiante a MetroPavoApp</title>
+  <title>Añadir Seccion a MetroPavoApp</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../../assets/styles/bootstrap.css" rel="stylesheet">
@@ -99,14 +99,6 @@
               </div>
 
               <div class="col-md-6 mb-3">
-                <label for="idProfesor">Profesor</label>
-                <input type="int" class="form-control" name="idProfesor" placeholder="Id del Profesor" required>
-                <div class="invalid-feedback">
-                  Ingrese un numero valido
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-3">
                 <label class="mr-sm-2" for="idMateria">Materia</label>
                 <select name="idMateria" class="form-control">
                   <option selected>Materia..</option>
@@ -116,6 +108,23 @@
                     </option>
                     <%})%>
                 </select>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="idAula">Aula</label>
+                  <input type="int" class="form-control" name="idAula" placeholder="idAula" required>
+                  <div class="invalid-feedback">
+                    Ingrese un numero de Aula valido
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="idProfesor">Profesor</label>
+                  <input type="int" class="form-control" name="idProfesor" placeholder="Id del Profesor" required>
+                  <div class="invalid-feedback">
+                    Ingrese un profesor valido
+                  </div>
+                </div>
               </div>
 
 
