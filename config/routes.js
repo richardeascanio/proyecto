@@ -101,8 +101,6 @@ module.exports.routes = {
   'POST /seccion/agregar': 'SeccionController.agregar',
   'GET /seccion/agregar': 'SeccionController.consultarMat', 
 
- 
-
   'POST /seccion/edit': {
     controller: 'SeccionController',
     action: 'update'

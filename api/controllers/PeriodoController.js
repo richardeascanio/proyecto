@@ -14,15 +14,17 @@ module.exports = {
     Periodo.create({
 
       idperiodo: req.param('id'),
+      nombre: req.param("nombre")
 
     }).exec(function (err, Periodo) {
 
       if (Periodo) res.redirect('#')
-      console.log("este es el usuario", Periodo);
+      console.log("este es el periodo", Periodo);
       if (err) return res.serverError(err)
 
     })
   },
+  
   consultar: function (req, res) {
 
     Periodo.find(function (err, periodos) {

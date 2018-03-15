@@ -8,6 +8,7 @@
 module.exports = {
 
   consultarDep: function (req, res) {
+    console.log("entre a consultardep")
     Departamento.find(function (err, departamentos) {
       if (err) return res.serverError(err);
       return res.view('profesor/agregar', {
@@ -87,7 +88,23 @@ module.exports = {
     });
   },
 
+  consultarDep2: function (req, res) {
+    console.log("entre a consultardep2")
+    Departamento.find(function (err, departamentos) {
+      console.log(departamentos)
+      if (err) return res.serverError(err);
+      return res.view('/profesor/edit/'+idprofesor, {
+        departamentos: departamentos
+      });
+    });
+  },
+
   edit: function (req, res) {
+
+    console.log("entre a consultardep2")
+    Departamento.find(function (err, departamentos) {
+      console.log(departamentos)
+    
     var profesorNuevo
     console.log("entre a editar")
     Profesor.findOne({
@@ -108,7 +125,7 @@ module.exports = {
           sexo: usuario.sexo,
           profesion: prof.profesion,
           fechaingreso: prof.fechaingreso,
-          iddepartamento: prof.iddepartamento
+          idDepartamento: prof.idDepartamento
         }
         console.log(profesorNuevo)
         if (err) return res.serverError(err)
@@ -118,6 +135,7 @@ module.exports = {
       });
 
     });
+  });
   },
 
   update: function (req, res) {
@@ -142,12 +160,12 @@ module.exports = {
       }, {
         profesion: req.param('profesion'),
         fechaingreso: req.param('fechaingreso'),
+        idDepartamento: req.param('idDepartamento'),
       }).exec(function (err, updated) {
 
         if (Profesor) {
           res.redirect('#')
         }
-
 
         if (err) return res.serverError(err)
 
