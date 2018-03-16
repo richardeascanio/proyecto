@@ -16,16 +16,28 @@
     <link href="../assets/styles/template.css" rel="stylesheet">
   </head>
 
-  <body class="identificacion">
-    <section id="identificacion">
-    <form action="/profesor/buscarseccion/" class="form-signin2">
-      <h1 class="h3 mb-3 font-weight-normal">Ingrese la cedula del Profesor</h1>
-      <label for="cedula" class="sr-only">Cedula</label>
-      <input type="int" name="cedula" class="form-control" placeholder="Cedula Profesor" required>
-      <hr class="mb-4">
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Siguiente</button>
-      <p class="mt-5 mb-3 text">&copy; Los que flinchy</p>
-    </form>
-  </section>
+  <body class="buscarseccion">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>IDSeccion</th>
+        
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% _.each(secciones, function(seccion) {%>
+              <th scope="row">
+                <%=seccion.idseccion%>
+              </th>
+
+              <td>
+                <a class="btn btn-outline-success" href="../mostrar" role="button">Ver Estudiantes</a>
+              </td>
+    
+          </tr>
+          <%}) %>
+        </tbody>
+      </table>
   </body>
 </html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.css">
+  <!-- ESTILOS PERSONALIZADOS -->
+  <link rel="stylesheet" href="../../assets/styles/estilos.css">
+
+</head>
+
+<body>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id Estudiante</th>
+        <th>No. Seccion</th>
+        <th>Id Prof.</th>
+        <th>Id Periodo</th>
+        <th>Id Materia</th>
+        <th>Id Aula</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% _.each(Estudiantes, function(estudiante) {%>
+          <th scope="row">
+            <%=estudiante.idestudiante%>
+          </th>
+
+          <td>
+            <%=estudiante.nroseccion%>
+          </td>
+          <td>
+            <%=estudiante.idProfesor%>
+          </td>
+          <td>
+            <%=estudiante.idPeriodo%>
+          </td>
+          <td>
+            <%=estudiante.idMateria%>
+          </td>
+          <td>
+            <%=estudiante.idAula%>
+          </td>
+          <td>
+            <%=estudiante.tipo%>
+          </td>
+
+
+      </tr>
+      <%}) %>
+    </tbody>
+  </table>
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="../../assets/js/dependencies/jquery-3.3.1.js"></script>
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/holder.min.js"></script>
+</body>
+
+</html>

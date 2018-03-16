@@ -25,13 +25,7 @@ module.exports = {
       if (err) return res.serverError(err)
     });
   },
-<<<<<<< HEAD
   
-=======
-
-  
-
->>>>>>> master
   consultar: function (req, res) {
     Aula.find(function (err, aulas) {
       if (err) return res.serverError(err);

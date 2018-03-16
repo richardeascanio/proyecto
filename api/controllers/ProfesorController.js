@@ -173,5 +173,40 @@ module.exports = {
     });
 
   },
+
+  buscarprofesor: function (req, res) {
+    console.log("entre a buscar Profesor")
+
+    user.findOne({
+      cedula: req.param('cedula')
+    }, function (err, profesor) {
+      console.log(profesor)
+      
+      
+      if (err) return res.serverError(err);
+    return res.view('profesor/elegirseccion', {
+      profesor: profesor
+    })
+     }); 
+     },
+
+  buscarseccion: function (req, res) {
+    console.log("entre a buscar seccion")
+
+    user.findOne({
+      cedula: req.param('cedula')
+    }, function (err, prof) {
+      console.log(prof)
+      Seccion.find({idProfesor:prof.idusuario}, function (err, secciones) {
+        console.log(secciones)
+        if (err) return res.serverError(err);
+        return res.view('profesor/elegirseccion',{
+          secciones:secciones
+        });
+      })
+      
+    });
+
+  },
   
 };

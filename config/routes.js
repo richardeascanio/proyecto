@@ -145,6 +145,7 @@ module.exports.routes = {
 
   'POST /profesor/agregar': 'ProfesorController.agregar',
   'GET /profesor/agregar': 'ProfesorController.consultarDep',
+  'GET /profesor/mostrar': 'EstudianteController.BuscarEstudiantesdeSeccion',
   'POST /profesor/edit': {
     controller: 'ProfesorController',
     action: 'update'
@@ -153,11 +154,19 @@ module.exports.routes = {
   'GET /profesor/seleccionbusqueda': {
     view: 'profesor/seleccionbusqueda'
   },
-  'GET /profesor/seleccionbusqueda': {
-    view: 'profesor/seleccionbusqueda'
-  },
   'GET /profesor/identificacion': {
     view: 'profesor/identificacion'
+  },
+  'POST /profesor/identificacion': {
+    controller: 'ProfesorController',
+    action: 'buscarseccion'
+  },
+  'POST /profesor/elegirseccion': {
+    controller: 'ProfesorController',
+    action: 'buscarseccion'
+  },
+  'GET /profesor/elegirseccion': {
+    view: 'profesor/elegirseccion'
   },
 
   'POST /beca/agregar': 'BecaController.agregar',
