@@ -89,6 +89,12 @@ module.exports.routes = {
     action: 'update'
   },
   'GET /materia/edit': 'MateriaController.consultarDep',
+  'GET /materia/seleccionbusqueda': {
+    view: 'materia/seleccionbusqueda'
+  },
+  'GET /materia/identificacion': {
+    view: 'materia/identificacion'
+  },
 
   'POST /periodo/agregar': 'PeriodoController.agregar',
   'GET /periodo/agregar': {
@@ -124,6 +130,12 @@ module.exports.routes = {
   'GET /selecciondeportiva/edit': {
     view: 'selecciondeportiva/edit'
   },
+  'GET /selecciondeportiva/seleccionbusqueda': {
+    view: 'selecciondeportiva/seleccionbusqueda'
+  },
+  'GET /selecciondeportiva/identificacion': {
+    view: 'selecciondeportiva/identificacion'
+  },
 
   'POST /estudiante/agregar': 'EstudianteController.agregar',
   'GET /estudiante/agregar': {
@@ -153,9 +165,6 @@ module.exports.routes = {
   'GET /profesor/seleccionbusqueda': {
     view: 'profesor/seleccionbusqueda'
   },
-  'GET /profesor/seleccionbusqueda': {
-    view: 'profesor/seleccionbusqueda'
-  },
   'GET /profesor/identificacion': {
     view: 'profesor/identificacion'
   },
@@ -170,7 +179,11 @@ module.exports.routes = {
   },
   'GET /beca/edit': {
     view: 'beca/edit'
+  },
+  'GET /beca/seleccionbusqueda': {
+    view: 'beca/seleccionbusqueda'
   }
+
 
   /***************************************************************************
    *                                                                          *
