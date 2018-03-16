@@ -18,6 +18,7 @@ module.exports = {
       cupos: req.param('cupos'),
       idProfesor: req.param('idProfesor'),
       idMateria: req.param('idMateria'),
+      idPeriodo: req.param('idPeriodo'),
       idAula: req.param('idAula'),
 
     }).exec(function (err, Seccion) {

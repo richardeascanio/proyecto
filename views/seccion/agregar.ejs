@@ -27,34 +27,47 @@
             <h4 class="mb-3">Añadir sección</h4>
             <form class="needs-validation" novalidate>
 
-              <div class="col-md-6 mb-3">
-                <label for="nrseccion">Número de sección</label>
-                <input type="integer" class="form-control" name="nroseccion" placeholder="Número de sección" required>
-                <div class="invalid-feedback">
-                  Ingrese un numero valido
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nrseccion">Número de sección</label>
+                    <input type="integer" class="form-control" name="nroseccion" placeholder="Número de sección" required>
+                    <div class="invalid-feedback">
+                      Ingrese un numero valido
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="cupos">Cupos</label>
+                  <input type="int" class="form-control" name="cupos" placeholder="Cupos" required>
+                  <div class="invalid-feedback">
+                    Ingrese un numero valido
+                  </div>
                 </div>
               </div>
-
-              <div class="col-md-6 mb-3">
-                <label for="cupos">Cupos</label>
-                <input type="int" class="form-control" name="cupos" placeholder="Cupos" required>
-                <div class="invalid-feedback">
-                  Ingrese un numero valido
+              
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="mr-sm-2" for="idMateria">Materia</label>
+                    <select name="idMateria" class="form-control">
+                      <option selected>Materia..</option>
+                      <%_.each(materias, function(materia) {%>}
+                        <option value="<%=materia.idmateria%>">
+                          <%=materia.nombre%>
+                        </option>
+                        <%})%>
+                    </select>
                 </div>
-              </div>
 
-              <div class="col-md-6 mb-3">
-                <label class="mr-sm-2" for="idMateria">Materia</label>
-                <select name="idMateria" class="form-control">
-                  <option selected>Materia..</option>
-                  <%_.each(materias, function(materia) {%>}
-                    <option value="<%=materia.idmateria%>">
-                      <%=materia.nombre%>
-                    </option>
-                    <%})%>
-                </select>
-              </div>
+                <div class="col-md-6 mb-3">
+                    <label for="idPeriodo">Periodo</label>
+                    <input type="int" class="form-control" name="idPeriodo" placeholder="idPeriodo" required>
+                    <div class="invalid-feedback">
+                      Ingrese un numero de Periodo valido
+                    </div>
+                </div>
 
+              </div>
+              
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="idAula">Aula</label>

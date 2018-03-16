@@ -17,6 +17,11 @@ module.exports = {
       unique: true
     },
 
+    nombre:{
+      type: 'string',
+      required: true
+    },
+
     secciones: {
       collection: 'Seccion',
       via: 'idPeriodo'

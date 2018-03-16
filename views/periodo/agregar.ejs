@@ -1,1 +1,82 @@
+<!doctype html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../assets/favicon.ico">
+
+  <title>Añadir periodo a MetroPavoApp</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../assets/styles/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../../assets/styles/estilos.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+
+  <form action="/periodo/agregar" method="post" accept-charset="utf-8" class="form-singin">
+    <section id="registro">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Añadir periodo</h4>
+            <form class="needs-validation" novalidate>
+
+              <div class="col-md-6 mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+                <div class="invalid-feedback">
+                  Ingrese un nombre valido
+                </div>
+              </div>
+              
+              <hr class="mb-4">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Añadir periodo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    </form>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; Los que flinchy</p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/dependencies/jquery-3.3.1.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict';
+
+        window.addEventListener('load', function () {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+
+    </script>
+</body>
+
+</html>
