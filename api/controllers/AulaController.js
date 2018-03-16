@@ -26,6 +26,8 @@ module.exports = {
     });
   },
 
+  
+
   consultar: function (req, res) {
     Aula.find(function (err, aulas) {
       if (err) return res.serverError(err);
