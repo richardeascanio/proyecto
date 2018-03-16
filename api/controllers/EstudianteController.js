@@ -140,5 +140,53 @@ module.exports = {
 
       });
     });
-  }
+  },
+
+  BuscarEstudiantesdeSeccion: function (req, res) {
+    var EstudianteNuevo
+    console.log("entre a Buscar Estudiantes de una seccion")
+    Estudiante.find( function (err, estud) {
+     
+      user.find(estud.idestudiante).exec(function (err, usuario) {
+
+        EstudianteNuevo = {
+
+          idestudiante: estud.idestudiante,
+          nombre: usuario.nombre,
+          apellido: usuario.apellido,
+          cedula: usuario.cedula,
+          carnet: usuario.carnet,
+          correo: usuario.correo,
+          sexo: usuario.sexo,
+          tipo: estud.tipo,
+        }
+      })
+
+    }).populate('secciones')
+      .populate('idMateria').exec(function(err,EstudianteNuevo){
+        if (err){
+            return res.view(err)
+        }
+        return res.view(EstudianteNuevo)
+      });
+  
+
+  },
+
+  BuscarEstudiantesdeSeccion: function (req, res) {
+    console.log("entre a consultar");
+    var listaEstudiantesConUsuarios = []
+    var estudianteQueSeInserta
+    var aux = 0
+    Estudiante.find({idseccion:req.param('id')})
+      .populate('secciones')
+      .populate('idMateria')
+      .exec(function(err,EstudianteNuevo){
+      if (err){
+          return res.view(err)
+      }
+      return res.view(EstudianteNuevo)
+    });
+  },
+
 };
