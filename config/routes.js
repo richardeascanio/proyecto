@@ -36,6 +36,10 @@ module.exports.routes = {
     view: 'homepage'
   },
 
+  '/busquedas':{
+    view: 'busquedas'
+  },
+
   'POST /aula/agregar': 'AulaController.agregar',
   'GET /aula/agregar': {
     view: 'aula/agregar'
@@ -132,6 +136,12 @@ module.exports.routes = {
   'GET /estudiante/edit': {
     view: 'estudiante/edit'
   },
+  'GET /estudiante/seleccionbusqueda': {
+    view: 'estudiante/seleccionbusqueda'
+  },
+  'GET /estudiante/identificacion': {
+    view: 'estudiante/identificacion'
+  },
 
   'POST /profesor/agregar': 'ProfesorController.agregar',
   'GET /profesor/agregar': 'ProfesorController.consultarDep',
@@ -140,6 +150,15 @@ module.exports.routes = {
     action: 'update'
   },
   'GET /profesor/edit': 'ProfesorController.consultarDep',
+  'GET /profesor/seleccionbusqueda': {
+    view: 'profesor/seleccionbusqueda'
+  },
+  'GET /profesor/seleccionbusqueda': {
+    view: 'profesor/seleccionbusqueda'
+  },
+  'GET /profesor/identificacion': {
+    view: 'profesor/identificacion'
+  },
 
   'POST /beca/agregar': 'BecaController.agregar',
   'GET /beca/agregar': {
