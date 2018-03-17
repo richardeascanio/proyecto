@@ -142,9 +142,9 @@ module.exports = {
     });
   },
 
-  BuscarEstudiantesdeSeccion: function (req, res) {
+  BuscarEstudiantesdeSeleccion: function (req, res) {
     var EstudianteNuevo
-    console.log("entre a Buscar Estudiantes de una seccion")
+    console.log("entre a Buscar Estudiantes de una seleccion")
     Estudiante.find( function (err, estud) {
      
       user.find(estud.idestudiante).exec(function (err, user) {
@@ -162,8 +162,8 @@ module.exports = {
         }
       })
 
-    }).populate('secciones')
-      .populate('idMateria').exec(function(err,EstudianteNuevo){
+    }).populate('selecciones')
+    .exec(function(err,EstudianteNuevo){
         if (err){
             return res.view(err)
         }
@@ -179,9 +179,12 @@ module.exports = {
     var estudianteQueSeInserta
     var aux 
 
-    Estudiante.find().populate("secciones")
+    Seccion.find({idseccion:'1'}).populate("estudiantes")
     
-      .exec(function(err,EstudianteNuevo){
+      .exec(function(err,EstudianteNuevo){  
+        
+        console.log("Estudiante: "+ EstudianteNuevo.idestudiante)
+        
         console.log(EstudianteNuevo)
       if (err){
           return res.view(err)
