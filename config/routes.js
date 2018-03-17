@@ -168,11 +168,12 @@ module.exports.routes = {
 
   'POST /profesor/agregar': 'ProfesorController.agregar',
   'GET /profesor/agregar': 'ProfesorController.consultarDep',
-  'GET /profesor/mostrar': 'EstudianteController.BuscarEstudiantesdeSeccion',
+  'GET /profesor/mostrar': 'Estudiante.BuscarEstudiantesdeSeccion',
   'POST /profesor/edit': {
     controller: 'ProfesorController',
     action: 'update'
   },
+  
   'GET /profesor/edit': 'ProfesorController.consultarDep',
   'GET /profesor/seleccionbusqueda': {
     view: 'profesor/seleccionbusqueda'
