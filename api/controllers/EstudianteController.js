@@ -147,17 +147,17 @@ module.exports = {
     console.log("entre a Buscar Estudiantes de una seccion")
     Estudiante.find( function (err, estud) {
      
-      user.find(estud.idestudiante).exec(function (err, usuario) {
+      user.find(estud.idestudiante).exec(function (err, user) {
 
         EstudianteNuevo = {
 
           idestudiante: estud.idestudiante,
-          nombre: usuario.nombre,
-          apellido: usuario.apellido,
-          cedula: usuario.cedula,
-          carnet: usuario.carnet,
-          correo: usuario.correo,
-          sexo: usuario.sexo,
+          nombre: user.nombre,
+          apellido: user.apellido,
+          cedula: user.cedula,
+          carnet: user.carnet,
+          correo: user.correo,
+          sexo: user.sexo,
           tipo: estud.tipo,
         }
       })
