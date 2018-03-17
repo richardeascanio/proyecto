@@ -136,6 +136,17 @@ module.exports.routes = {
   'GET /selecciondeportiva/identificacion': {
     view: 'selecciondeportiva/identificacion'
   },
+  'POST /selecciondeportiva/identificacion': {
+    controller: 'EstudianteController',
+    action: 'BuscarEstudiantesdeSeleccion'
+  },
+  
+  'GET /selecciondeportiva/listaestudiantesseleccion': {
+    view: 'selecciondeportiva/listaestudiantesseleccion'
+  },
+  'GET /selecciondeportiva/becayseleccion': {
+    view: 'selecciondeportiva/becayseleccion'
+  },
 
   'POST /estudiante/agregar': 'EstudianteController.agregar',
   'GET /estudiante/agregar': {

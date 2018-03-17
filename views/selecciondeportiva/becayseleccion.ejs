@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../assets/styles/bootstrap.css">
+    <!-- ESTILOS PERSONALIZADOS -->
+    <link rel="stylesheet" href="../../assets/styles/estilos.css">
+
+</head>
+
+<body>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Carnet</th>
+                <th>Cedula</th>
+                <th>Sexo</th>
+                <th>Tipo</th>
+                <th>Seleccion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <% _.each(listaEstudiantesConUsuarios, function(estudiante) {%>
+                    <th scope="row">
+                        <%=estudiante.idestudiante%>
+                    </th>
+
+                    <td>
+                        <%=estudiante.nombre%>
+                    </td>
+                    <td>
+                        <%=estudiante.apellido%>
+                    </td>
+                    <td>
+                        <%=estudiante.correo%>
+                    </td>
+                    <td>
+                        <%=estudiante.carnet%>
+                    </td>
+                    <td>
+                        <%=estudiante.cedula%>
+                    </td>
+                    <td>
+                        <%=estudiante.sexo%>
+                    </td>
+                    <td>
+                        <%=estudiante.tipo%>
+                    </td>
+                    <td>
+                        <%=estudiante.seleccion%>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-success" href="../estudiante/edit/<%=estudiante.idestudiante%>" role="button">Editar</a>
+                    </td>
+            </tr>
+            <%}) %>
+        </tbody>
+    </table>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/dependencies/jquery-3.3.1.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/holder.min.js"></script>
+</body>
+
+</html>
