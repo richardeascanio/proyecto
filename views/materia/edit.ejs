@@ -18,7 +18,7 @@
 </head>
 
 <body class="bg-dark">
-  
+
   <form action="../../materia/update/<%=materia.idmateria%>" method="POST" accept-charset="utf-8" class="form-singin">
     <section id="editar">
       <div class="container">
@@ -51,16 +51,13 @@
               </div>
 
               <div class="col-md-6 mb-3">
-                  <label class="mr-sm-2" for="iddepartamento">Departamento</label>
-                  <select name="iddepartamento" class="form-control">
-                    <option selected value="null">Departamento de..</option>
-                    <%_.each(departamentos, function(departamento) {%>}
-                      <option value="<%=departamento.iddepartamento%>">
-                        <%=departamento.nombre%>
-                      </option>
-                      <%})%>
-                  </select>
+                <label for="iddepartamento">Departamento</label>
+                <input type="int" class="form-control" name="iddepartamento" placeholder="Id Departamento" value="<%=materia.iddepartamento%>"
+                  required>
+                <div class="invalid-feedback">
+                  Ingrese un numero valido
                 </div>
+              </div>
               <hr class="mb-4">
               <button class="btn btn-primary btn-lg btn-block" type="submit">Editar materia</button>
           </div>
