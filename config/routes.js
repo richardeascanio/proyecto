@@ -166,8 +166,10 @@ module.exports.routes = {
     controller: 'SelecciondeportivaController',
     action: 'buscarseleccion'
   },
+
   'GET /selecciondeportiva/becayseleccion': {
-    view: 'selecciondeportiva/becayseleccion'
+    controller:'SelecciondeportivaController',
+    action:'becados',
   },
   'GET /selecciondeportiva/listahorarios': {
     controller:'SelecciondeportivaController',

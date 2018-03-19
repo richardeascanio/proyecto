@@ -21,16 +21,13 @@
                 <th>id</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Correo</th>
-                <th>Carnet</th>
-                <th>Cedula</th>
-                <th>Seleccion</th>
                 <th>Beca</th>
-            </tr>
+                <th>Porcentaje de Beca</th>
+
         </thead>
         <tbody>
             <tr>
-                <% _.each(listaEstudiantesConUsuarios, function(estudiante) {%>
+                <% _.each(listaEstudiantes, function(estudiante) {%>
                     <th scope="row">
                         <%=estudiante.idestudiante%>
                     </th>
@@ -42,26 +39,12 @@
                         <%=estudiante.apellido%>
                     </td>
                     <td>
-                        <%=estudiante.correo%>
-                    </td>
-                    <td>
-                        <%=estudiante.carnet%>
-                    </td>
-                    <td>
-                        <%=estudiante.cedula%>
-                    </td>
-                    <td>
-                        <%=estudiante.tipo%>
-                    </td>
-                    <td>
-                        <%=estudiante.seleccion%>
-                    </td>
-                    <td>
                         <%=estudiante.beca%>
                     </td>
                     <td>
-                        <a class="btn btn-outline-success" href="../estudiante/edit/<%=estudiante.idestudiante%>" role="button">Editar</a>
+                        <%=estudiante.porcentaje%>
                     </td>
+
             </tr>
             <%}) %>
         </tbody>
