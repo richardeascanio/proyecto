@@ -140,9 +140,8 @@ module.exports = {
 
   update: function (req, res) {
     console.log("entre a update")
-
     user.update({
-
+      
       idusuario: req.param('id')
     }, {
       nombre: req.param('nombre'),
@@ -209,4 +208,45 @@ module.exports = {
 
   },
   
+
+  BuscarEstudiantesdeSeccion: function (req, res) {
+    console.log("entre a Buscar estudiantes");
+    var listaEstudiantesConTodo = []
+    var estudianteQueSeInserta
+    var aux =0
+
+    Seccion.find({idseccion:'1'}).populate("estudiantes")
+    
+      .exec(function(err,EstudianteNuevo){
+ 
+        EstudianteNuevo[0].estudiantes.forEach(estud => {
+          user.findOne(estud.idestudiante).exec(function (err, usuario) {
+
+            estudianteQueSeInserta = {
+
+              idestudiante: estud.idestudiante,
+              nombre: usuario.nombre,
+              apellido: usuario.apellido,
+              idPeriodo: EstudianteNuevo[0].idPeriodo,
+              idMateria: EstudianteNuevo[0].idMateria,
+              idAula: EstudianteNuevo[0].idAula,
+              tipo: estud.tipo,
+
+            }
+            listaEstudiantesConTodo.push(estudianteQueSeInserta);
+           
+            aux = aux + 1   
+            if (aux == EstudianteNuevo[0].estudiantes.length) {
+              console.log("Entre a IF")
+              return res.view('profesor/mostrar',{
+                listaEstudiantesConTodo: listaEstudiantesConTodo
+              });
+            }
+            
+            
+          });
+        });
+        
+    });
+  },
 };

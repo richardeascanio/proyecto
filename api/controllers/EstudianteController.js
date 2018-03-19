@@ -173,29 +173,5 @@ module.exports = {
 
   },
 
-  BuscarEstudiantesdeSeccion: function (req, res) {
-    console.log("entre a Buscar estudiantes");
-    var listaEstudiantesConUsuarios = []
-    var estudianteQueSeInserta
-    var aux 
-
-    Seccion.find({idseccion:'1'}).populate("estudiantes")
-    
-      .exec(function(err,EstudianteNuevo){  
-        
-        console.log("Estudiante: "+ EstudianteNuevo.idestudiante)
-        
-        console.log(EstudianteNuevo)
-      if (err){
-          return res.view(err)
-      }
-      
-      return res.view('profesor/mostrar',{
-      
-        Estudiantes:EstudianteNuevo
-
-      } )
-    });
-  },
 
 };

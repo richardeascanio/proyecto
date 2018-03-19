@@ -19,8 +19,8 @@
     <thead>
       <tr>
         <th>Id Estudiante</th>
-        <th>No. Seccion</th>
-        <th>Id Prof.</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
         <th>Id Periodo</th>
         <th>Id Materia</th>
         <th>Id Aula</th>
@@ -29,16 +29,16 @@
     </thead>
     <tbody>
       <tr>
-        <% _.each(Estudiantes, function(estudiante) {%>
+        <% _.each(listaEstudiantesConTodo, function(estudiante) {%>
           <th scope="row">
             <%=estudiante.idestudiante%>
           </th>
 
           <td>
-            <%=estudiante.nroseccion%>
+            <%=estudiante.nombre%>
           </td>
           <td>
-            <%=estudiante.idProfesor%>
+            <%=estudiante.apellido%>
           </td>
           <td>
             <%=estudiante.idPeriodo%>
