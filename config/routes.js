@@ -137,15 +137,15 @@ module.exports.routes = {
     view: 'selecciondeportiva/identificacion'
   },
   'POST /selecciondeportiva/identificacion': {
-    controller: 'EstudianteController',
-    action: 'BuscarEstudiantesdeSeleccion'
-  },
-  
-  'GET /selecciondeportiva/listaestudiantesseleccion': {
-    view: 'selecciondeportiva/listaestudiantesseleccion'
+    controller: 'SelecciondeportivaController',
+    action: 'buscarseleccion'
   },
   'GET /selecciondeportiva/becayseleccion': {
     view: 'selecciondeportiva/becayseleccion'
+  },
+  'POST /selecciondeportiva/identificacion2': {
+    controller:'SelecciondeportivaController',
+    action:'buscarhorarios'
   },
 
   'POST /estudiante/agregar': 'EstudianteController.agregar',
@@ -172,8 +172,7 @@ module.exports.routes = {
   'POST /profesor/edit': {
     controller: 'ProfesorController',
     action: 'update'
-  },
-  
+  },  
   'GET /profesor/edit': 'ProfesorController.consultarDep',
   'GET /profesor/seleccionbusqueda': {
     view: 'profesor/seleccionbusqueda'
