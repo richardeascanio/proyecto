@@ -221,8 +221,9 @@ module.exports.routes = {
   },
   'POST /profesor/elegirseccion': {
     controller: 'ProfesorController',
-    action: 'buscarseccion'
+    action: 'BuscarEstudiantesdeSeccion'
   },
+  
   'GET /profesor/elegirseccion': {
     view: 'profesor/elegirseccion'
   },
