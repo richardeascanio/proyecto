@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../assets/favicon.ico">
+
+    <title>Template para busquedas especiales de estudiantes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/styles/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../assets/styles/template.css" rel="stylesheet">
+  </head>
+
+  <body class="buscarseccion">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Codigo</th>
+        
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% _.each(materias, function(materia) {%>
+              <th scope="row">
+                <%=materia.nombre%>
+              </th>
+              <td>
+                <%=materia.codigo%>
+              </td>
+    
+          </tr>
+          <%}) %>
+        </tbody>
+      </table>
+  </body>
+</html>

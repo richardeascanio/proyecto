@@ -146,13 +146,13 @@ module.exports = {
     console.log("entre a buscar beca con estudiante")
 
     var listaEstudiantesBeca = []
-    var aux = 0
+    var aux = 0, aux2=0
     var estudianteQueSeInserta
 
     Estudiante.find({
 
     }).populate("beca").exec(function (err, becados) {
-      console.log(becados[0].beca[0].tipo)
+      console.log(becados[1].beca[0])
       becados[0].beca.forEach(estud => {
         user.findOne(estud.idestudiante).exec(function (err, usuario) {
 
@@ -167,19 +167,45 @@ module.exports = {
 
           }
           listaEstudiantesBeca.push(estudianteQueSeInserta);
-          aux = aux + 1
-          if (aux == becados[0].beca.length) {
+          
+          if (becados[aux+1].beca[aux2] == undefined) {
+            console.log("Entre a if")
+            if(err) {res.serverError(err);}
             return res.view('estudiante/estudianteconbeca', {
               listaEstudiantesBeca: listaEstudiantesBeca
             });
           }
-
+          aux = aux + 1
         });
       });
 
     });
 
-  }
+  },
+
+  materiascursando: function (req, res) {
+    console.log("entre a buscar materias")
+
+    user.findOne({
+      cedula: req.param('cedula')
+    }, function (err, estud) {
+
+      var materiaestud= "select m.nombre, m.codigo from user u join estudiante e on e.idestudiante = u.idusuario join estudiante_seccion es on es.idEstudiante = u.idusuario join seccion s on s.idseccion= es.idSeccion join materia m on m.idmateria= s.idMateria where u.cedula = ?"
+    
+      user.query(materiaestud,[req.param('cedula')], function(err,materias){
+          console.log(materias)
+          if(err) {res.serverError(err);}
+        return res.view('estudiante/materiasquecurso',{
+  
+          materias:materias
+        })
+      });
+
+      
+        });
+ 
+
+  },
 
   
 

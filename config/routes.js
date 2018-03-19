@@ -73,6 +73,11 @@ module.exports.routes = {
     controller: 'CarreraController',
     action: 'consultarcarr',
   },
+  'GET /carrera/flujograma': {
+    controller: 'CarreraController',
+    action: 'BuscarMateriasdeCarrera'
+  },
+  
 
 
   //Departamento
@@ -201,7 +206,10 @@ module.exports.routes = {
   'GET /estudiante/identificacion': {
     view: 'estudiante/identificacion'
   },
-  
+  'POST /estudiante/identificacion': {
+    controller: 'EstudianteController',
+    action: 'materiascursando'
+  },
 
 
   //Profesor

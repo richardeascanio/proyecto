@@ -120,31 +120,22 @@ module.exports = {
   },
 
   buscarhorarios: function (req, res){
-<<<<<<< HEAD
 
   },
     
   becados: function(req,res){
-    console.log("entre a becados")
-    var userQueryAsync = Promise.promisify(user.query);
-    userQueryAsync("SELECT u.idusuario, u.nombre, apellido, b.tipo, porcentaje from metropavoapp.user u join estudiante_seleccion es ones.idEstudiante = u.idusuario join beca b on b.idestudiante = u.idusuario",[])
-    .then(function(user) {
-      console.log(becados)
-     return res.view('selecciondeportiva/becayseleccion',{
-
-    listaEstudiantes:becados
-});
-})
-
   
-  
-=======
-    console.log("entre a buscar horarios");
+  var becaditos= "select u.idusuario, u.nombre, apellido, b.tipo, porcentaje from user u join estudiante_seleccion es on es.idEstudiante = u.idusuario join beca b on b.idestudiante = u.idusuario"
     
-    
-  }
->>>>>>> master
-    
+    user.query(becaditos,[], function(err,usuarios){
+        console.log(usuarios)
+        if(err) {res.serverError(err);}
+      return res.view('selecciondeportiva/becayseleccion',{
+
+        listaEstudiantes:usuarios
+      })
+    });
+
   },
 
 };
