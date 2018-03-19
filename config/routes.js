@@ -169,9 +169,10 @@ module.exports.routes = {
   'GET /selecciondeportiva/becayseleccion': {
     view: 'selecciondeportiva/becayseleccion'
   },
-  'POST /selecciondeportiva/identificacion2': {
+  'GET /selecciondeportiva/listahorarios': {
     controller:'SelecciondeportivaController',
-    action:'buscarhorarios'
+    action:'buscarhorarios',
+    view: 'selecciondeportiva/listahorarios'
   },
 
 
