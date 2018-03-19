@@ -120,7 +120,9 @@ module.exports = {
   },
 
   buscarhorarios: function (req, res){
-
+    console.log("entre a buscar horarios");
+    
+    
   }
     
 

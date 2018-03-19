@@ -21,23 +21,37 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Selección</th>
-                <th>Día</th>
-                <th>Bloque horario</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Carnet</th>
+                <th>Correo</th>
+                <th>Beca</th>
+                <th>Porcentaje</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <% _.each(listahorariosseleccion, function(horarios) {%>
+                <% _.each(listaEstudiantesBeca, function(estudiante) {%>
                     <td>
-                        <%=horarios.nombre%>
+                        <%=estudiante.nombre%>
                     </td>
                     <td>
-                        <%=horarios.apellido%>
+                        <%=estudiante.apellido%>
                     </td>
                     <td>
-                        <%=horarios.carnet%>
+                        <%=estudiante.carnet%>
                     </td>
+                    <td>
+                        <%=estudiante.correo%>
+                    </td>
+
+                    <td>
+                        <%=estudiante.tipob%>
+                    </td>
+                    <td>
+                        <%=estudiante.porcentaje%>%
+                    </td>
+
             </tr>
             <%}) %>
         </tbody>

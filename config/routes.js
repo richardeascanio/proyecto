@@ -69,7 +69,10 @@ module.exports.routes = {
   'GET /carrera/edit': {
     view: 'carrera/edit'
   },
-
+  'GET /carrera/listadecarreras': {
+    controller: 'CarreraController',
+    action: 'consultarcarr',
+  },
 
 
   //Departamento
@@ -109,7 +112,7 @@ module.exports.routes = {
   'GET /materia/identificacion': {
     view: 'materia/identificacion'
   },
-
+  
 
 
   //Periodo
@@ -196,7 +199,7 @@ module.exports.routes = {
   'GET /estudiante/identificacion': {
     view: 'estudiante/identificacion'
   },
-
+  
 
 
   //Profesor
@@ -245,7 +248,13 @@ module.exports.routes = {
   },
   'GET /beca/seleccionbusqueda': {
     view: 'beca/seleccionbusqueda'
-  }
+  },
+  'GET /estudiante/estudianteconbeca': {
+    controller: 'EstudianteController',
+    action: 'buscarbeca',
+  },
+
+
 
 
   /***************************************************************************

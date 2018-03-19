@@ -8,6 +8,25 @@
 module.exports = {
 
   attributes: {
+    idhorario: {
+      type: 'integer',
+      required: false,
+      primaryKey: true,
+      unique: true,
+
+    },
+
+    dia: {
+      type: 'string',
+      required: true,
+    },
+
+    bloquehorario: {
+      type: 'string',
+      required: true,
+    },
+
+
 
   }
 };

@@ -142,7 +142,44 @@ module.exports = {
     });
   },
 
-  
+  buscarbeca: function (req, res) {
+    console.log("entre a buscar beca con estudiante")
+
+    var listaEstudiantesBeca = []
+    var aux = 0
+    var estudianteQueSeInserta
+
+    Estudiante.find({
+
+    }).populate("beca").exec(function (err, becados) {
+      console.log(becados[0].beca[0].tipo)
+      becados[0].beca.forEach(estud => {
+        user.findOne(estud.idestudiante).exec(function (err, usuario) {
+
+          estudianteQueSeInserta = {
+
+            nombre: usuario.nombre,
+            apellido: usuario.apellido,
+            carnet: usuario.carnet,
+            correo: usuario.correo,
+            tipob: becados[0].beca[0].tipo,
+            porcentaje: becados[0].beca[0].porcentaje,
+
+          }
+          listaEstudiantesBeca.push(estudianteQueSeInserta);
+          aux = aux + 1
+          if (aux == becados[0].beca.length) {
+            return res.view('estudiante/estudianteconbeca', {
+              listaEstudiantesBeca: listaEstudiantesBeca
+            });
+          }
+
+        });
+      });
+
+    });
+
+  }
 
   
 

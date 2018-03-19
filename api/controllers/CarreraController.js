@@ -64,6 +64,22 @@ module.exports = {
       if (err) return res.serverError(err)
 
     })
+  },
+
+  consultarcarr: function (req, res) {
+
+    Carrera.find(function (err, carreras) {
+      if (err) return res.serverError(err);
+      return res.view('carrera/listadecarreras', {
+        carreras: carreras
+      });
+    });
+  },
+
+  buscarmat: function (req, res) {
+
+
+
   }
 
 };
