@@ -120,6 +120,7 @@ module.exports = {
   },
 
   buscarhorarios: function (req, res){
+<<<<<<< HEAD
 
   },
     
@@ -137,6 +138,12 @@ module.exports = {
 
   
   
+=======
+    console.log("entre a buscar horarios");
+    
+    
+  }
+>>>>>>> master
     
   },
 
