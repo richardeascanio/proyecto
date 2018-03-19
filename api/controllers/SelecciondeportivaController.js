@@ -81,6 +81,7 @@ module.exports = {
     });
   },
 
+<<<<<<< HEAD
   buscarseleccion: function (req, res) {
     console.log("entre a buscar seleccion")
 
@@ -123,5 +124,8 @@ module.exports = {
 
   }
     
+=======
+  
+>>>>>>> master
 
 };

@@ -40,6 +40,8 @@ module.exports.routes = {
     view: 'busquedas'
   },
 
+  //Aula
+
   'POST /aula/agregar': 'AulaController.agregar',
   'GET /aula/agregar': {
     view: 'aula/agregar'
@@ -52,6 +54,10 @@ module.exports.routes = {
     view: 'aula/edit'
   },
 
+
+
+  //Carrera
+
   'POST /carrera/agregar': 'CarreraController.agregar',
   'GET /carrera/agregar': {
     view: 'carrera/agregar'
@@ -63,6 +69,10 @@ module.exports.routes = {
   'GET /carrera/edit': {
     view: 'carrera/edit'
   },
+
+
+
+  //Departamento
 
   'POST /departamento/agregar': {
     controller: 'DepartamentoController',
@@ -78,6 +88,10 @@ module.exports.routes = {
   'GET /departamento/edit': {
     view: 'departamento/edit'
   },
+
+
+
+  //Materia
 
   'POST /materia/agregar': {
     controller: 'MateriaController',
@@ -96,6 +110,10 @@ module.exports.routes = {
     view: 'materia/identificacion'
   },
 
+
+
+  //Periodo
+
   'POST /periodo/agregar': 'PeriodoController.agregar',
   'GET /periodo/agregar': {
     view: 'periodo/agregar'
@@ -108,6 +126,10 @@ module.exports.routes = {
     view: 'periodo/edit'
   },
 
+
+
+  //Seccion
+
   'POST /seccion/agregar': 'SeccionController.agregar',
   'GET /seccion/agregar': 'SeccionController.consultarMat', 
 
@@ -118,6 +140,10 @@ module.exports.routes = {
   'GET /seccion/edit': {
     view: 'seccion/edit'
   },
+
+
+
+  //Seleccion deportiva
 
   'POST /selecciondeportiva/agregar': 'SelecciondeportivaController.agregar',
   'GET /selecciondeportiva/agregar': {
@@ -148,6 +174,10 @@ module.exports.routes = {
     action:'buscarhorarios'
   },
 
+
+
+  //Estudiante
+
   'POST /estudiante/agregar': 'EstudianteController.agregar',
   'GET /estudiante/agregar': {
     view: 'estudiante/agregar'
@@ -166,9 +196,13 @@ module.exports.routes = {
     view: 'estudiante/identificacion'
   },
 
+
+
+  //Profesor
+
   'POST /profesor/agregar': 'ProfesorController.agregar',
   'GET /profesor/agregar': 'ProfesorController.consultarDep',
-  'GET /profesor/mostrar': 'Estudiante.BuscarEstudiantesdeSeccion',
+  'GET /profesor/mostrar': 'ProfesorController.BuscarEstudiantesdeSeccion',
   'POST /profesor/edit': {
     controller: 'ProfesorController',
     action: 'update'
@@ -191,6 +225,10 @@ module.exports.routes = {
   'GET /profesor/elegirseccion': {
     view: 'profesor/elegirseccion'
   },
+
+  
+
+  //Beca
 
   'POST /beca/agregar': 'BecaController.agregar',
   'GET /beca/agregar': {
