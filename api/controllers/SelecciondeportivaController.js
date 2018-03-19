@@ -81,6 +81,47 @@ module.exports = {
     });
   },
 
-  
+  buscarseleccion: function (req, res) {
+    console.log("entre a buscar seleccion")
+
+    var listaEstudiantesSeleccion = []
+    var aux=0
+    var estudianteQueSeInserta
+
+    Selecciondeportiva.find({
+      codigo: req.param('codigo')
+    }).populate("jugadores").exec(function (err, seleccion){
+      
+      seleccion[0].jugadores.forEach(estud => {
+        user.findOne(estud.idestudiante).exec(function (err, usuario) {
+
+          estudianteQueSeInserta = {
+
+            nombre: usuario.nombre,
+            apellido: usuario.apellido,
+            carnet: usuario.carnet,
+            correo: usuario.correo,
+            nombreSelec: seleccion[0].nombre,
+          
+          }
+          listaEstudiantesSeleccion.push(estudianteQueSeInserta);
+          aux = aux + 1
+          if (aux == seleccion[0].jugadores.length) {
+            return res.view('selecciondeportiva/listaestudiantesseleccion',{
+              listaEstudiantesSeleccion: listaEstudiantesSeleccion
+            });
+          }
+
+        });
+      });
+
+    });
+
+  },
+
+  buscarhorarios: function (req, res){
+
+  }
+    
 
 };

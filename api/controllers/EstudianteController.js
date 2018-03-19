@@ -142,36 +142,9 @@ module.exports = {
     });
   },
 
-  BuscarEstudiantesdeSeleccion: function (req, res) {
-    var EstudianteNuevo
-    console.log("entre a Buscar Estudiantes de una seleccion")
-    Estudiante.find( function (err, estud) {
-     
-      user.find(estud.idestudiante).exec(function (err, user) {
-
-        EstudianteNuevo = {
-
-          idestudiante: estud.idestudiante,
-          nombre: user.nombre,
-          apellido: user.apellido,
-          cedula: user.cedula,
-          carnet: user.carnet,
-          correo: user.correo,
-          sexo: user.sexo,
-          tipo: estud.tipo,
-        }
-      })
-
-    }).populate('selecciones')
-    .exec(function(err,EstudianteNuevo){
-        if (err){
-            return res.view(err)
-        }
-        return res.view(EstudianteNuevo)
-      });
   
 
-  },
+  
 
 
 };

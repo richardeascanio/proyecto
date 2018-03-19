@@ -1,31 +1,33 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../assets/favicon.ico">
 
-    <title>Template para busquedas especiales de profesores</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../assets/favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../assets/styles/bootstrap.css" rel="stylesheet">
+  <title>Template para busquedas especiales de profesores</title>
 
-    <!-- Custom styles for this template -->
-    <link href="../assets/styles/template.css" rel="stylesheet">
-  </head>
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/styles/bootstrap.css" rel="stylesheet">
 
-  <body class="identificacion">
-    <section id="identificacion">
-    <form accion="/selecciondeportiva/buscarseleccion/">
-      <h1 class="h3 mb-3 font-weight-normal">Ingrese el código de la Selección Deportiva</h1>
-      <label for="codigo" class="sr-only">Código de la Selección</label>
-      <input type="int" name="codigo" class="form-control" placeholder="Codigo Seleccion" required>
+  <!-- Custom styles for this template -->
+  <link href="../assets/styles/template.css" rel="stylesheet">
+</head>
+
+<body class="identificacion">
+  <section id="identificacion">
+    <form action="/selecciondeportiva/buscarseleccion" method="POST" class="form-signin2">
+      <h1 class="h3 mb-3 font-weight-normal">Ingrese el código de la selección</h1>
+      <label for="codigo" class="sr-only">Código</label>
+      <input type="int" name="codigo" class="form-control" placeholder="Código de la selección" required>
       <hr class="mb-4">
       <button class="btn btn-lg btn-primary btn-block" type="submit">Siguiente</button>
       <p class="mt-5 mb-3 text">&copy; Los que flinchy</p>
     </form>
   </section>
-  </body>
+</body>
+
 </html>
