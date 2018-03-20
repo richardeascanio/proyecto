@@ -36,4 +36,35 @@ module.exports = {
     });
   },
 
+  edit: function (req, res) {
+    console.log("entre a editar")
+    Horario.findOne({
+      idhorario: req.param('id')
+    }, function (err, mhorario) {
+      console.log(horario)
+      if (err) return res.serverError(err)
+      res.view({
+        horario: horario
+      });
+    });
+  },
+
+  update: function (req, res) {
+    console.log("entre a update")
+
+    Horario.update({
+
+      idhorario: req.param('id')
+    }, {
+      dia: req.param('dia'),
+      bloquehorario: req.param('bloquehorario'),
+    }).exec(function (err, updated) {
+
+      if (Horario) res.redirect('#')
+      console.log("este es la materia " + updated[0].dia, updated[0].bloquehorario);
+      if (err) return res.serverError(err)
+
+    })
+  },
+
 };
