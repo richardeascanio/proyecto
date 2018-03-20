@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
 
     idSeleccion: {
-      model: 'Seleccion'
+      model: 'Selecciondeportiva'
     },
 
     idHorario: {

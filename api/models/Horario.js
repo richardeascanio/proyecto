@@ -26,6 +26,19 @@ module.exports = {
       required: true,
     },
 
+    selecciones: {
+      collection: 'Selecciondeportiva',
+      via: 'idHorario',
+      through: 'seleccion_horario'
+    },
+
+    secciones: {
+      collection: 'Seccion',
+      via: 'idHorario',
+      through: 'seccion_horario'
+    }
+
+
 
 
   }
