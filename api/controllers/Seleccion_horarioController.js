@@ -26,4 +26,14 @@ module.exports = {
     });
   },
 
+  consultar: function (req, res) {
+    console.log("entre a consultar")
+    seleccion_horario.find(function (err, selecciones_horario) {
+      if (err) return res.serverError(err);
+      return res.view({
+        selecciones_horario: selecciones_horario
+      });
+    });
+  },
+
 };

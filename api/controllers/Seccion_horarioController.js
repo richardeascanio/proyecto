@@ -26,4 +26,14 @@ module.exports = {
     });
   },
 
+  consultar: function (req, res) {
+    console.log("entre a consultar")
+    seccion_horario.find(function (err, secciones_horario) {
+      if (err) return res.serverError(err);
+      return res.view({
+        secciones_horario: secciones_horario
+      });
+    });
+  },
+
 };
