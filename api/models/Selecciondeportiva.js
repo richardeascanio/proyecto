@@ -41,6 +41,12 @@ module.exports = {
       collection: 'Estudiante',
       via: 'idSeleccion',
       through: 'estudiante_seleccion'
+    },
+
+    horarios: {
+      collection: 'Horario',
+      via: 'idSeccion',
+      through: 'seccion_horario'
     }
 
   }
