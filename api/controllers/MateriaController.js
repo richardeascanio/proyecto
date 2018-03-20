@@ -78,6 +78,23 @@ module.exports = {
         departamentos: departamentos
       });
     });
-  }
+  },
+
+  prelacion:function (req, res) {
+    console.log("entre a buscar materias")
+
+    Materia.find({
+      codigo: req.param('codigo')
+    }, function (err, estud) {
+
+          if(err) {res.serverError(err);}
+        return res.view('profesor/aulasquedicto',{
+  
+          aulas:aulas
+        })
+      }).populate("")
+        
+  },
+
 
 };

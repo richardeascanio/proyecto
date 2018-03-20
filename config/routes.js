@@ -117,7 +117,14 @@ module.exports.routes = {
   'GET /materia/identificacion': {
     view: 'materia/identificacion'
   },
-  
+  'POST /materia/identificacion': {
+    controller: 'MateriaController',
+    action: 'prelacion'
+  },
+  'GET /materia/mostrarmaterias': {
+    controller: 'MateriaController',
+    action:'prelacion'
+  },
 
 
   //Periodo
