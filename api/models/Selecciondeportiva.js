@@ -45,8 +45,8 @@ module.exports = {
 
     horarios: {
       collection: 'Horario',
-      via: 'idSeccion',
-      through: 'seccion_horario'
+      via: 'idSeleccion',
+      through: 'seleccion_horario'
     }
 
   }
