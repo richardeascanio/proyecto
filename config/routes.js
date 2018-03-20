@@ -210,7 +210,17 @@ module.exports.routes = {
     controller: 'EstudianteController',
     action: 'materiascursando'
   },
-
+  'GET /estudiante/identificacionaul': {
+    view: 'estudiante/identificacionaul'
+  },
+  'POST /estudiante/identificacionaul': {
+    controller: 'EstudianteController',
+    action: 'aulascursando'
+  },
+  'GET /estudiante/probatorio': {
+    controller: 'EstudianteController',
+    action:'probatorio'
+  },
 
   //Profesor
 
