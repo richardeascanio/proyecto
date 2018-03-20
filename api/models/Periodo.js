@@ -36,6 +36,12 @@ module.exports = {
       via: 'idPeriodo'
     },
 
+    estudiantes: {
+      collection: 'Estudiante',
+      via: 'idPeriodo',
+      through: 'estudiante_periodo'
+    }
+
 
 
   }
