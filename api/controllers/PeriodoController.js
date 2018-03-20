@@ -14,7 +14,7 @@ module.exports = {
     Periodo.create({
 
       idperiodo: req.param('id'),
-      nombre: req.param("nombre")
+      nombre: req.param('nombre'),
 
     }).exec(function (err, Periodo) {
 
@@ -24,7 +24,7 @@ module.exports = {
 
     })
   },
-  
+
   consultar: function (req, res) {
 
     Periodo.find(function (err, periodos) {
@@ -47,5 +47,22 @@ module.exports = {
       });
     });
   },
+
+  update: function (req, res) {
+    console.log("entre a update")
+
+    Periodo.update({
+
+      idperiodo: req.param('id')
+    }, {
+      nombre: req.param('nombre')
+    }).exec(function (err, updated) {
+
+      if (Periodo) res.redirect('#')
+      console.log("este es el departamento " + updated[0].nombre);
+      if (err) return res.serverError(err)
+
+    })
+  }
 
 };

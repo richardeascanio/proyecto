@@ -120,20 +120,22 @@ module.exports.routes = {
   
 
 
-  //Periodo
+    //Periodo
 
-  'POST /periodo/agregar': 'PeriodoController.agregar',
-  'GET /periodo/agregar': {
-    view: 'periodo/agregar'
-  },
-  'POST /periodo/edit': {
-    controller: 'PeriodoController',
-    action: 'update'
-  },
-  'GET /periodo/edit': {
-    view: 'periodo/edit'
-  },
-
+    'POST /periodo/agregar': {
+      controller: 'PeriodoController',
+      action: 'agregar'
+    },
+    'GET /periodo/agregar': {
+      view: 'periodo/agregar'
+    },
+    'POST /periodo/edit': {
+      controller: 'PeriodoController',
+      action: 'update'
+    },
+    'GET /periodo/edit': {
+      view: 'periodo/edit'
+    },
 
 
   //Seccion
@@ -264,6 +266,9 @@ module.exports.routes = {
     action: 'buscarbeca',
   },
 
+
+  
+  
 
 
 
