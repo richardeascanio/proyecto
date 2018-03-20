@@ -124,8 +124,8 @@ module.exports = {
   },
     
   becados: function(req,res){
-  
-  var becaditos= "select u.idusuario, u.nombre, apellido, b.tipo, porcentaje from user u join estudiante_seleccion es on es.idEstudiante = u.idusuario join beca b on b.idestudiante = u.idusuario"
+  console.log("Entre a becaditos")
+  var becaditos= "select u.idusuario, u.nombre, apellido, b.tipo, porcentaje, idSeleccion from user u join estudiante_seleccion es on es.idEstudiante = u.idusuario join beca b on b.idestudiante = u.idusuario"
     
     user.query(becaditos,[], function(err,usuarios){
         console.log(usuarios)

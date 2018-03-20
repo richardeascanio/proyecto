@@ -240,7 +240,13 @@ module.exports.routes = {
   'GET /profesor/elegirseccion': {
     view: 'profesor/elegirseccion'
   },
-
+  'GET /profesor/identificacionaul': {
+    view: 'profesor/identificacionaul'
+  },
+  'POST /profesor/identificacionaul': {
+    controller: 'ProfesorController',
+    action: 'buscaraulas'
+  },
   
 
   //Beca

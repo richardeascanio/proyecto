@@ -152,7 +152,7 @@ module.exports = {
     Estudiante.find({
 
     }).populate("beca").exec(function (err, becados) {
-      console.log(becados[1].beca[0])
+      console.log(becados)
       becados[0].beca.forEach(estud => {
         user.findOne(estud.idestudiante).exec(function (err, usuario) {
 
@@ -168,7 +168,7 @@ module.exports = {
           }
           listaEstudiantesBeca.push(estudianteQueSeInserta);
           
-          if (becados[aux+1].beca[aux2] == undefined) {
+          if (becados[0] == undefined) {
             console.log("Entre a if")
             if(err) {res.serverError(err);}
             return res.view('estudiante/estudianteconbeca', {
@@ -215,7 +215,7 @@ module.exports = {
       cedula: req.param('cedula')
     }, function (err, estud) {
 
-      var aulasestud= "select edificio, piso, numeroaula from metropavoapp.user u join estudiante_seccion es on es.idEstudiante = u.idusuario join aula a join seccion s on a.idaula = s.idAula where u.cedula  = ?"
+      var aulasestud= "select edificio, piso, numeroaula from metropavoapp.user u join estudiante_seccion es on es.idEstudiante = u.idusuario join aula a join seccion s on a.idaula = s.idAula where u.cedula = ? group by a.numeroaula"
     
       Aula.query(aulasestud,[req.param('cedula')], function(err,aulas){
           console.log(aulas)
@@ -225,12 +225,6 @@ module.exports = {
           aulas:aulas
         })
       });
-
-      
         });
- 
   },
-  
-
-
 };
