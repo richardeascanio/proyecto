@@ -148,43 +148,40 @@ module.exports = {
     var listaEstudiantesBeca = []
     var aux = 0
     var estudianteQueSeInserta
+    var cont=0
 
     Estudiante.find({
 
     }).populate("beca").exec(function (err, becados) {
 
-      console.log(becados[0].idestudiante)
+      console.log(becados[aux].beca[0].idbeca)
 
-      becados[0].beca.forEach(estud => {
+      becados.forEach(estud => {
         user.findOne(estud.idestudiante).exec(function (err, usuario) {
+          if(becados[aux].beca[0] != null){
+            cont=cont+1
+            estudianteQueSeInserta = {
 
-          estudianteQueSeInserta = {
-
-            nombre: usuario.nombre,
-            apellido: usuario.apellido,
-            carnet: usuario.carnet,
-            correo: usuario.correo,
-            tipob: becados[aux].beca[0].tipo,
-            porcentaje: becados[aux].beca[0].porcentaje,
-
-          }
-          listaEstudiantesBeca.push(estudianteQueSeInserta);
-
-          console.log(listaEstudiantesBeca)
-          aux = aux + 1,
-
-          console.log(aux);
-
-          if (becados[aux].beca[0].length == 0 ) {
-            console.log("Entre a if")
+              nombre: usuario.nombre,
+              apellido: usuario.apellido,
+              carnet: usuario.carnet,
+              correo: usuario.correo,
+              tipob: becados[aux].beca[0].tipo,
+              porcentaje: becados[aux].beca[0].porcentaje,
+  
+            }
+            aux = aux + 1
+            listaEstudiantesBeca.push(estudianteQueSeInserta);
             console.log(listaEstudiantesBeca)
-            return res.view('estudiante/estudianteconbeca', {
+            console.log("ingresado")
+          }
+   
+          else{
+            console.log("entre a else")
+            console.log(listaEstudiantesBeca)
+            return res.view('estudiante/estudianteconbeca',{
               listaEstudiantesBeca: listaEstudiantesBeca
             });
-          }
-          else{
-
-            console.log("else")
           }
           
         });
@@ -248,9 +245,9 @@ module.exports = {
 
     Estudiante.find({
 
-    }).populate("beca").exec(function (err, becados) {
+    }).populate("periodos").exec(function (err, probatorio) {
      
-      console.log(becados[4])
+      console.log(probatorio)
 
       becados[0].beca.forEach(estud => {
         user.findOne(estud.idestudiante).exec(function (err, usuario) {
@@ -261,20 +258,11 @@ module.exports = {
             apellido: usuario.apellido,
             carnet: usuario.carnet,
             correo: usuario.correo,
-            tipob: becados[0].beca[0].tipo,
-            porcentaje: becados[0].beca[0].porcentaje,
 
           }
           listaEstudiantesBeca.push(estudianteQueSeInserta);
-          
-          if (becados[0] == undefined) {
-            console.log("Entre a if")
-            if(err) {res.serverError(err);}
-            return res.view('estudiante/probatorio', {
-              listaEstudiantesBeca: listaEstudiantesBeca
-            });
-          }
-          aux = aux + 1
+          console.log(listaEstudiantesBeca)
+
         });
       });
 
