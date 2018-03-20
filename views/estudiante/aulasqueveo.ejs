@@ -26,9 +26,15 @@
         </thead>
         <tbody>
           <tr>
-            <% _.each(secciones, function(seccion) {%>
+            <% _.each(aulas, function(aula) {%>
               <th scope="row">
-                <%=seccion.idseccion%>
+                <%=aula.idedificio%>
+              </th>
+              <th>
+                <%=aula.piso%>
+              </th>
+              <th>
+                <%=aula.numeroaula%>
               </th>
 
               <td>
