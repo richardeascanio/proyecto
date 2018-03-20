@@ -207,6 +207,29 @@ module.exports = {
 
   },
 
+
+  aulascursando: function (req, res) {
+    console.log("entre a buscar materias")
+
+    user.findOne({
+      cedula: req.param('cedula')
+    }, function (err, estud) {
+
+      var aulasestud= "select edificio, piso, numeroaula from metropavoapp.user u join estudiante_seccion es on es.idEstudiante = u.idusuario join aula a join seccion s on a.idaula = s.idAula where u.cedula  = ?"
+    
+      Aula.query(aulasestud,[req.param('cedula')], function(err,aulas){
+          console.log(aulas)
+          if(err) {res.serverError(err);}
+        return res.view('estudiante/aulasqueveo',{
+  
+          aulas:aulas
+        })
+      });
+
+      
+        });
+ 
+  },
   
 
 
