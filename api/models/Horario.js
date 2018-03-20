@@ -36,10 +36,6 @@ module.exports = {
       collection: 'Seccion',
       via: 'idHorario',
       through: 'seccion_horario'
-    }
-
-
-
-
+    },
   }
 };
