@@ -78,9 +78,11 @@ module.exports = {
 
   BuscarMateriasdeCarrera: function (req, res) {
     console.log("Entre a buscar materias")
+
     var materitas= "select m.idmateria, m.nombre, m.codigo, credito, idDepartamento from materia m join materia_carrera mat on mat.idMateria = m.idmateria join carrera c on c.idcarrera = mat.idCarrera where c.idcarrera=?"
-    
-    Materia.query(materitas,['1'], function(err,mats){
+    var aux=req.param('idcarrera')
+    console.log(aux)
+    Materia.query(materitas,[req.param('idcarrera')], function(err,mats){
         console.log(mats)
         if(err) {res.serverError(err);}
       return res.view('carrera/flujograma',{

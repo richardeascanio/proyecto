@@ -1,74 +1,52 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../assets/favicon.ico">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Template para busquedas especiales de estudiantes</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="../../assets/styles/bootstrap.css">
-  <!-- ESTILOS PERSONALIZADOS -->
-  <link rel="stylesheet" href="../../assets/styles/estilos.css">
-</head>
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/styles/bootstrap.css" rel="stylesheet">
 
-<body>
+    <!-- Custom styles for this template -->
+    <link href="../assets/styles/template.css" rel="stylesheet">
+  </head>
 
-  <!-- <table class="table table-striped">
+  <body>
+      <form action="/carrera/BuscarMateriasdeCarrera/" class="form-signin2">
+    <table class="table table-striped">
         <thead>
-            <tr>
-                <th>id</th>
-                <th>Nombre</th>
-                <th>Codigo</th>
-
-            </tr>
+          <tr>
+            <th>IDCarrera</th>
+            <th>Carrera</th>
+        
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <% _.each(carreras, function(carrera) {%>
-                    <th scope="row">
-                        <%=carrera.idcarrera%>
-                    </th>
-
-                    <td>
-                        <%=carrera.nombre%>
-                    </td>
-                    <td>
-                        <%=carrera.codigo%>
-                    </td>
-                    <td>
-                        <a class="btn btn-outline-success" href="../carrera/flujograma" value="<%=carrera.idcarrera%>" role="button">Ver Flujograma</a>
-                    </td>
-
-            </tr>
-            <%}) %>
+          <tr>
+            <% _.each(carreras, function(carrera) {%>
+              <th scope="row">
+                <%=carrera.idcarrera%>
+              </th> 
+              <th >
+                <%=carrera.nombre%>
+            </th>      
+          </tr>
+          <%}) %>
         </tbody>
-    </table> -->
-    <div class="col-md-6 mb-3">
-      <label class="mr-sm-2" for="idcarrera">Carreras</label>
-      <select name="idcarrera" class="form-control">
-        <option selected>Carreras..</option>
-        <%_.each(carreras, function(carrera) {%>}
-          <option value="<%=carrera.idcarrera%>">
-            <%=carrera.nombre%>
-          </option>
-          <%})%>
-      </select>
-    </div>
-    <div class="col-md-6 mb-3">
-      <a class="btn btn-outline-success" href="../carrera/flujograma" role="button">Ver Flujograma</a>
-    </div>
- 
+      </table> 
 
+      <label for="idcarrera" class="sr-only">ID de la Carrera a escoger</label>
+      <input type="int" name="idcarrera" class="form-control" placeholder="ID de la Carrera" required>
+      <hr class="mb-4">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Siguiente</button>
+      <p class="mt-5 mb-3 text">&copy; Los que flinchy</p>
+      </form> 
 
-
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="../../assets/js/dependencies/jquery-3.3.1.js"></script>
-  <script src="../../assets/js/popper.min.js"></script>
-  <script src="../../assets/js/bootstrap.min.js"></script>
-  <script src="../../assets/js/holder.min.js"></script>
-</body>
-
+      </body>
+  
 </html>

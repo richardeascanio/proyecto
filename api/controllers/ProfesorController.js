@@ -214,8 +214,9 @@ module.exports = {
     var listaEstudiantesConTodo = []
     var estudianteQueSeInserta
     var aux =0
-
-    Seccion.find({idseccion:'1'}).populate("estudiantes")
+var aux2=req.param('idseccion')
+console.log(aux2)
+    Seccion.find({idseccion:req.param('idseccion')}).populate("estudiantes")
     
       .exec(function(err,EstudianteNuevo){
  

@@ -16,8 +16,9 @@
     <link href="../assets/styles/template.css" rel="stylesheet">
   </head>
 
-  <body class="buscarseccion">
-    <!-- <table class="table table-striped">
+  <body>
+      <form action="/profesor/BuscarEstudiantesdeSeccion/" class="form-signin2">
+    <table class="table table-striped">
         <thead>
           <tr>
             <th>IDSeccion</th>
@@ -29,29 +30,19 @@
             <% _.each(secciones, function(seccion) {%>
               <th scope="row">
                 <%=seccion.idseccion%>
-              </th>
-
-              <td>
-                <a class="btn btn-outline-success" href="../mostrar" role="button">Ver Estudiantes</a>
-              </td>
-    
+              </th>    
           </tr>
           <%}) %>
         </tbody>
-      </table> -->
-      
-      <div class="col-md-6 mb-3">
-          <label class="mr-sm-2" for="idcarrera">Secciones</label>
-          <select name="idseccion" class="form-control">
-            <option selected>Secciones..</option>
-            <%_.each(secciones, function(seccion) {%>}
-              <option value="<%=seccion.idseccion%>">
-                <%=seccion.idseccion%>
-              </option>
-              <%})%>
-          </select>
-        </div>
-        <div class="col-md-6 mb-3">
-            <a class="btn btn-outline-success" href="../mostrar" role="button">Ver Estudiantes</a>
-        </div>
+      </table> 
+
+      <label for="idseccion" class="sr-only">ID de la Sección a escoger</label>
+      <input type="int" name="idseccion" class="form-control" placeholder="ID de la Sección" required>
+      <hr class="mb-4">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Siguiente</button>
+      <p class="mt-5 mb-3 text">&copy; Los que flinchy</p>
+      </form> 
+
+      </body>
+  
 </html>
