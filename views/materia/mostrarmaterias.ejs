@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.css">
+  <!-- ESTILOS PERSONALIZADOS -->
+  <link rel="stylesheet" href="../../assets/styles/estilos.css">
+</head>
+
+<body>
+
+  <!-- TABLA QUE IMPRIME TODOS LOS DATOS -->
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Codigo</th>
+        <th>Créditos</th>
+        <th>Prelación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% _.each(materias, function(materia) {%>
+          <th scope="row">
+            <%=materia.idmateria%>
+          </th>
+
+          <td>
+            <%=materia.nombre%>
+          </td>
+          <td>
+            <%=materia.codigo%>
+          </td>
+          <td>
+            <%=materia.credito%>
+          </td>
+          <td>
+            <%=materia.prelacion%>
+          </td>
+
+      </tr>
+      <%}) %>
+    </tbody>
+  </table>
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="../../assets/js/dependencies/jquery-3.3.1.js"></script>
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/holder.min.js"></script>
+</body>
+
+</html>

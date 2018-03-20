@@ -20,7 +20,6 @@
     <table class="table table-striped">
         <thead>
           <tr>
-            <th>ID Aula</th>
             <th>Edificio</th>
             <th>Piso</th>
             <th>Numero de Aula</th>            
@@ -31,11 +30,8 @@
           <tr>
             <% _.each(aulas, function(aula) {%>
               <th scope="row">
-                <%=aula.idaula%>
+                <%=aula.edificio%>
               </th>
-              <th>
-                  <%=aula.edificio%>
-                </th>
               <th>
                 <%=aula.piso%>
               </th>

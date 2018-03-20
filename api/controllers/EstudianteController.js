@@ -146,13 +146,15 @@ module.exports = {
     console.log("entre a buscar beca con estudiante")
 
     var listaEstudiantesBeca = []
-    var aux = 0, aux2=0
+    var aux = 0
     var estudianteQueSeInserta
 
     Estudiante.find({
 
     }).populate("beca").exec(function (err, becados) {
-      console.log(becados[1].beca[0])
+
+      console.log(becados[0].idestudiante)
+
       becados[0].beca.forEach(estud => {
         user.findOne(estud.idestudiante).exec(function (err, usuario) {
 
@@ -162,20 +164,29 @@ module.exports = {
             apellido: usuario.apellido,
             carnet: usuario.carnet,
             correo: usuario.correo,
-            tipob: becados[0].beca[0].tipo,
-            porcentaje: becados[0].beca[0].porcentaje,
+            tipob: becados[aux].beca[0].tipo,
+            porcentaje: becados[aux].beca[0].porcentaje,
 
           }
           listaEstudiantesBeca.push(estudianteQueSeInserta);
-          
-          if (becados[aux+1].beca[aux2] == undefined) {
+
+          console.log(listaEstudiantesBeca)
+          aux = aux + 1,
+
+          console.log(aux);
+
+          if (becados[aux].beca[0].length == 0 ) {
             console.log("Entre a if")
-            if(err) {res.serverError(err);}
+            console.log(listaEstudiantesBeca)
             return res.view('estudiante/estudianteconbeca', {
               listaEstudiantesBeca: listaEstudiantesBeca
             });
           }
-          aux = aux + 1
+          else{
+
+            console.log("else")
+          }
+          
         });
       });
 
@@ -215,7 +226,7 @@ module.exports = {
       cedula: req.param('cedula')
     }, function (err, estud) {
 
-      var aulasestud= "select edificio, piso, numeroaula from metropavoapp.user u join estudiante_seccion es on es.idEstudiante = u.idusuario join aula a join seccion s on a.idaula = s.idAula where u.cedula  = ?"
+      var aulasestud= "select au.idaula, au.edificio, au.piso, au.numeroaula from metropavoapp.user u join estudiante e on u.idusuario = e.idestudiante join estudiante_seccion es on es.idEstudiante = e.idestudiante join seccion s on s.idseccion = es.idSeccion join aula au on au.idaula = s.idAula where u.cedula = ? group by es.idEstudiante"
     
       Aula.query(aulasestud,[req.param('cedula')], function(err,aulas){
           console.log(aulas)
@@ -225,12 +236,51 @@ module.exports = {
           aulas:aulas
         })
       });
-
-      
         });
- 
   },
-  
+
+  probatorio: function (req, res) {
+    console.log("entre a buscar beca con estudiante")
+
+    var listaEstudiantesBeca = []
+    var aux = 0, aux2=0
+    var estudianteQueSeInserta
+
+    Estudiante.find({
+
+    }).populate("beca").exec(function (err, becados) {
+     
+      console.log(becados[4])
+
+      becados[0].beca.forEach(estud => {
+        user.findOne(estud.idestudiante).exec(function (err, usuario) {
+
+          estudianteQueSeInserta = {
+
+            nombre: usuario.nombre,
+            apellido: usuario.apellido,
+            carnet: usuario.carnet,
+            correo: usuario.correo,
+            tipob: becados[0].beca[0].tipo,
+            porcentaje: becados[0].beca[0].porcentaje,
+
+          }
+          listaEstudiantesBeca.push(estudianteQueSeInserta);
+          
+          if (becados[0] == undefined) {
+            console.log("Entre a if")
+            if(err) {res.serverError(err);}
+            return res.view('estudiante/probatorio', {
+              listaEstudiantesBeca: listaEstudiantesBeca
+            });
+          }
+          aux = aux + 1
+        });
+      });
+
+    });
+
+  },
 
 
 };

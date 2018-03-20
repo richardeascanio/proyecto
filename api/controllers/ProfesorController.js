@@ -242,11 +242,29 @@ module.exports = {
                 listaEstudiantesConTodo: listaEstudiantesConTodo
               });
             }
-            
-            
           });
         });
         
     });
+  },
+
+  buscaraulas:function (req, res) {
+    console.log("entre a buscar materias")
+
+    user.findOne({
+      cedula: req.param('cedula')
+    }, function (err, estud) {
+
+      var aulasestud= "select edificio, piso, numeroaula from metropavoapp.user u join profesor p on p.idprofesor = u.idusuario join seccion s on s.idProfesor=p.idprofesor join aula a on a.idaula = s.idAula where u.cedula = ? group by a.numeroaula"
+    
+      Aula.query(aulasestud,[req.param('cedula')], function(err,aulas){
+          console.log(aulas)
+          if(err) {res.serverError(err);}
+        return res.view('profesor/aulasquedicto',{
+  
+          aulas:aulas
+        })
+      });
+        });
   },
 };

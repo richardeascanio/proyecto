@@ -117,7 +117,14 @@ module.exports.routes = {
   'GET /materia/identificacion': {
     view: 'materia/identificacion'
   },
-  
+  'POST /materia/identificacion': {
+    controller: 'MateriaController',
+    action: 'prelacion'
+  },
+  'GET /materia/mostrarmaterias': {
+    controller: 'MateriaController',
+    action:'prelacion'
+  },
 
 
     //Periodo
@@ -212,7 +219,17 @@ module.exports.routes = {
     controller: 'EstudianteController',
     action: 'materiascursando'
   },
-
+  'GET /estudiante/identificacionaul': {
+    view: 'estudiante/identificacionaul'
+  },
+  'POST /estudiante/identificacionaul': {
+    controller: 'EstudianteController',
+    action: 'aulascursando'
+  },
+  'GET /estudiante/probatorio': {
+    controller: 'EstudianteController',
+    action:'probatorio'
+  },
 
   //Profesor
 
@@ -242,7 +259,13 @@ module.exports.routes = {
   'GET /profesor/elegirseccion': {
     view: 'profesor/elegirseccion'
   },
-
+  'GET /profesor/identificacionaul': {
+    view: 'profesor/identificacionaul'
+  },
+  'POST /profesor/identificacionaul': {
+    controller: 'ProfesorController',
+    action: 'buscaraulas'
+  },
   
 
   //Beca
