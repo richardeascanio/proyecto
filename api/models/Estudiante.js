@@ -45,6 +45,12 @@ module.exports = {
       collection: 'Selecciondeportiva',
       via: 'idEstudiante',
       through: 'estudiante_seleccion'
+    },
+
+    periodos: {
+      collection: 'Periodo',
+      via: 'idEstudiante',
+      through: 'estudiante_periodo'
     }
 
   }
