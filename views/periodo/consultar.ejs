@@ -1,1 +1,55 @@
+<!doctype html>
+<html lang="en">
 
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.css">
+  <!-- ESTILOS PERSONALIZADOS -->
+  <link rel="stylesheet" href="../../assets/styles/estilos.css">
+</head>
+
+<body>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Nombre</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% _.each(periodos, function(periodo) {%>
+          <th scope="row">
+            <%=periodo.idperiodo%>
+          </th>
+
+          <td>
+            <%=periodo.nombre%>
+          </td>
+          <td>
+            <form action="../periodo/edit/<%=periodo.idperiodo%>" method="POST" accept-charset="utf-8">
+              <button type="submit" class="btn btn-outline-success">Editar</button>
+            </form>
+          </td>
+
+      </tr>
+      <%}) %>
+    </tbody>
+  </table>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="../../assets/js/dependencies/jquery-3.3.1.js"></script>
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/holder.min.js"></script>
+</body>
+
+</html>

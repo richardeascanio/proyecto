@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../assets/favicon.ico">
 
-    <title>Editar departamento de MetroPavoApp</title>
+    <title>Editar periodo de MetroPavoApp</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../assets/styles/bootstrap.css" rel="stylesheet">
@@ -18,17 +18,17 @@
 
   <body class="bg-dark">
     
-    <form action="../../departamento/update/<%=departamento.iddepartamento%>" method="POST" accept-charset="utf-8" class="form-singin">
+    <form action="../../periodo/update/<%=periodo.idperiodo%>" method="POST" accept-charset="utf-8" class="form-singin">
       <section id="editar">
         <div class="container">
         <div class="row">
             <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Editar departamento</h4>
+            <h4 class="mb-3">Editar Periodo</h4>
             <form class="needs-validation" novalidate>
                 
               <div class="col-md-6 mb-3">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" name="nombre" placeholder="Nombre del departamento" value="<%=departamento.nombre%>" required>
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre del periodo" value="<%=periodo.nombre%>" required>
                 <div class="invalid-feedback">
                 Ingrese un nombre valido
                 </div>

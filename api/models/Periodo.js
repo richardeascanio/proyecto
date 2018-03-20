@@ -17,9 +17,18 @@ module.exports = {
       unique: true
     },
 
-    nombre:{
+    nombre: {
       type: 'string',
-      required: true
+      required: true,
+      unique: true
+    },
+
+    indiceacum: {
+      type: 'int',
+    },
+
+    indiceper: {
+      type: 'int',
     },
 
     secciones: {
