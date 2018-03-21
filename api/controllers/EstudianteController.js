@@ -269,10 +269,10 @@ module.exports = {
 
     }, function (err, estud) {
 
-      var historico= "select u.idusuario, u.nombre, u.apellido, carnet, cedula, indiceaum  from user u join estudiante_periodo ep on u.idusuario = ep.idEstudiante join periodo p on p.idperiodo = ep.idPeriodo where u.idusuario = ?"
+      var historico= "select u.idusuario, u.nombre, u.apellido, carnet, cedula, indiceacum  from user u join estudiante_periodo ep on u.idusuario = ep.idEstudiante join periodo p on p.idperiodo = ep.idPeriodo where u.cedula = ?"
     
       Estudiante.query(historico,[req.param('cedula')], function(err,ListaHistoricoEstud){
-          console.log(ListaHistorico)
+          console.log(ListaHistoricoEstud)
           if(err) {res.serverError(err);}
         return res.view('estudiante/historico',{
   
