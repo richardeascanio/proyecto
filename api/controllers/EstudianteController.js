@@ -159,6 +159,7 @@ module.exports = {
       becados.forEach(estud => {
         user.findOne(estud.idestudiante).exec(function (err, usuario) {
           cont=cont+1
+          console.log(aux)
           if(becados[aux].beca[0] != null){
             
            
@@ -173,12 +174,12 @@ module.exports = {
               porcentaje: becados[aux].beca[0].porcentaje,
               
             }
-            aux = aux + 1
+
             listaEstudiantesBeca.push(estudianteQueSeInserta);
             console.log("ingresado")
           }
 
-          else if(becados[aux].beca[0] == null && cont==becados.length){
+          else if(cont==becados.length){
             
             console.log("entre a else")
             console.log(listaEstudiantesBeca)
@@ -187,7 +188,7 @@ module.exports = {
             });
 
           }
-
+          aux = aux + 1
         });
       });
 
