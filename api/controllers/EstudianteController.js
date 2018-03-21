@@ -154,12 +154,15 @@ module.exports = {
 
     }).populate("beca").exec(function (err, becados) {
 
-      console.log(becados[aux].beca[0].idbeca)
+      console.log(becados)
 
       becados.forEach(estud => {
         user.findOne(estud.idestudiante).exec(function (err, usuario) {
+          cont=cont+1
           if(becados[aux].beca[0] != null){
-            cont=cont+1
+            
+           
+            console.log(cont)
             estudianteQueSeInserta = {
 
               nombre: usuario.nombre,
@@ -168,23 +171,23 @@ module.exports = {
               correo: usuario.correo,
               tipob: becados[aux].beca[0].tipo,
               porcentaje: becados[aux].beca[0].porcentaje,
-  
+              
             }
             aux = aux + 1
             listaEstudiantesBeca.push(estudianteQueSeInserta);
-            console.log(listaEstudiantesBeca)
             console.log("ingresado")
           }
-   
-          else{
+
+          else if(becados[aux].beca[0] == null && cont==becados.length){
             
             console.log("entre a else")
             console.log(listaEstudiantesBeca)
             return res.view('estudiante/estudianteconbeca',{
               listaEstudiantesBeca: listaEstudiantesBeca
             });
+
           }
-          
+
         });
       });
 
