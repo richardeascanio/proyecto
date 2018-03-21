@@ -107,3 +107,6 @@ dump.rdb
 nbproject
 .idea
 .node_history
+views/estudiante/historico.ejs
+views/estudiante/historico.ejs
+*.ejs

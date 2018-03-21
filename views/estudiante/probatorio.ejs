@@ -21,18 +21,17 @@
         <th>id</th>
         <th>Nombre</th>
         <th>Apellido</th>
-        <th>Correo</th>
         <th>Carnet</th>
         <th>Cedula</th>
-        <th>Sexo</th>
-        <th>Tipo</th>
+        <th>Promedio Acumulado</th>
+
       </tr>
     </thead>
     <tbody>
       <tr>
         <% _.each(listaEstudiantesConUsuarios, function(estudiante) {%>
           <th scope="row">
-            <%=estudiante.idestudiante%>
+            <%=estudiante.idusuario%>
           </th>
 
           <td>
@@ -42,22 +41,13 @@
             <%=estudiante.apellido%>
           </td>
           <td>
-            <%=estudiante.correo%>
-          </td>
-          <td>
             <%=estudiante.carnet%>
           </td>
           <td>
             <%=estudiante.cedula%>
           </td>
           <td>
-            <%=estudiante.sexo%>
-          </td>
-          <td>
-            <%=estudiante.tipo%>
-          </td>
-          <td>
-            <%=estudiante.indice%>
+            <%=estudiante.indiceacum%>
           </td>
 
         

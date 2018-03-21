@@ -83,16 +83,22 @@ module.exports = {
   prelacion:function (req, res) {
     console.log("entre a buscar materias")
 
-    Materia.find({
+    user.findOne({
       codigo: req.param('codigo')
     }, function (err, estud) {
 
+      var materitas2= "select z.idmateria,z.nombre,z.codigo, m.nombre as 'prelacion', m.codigo as 'codprelacion' from materia m join prelacion p on p.idMateriaPrela = m.idmateria join materia z on z.idmateria = p.idmateria where z.codigo= ?"
+    
+      Materia.query(materitas2,[req.param('codigo')], function(err,materias2){
+          console.log(materias2)
           if(err) {res.serverError(err);}
-        return res.view('profesor/aulasquedicto',{
+        return res.view('materia/mostrarmaterias',{
   
-          aulas:aulas
+          materias:materias2
         })
-      }).populate("")
+      });
+        });
+
         
   },
 

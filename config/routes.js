@@ -125,10 +125,7 @@ module.exports.routes = {
     controller: 'MateriaController',
     action: 'prelacion'
   },
-  'GET /materia/mostrarmaterias': {
-    controller: 'MateriaController',
-    action:'prelacion'
-  },
+ 
 
 
     //Periodo
@@ -234,6 +231,17 @@ module.exports.routes = {
     controller: 'EstudianteController',
     action:'probatorio'
   },
+
+  'GET /estudiante/identificacionHist': {
+    view: 'estudiante/identificacionHist'
+  },
+
+  'POST /estudiante/historico': {
+    controller: 'EstudianteController',
+    action: 'promedioHistorico'
+  },
+
+
 
   //Profesor
 
