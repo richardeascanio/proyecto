@@ -192,7 +192,6 @@ module.exports.routes = {
   'GET /selecciondeportiva/listahorarios': {
     controller:'SelecciondeportivaController',
     action:'buscarhorarios',
-    view: 'selecciondeportiva/listahorarios'
   },
 
 
