@@ -177,6 +177,7 @@ module.exports = {
           }
    
           else{
+            
             console.log("entre a else")
             console.log(listaEstudiantesBeca)
             return res.view('estudiante/estudianteconbeca',{
@@ -217,7 +218,7 @@ module.exports = {
 
 
   aulascursando: function (req, res) {
-    console.log("entre a buscar materias")
+    console.log("entre a buscar aulas")
 
     user.findOne({
       cedula: req.param('cedula')
@@ -236,39 +237,53 @@ module.exports = {
         });
   },
 
-  probatorio: function (req, res) {
-    console.log("entre a buscar beca con estudiante")
+  probatorio:function (req, res) {
+    console.log("entre a buscar estudiantes")
 
-    var listaEstudiantesBeca = []
-    var aux = 0, aux2=0
-    var estudianteQueSeInserta
+    user.find({
 
-    Estudiante.find({
+    }, function (err, estud) {
 
-    }).populate("periodos").exec(function (err, probatorio) {
-     
-      console.log(probatorio)
-
-      becados[0].beca.forEach(estud => {
-        user.findOne(estud.idestudiante).exec(function (err, usuario) {
-
-          estudianteQueSeInserta = {
-
-            nombre: usuario.nombre,
-            apellido: usuario.apellido,
-            carnet: usuario.carnet,
-            correo: usuario.correo,
-
-          }
-          listaEstudiantesBeca.push(estudianteQueSeInserta);
-          console.log(listaEstudiantesBeca)
-
-        });
+      var probatorio= "select u.idusuario, u.nombre, u.apellido,carnet,cedula, p.indiceacum from user u join estudiante_periodo ep on u.idusuario = ep.idEstudiante join periodo p on p.idperiodo = ep.idPeriodo where p.indiceacum < 12;"
+    
+      Estudiante.query(probatorio,[], function(err,listaProbatorio){
+          console.log(listaProbatorio)
+          if(err) {res.serverError(err);}
+        return res.view('estudiante/probatorio',{
+  
+          listaEstudiantesConUsuarios:listaProbatorio
+        })
       });
+        });
 
-    });
-
+        
   },
+
+
+  promedioHistorico:function (req, res) {
+    console.log("entre a buscar estudiantes y su historico")
+
+    user.findOne({
+
+      cedula: req.param('cedula')
+
+    }, function (err, estud) {
+
+      var historico= "select u.idusuario, u.nombre, u.apellido, carnet, cedula, indiceaum  from user u join estudiante_periodo ep on u.idusuario = ep.idEstudiante join periodo p on p.idperiodo = ep.idPeriodo where u.idusuario = ?"
+    
+      Estudiante.query(historico,[req.param('cedula')], function(err,ListaHistoricoEstud){
+          console.log(ListaHistorico)
+          if(err) {res.serverError(err);}
+        return res.view('estudiante/historico',{
+  
+          listaEstudiantesConUsuarios:ListaHistoricoEstud
+        })
+      });
+        });
+
+        
+  },
+
 
 
 };
