@@ -120,7 +120,16 @@ module.exports = {
   },
 
   buscarhorarios: function (req, res){
+    var horarios= "select  s.nombre, dia, bloquehorario from horario h join seleccion_horario sh on sh.idHorario = h.idhorario join selecciondeportiva s on s.idselecciondeportiva = sh.idSeleccion"
+    
+    Horario.query(horarios,[], function(err,horarios){
+        console.log(horarios)
+        if(err) {res.serverError(err);}
+      return res.view('selecciondeportiva/listahorarios',{
 
+        listahorariosseleccion:horarios
+      })
+    });
   },
     
   becados: function(req,res){

@@ -154,12 +154,16 @@ module.exports = {
 
     }).populate("beca").exec(function (err, becados) {
 
-      console.log(becados[aux].beca[0].idbeca)
+      console.log(becados)
 
       becados.forEach(estud => {
         user.findOne(estud.idestudiante).exec(function (err, usuario) {
+          cont=cont+1
+          console.log(aux)
           if(becados[aux].beca[0] != null){
-            cont=cont+1
+            
+           
+            console.log(cont)
             estudianteQueSeInserta = {
 
               nombre: usuario.nombre,
@@ -168,23 +172,23 @@ module.exports = {
               correo: usuario.correo,
               tipob: becados[aux].beca[0].tipo,
               porcentaje: becados[aux].beca[0].porcentaje,
-  
+              
             }
-            aux = aux + 1
+
             listaEstudiantesBeca.push(estudianteQueSeInserta);
-            console.log(listaEstudiantesBeca)
             console.log("ingresado")
           }
-   
-          else{
+
+          else if(cont==becados.length){
             
             console.log("entre a else")
             console.log(listaEstudiantesBeca)
             return res.view('estudiante/estudianteconbeca',{
               listaEstudiantesBeca: listaEstudiantesBeca
             });
+
           }
-          
+          aux = aux + 1
         });
       });
 
@@ -269,10 +273,10 @@ module.exports = {
 
     }, function (err, estud) {
 
-      var historico= "select u.idusuario, u.nombre, u.apellido, carnet, cedula, indiceaum  from user u join estudiante_periodo ep on u.idusuario = ep.idEstudiante join periodo p on p.idperiodo = ep.idPeriodo where u.idusuario = ?"
+      var historico= "select u.idusuario, u.nombre, u.apellido, carnet, cedula, indiceacum  from user u join estudiante_periodo ep on u.idusuario = ep.idEstudiante join periodo p on p.idperiodo = ep.idPeriodo where u.cedula = ?"
     
       Estudiante.query(historico,[req.param('cedula')], function(err,ListaHistoricoEstud){
-          console.log(ListaHistorico)
+          console.log(ListaHistoricoEstud)
           if(err) {res.serverError(err);}
         return res.view('estudiante/historico',{
   
